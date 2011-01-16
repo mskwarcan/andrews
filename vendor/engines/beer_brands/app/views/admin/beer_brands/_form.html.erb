@@ -1,0 +1,34 @@
+<% form_for [:admin, @beer_brand] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+    :object => @beer_brand,
+    :include_object_name => true
+  } %>
+  
+  <div class='field'>
+    <%= f.label :image -%>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {
+      :f => f,
+      :field => :image_id,
+      :image => @beer_brand.image,
+      :toggle_image_display => false
+    } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :main_category -%>
+    <%= f.text_field :main_category -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :sub_category -%>
+    <%= f.text_field :sub_category -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.beer_brands.beer_brand.delete'),
+                :delete_confirmation => t('shared.admin.delete.message', :title => @beer_brand.main_category)
+              } %>
+<% end -%>

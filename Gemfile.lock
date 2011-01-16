@@ -1,3 +1,11 @@
+PATH
+  remote: vendor/engines
+  specs:
+    refinerycms-beer_brands (1.0)
+    refinerycms-brewers (1.0)
+    refinerycms-events (1.0)
+    refinerycms-managements (1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -106,7 +114,11 @@ PLATFORMS
 DEPENDENCIES
   rails (= 3.0.0)
   refinerycms (~> 0.9.8.5)
+  refinerycms-beer_brands (= 1.0)!
+  refinerycms-brewers (= 1.0)!
+  refinerycms-events (= 1.0)!
   refinerycms-i18n (~> 0.9.8.7)
   refinerycms-inquiries (~> 0.9.8.8)
+  refinerycms-managements (= 1.0)!
   rmagick (~> 2.12.0)
   sqlite3-ruby

@@ -10,7 +10,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100913234704) do
+ActiveRecord::Schema.define(:version => 20110115025651) do
+
+  create_table "beer_brands", :force => true do |t|
+    t.integer  "image_id"
+    t.string   "main_category"
+    t.string   "sub_category"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "beer_brands", ["id"], :name => "index_beer_brands_on_id"
+
+  create_table "brewers", :force => true do |t|
+    t.integer  "first_image_id"
+    t.integer  "second_image_id"
+    t.string   "company"
+    t.string   "website_url"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "brewers", ["id"], :name => "index_brewers_on_id"
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.integer  "image_id"
+    t.text     "description"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["id"], :name => "index_events_on_id"
 
   create_table "images", :force => true do |t|
     t.string   "image_mime_type"
@@ -43,6 +77,19 @@ ActiveRecord::Schema.define(:version => 20100913234704) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "managements", :force => true do |t|
+    t.string   "title"
+    t.string   "name"
+    t.integer  "thumb_image_id"
+    t.integer  "main_image_id"
+    t.text     "bio"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "managements", ["id"], :name => "index_managements_on_id"
 
   create_table "page_parts", :force => true do |t|
     t.integer  "page_id"

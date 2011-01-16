@@ -58,3 +58,8 @@ gem 'rmagick',                  '~> 2.12.0', rmagick_options
 # USER DEFINED
 
 # END USER DEFINED
+
+gem 'refinerycms-managements', '1.0', :path => 'vendor/engines', :require => 'managements'
+gem 'refinerycms-brewers', '1.0', :path => 'vendor/engines', :require => 'brewers'
+gem 'refinerycms-beer_brands', '1.0', :path => 'vendor/engines', :require => 'beer_brands'
+gem 'refinerycms-events', '1.0', :path => 'vendor/engines', :require => 'events'

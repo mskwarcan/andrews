@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
+  <%= render :partial => "/shared/head" %>
+  <body>
+    <%= site_bar -%>
+    <%= render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
+	<div class="banner"></div>
+	<div class="left_shadow"></div>
+	<div class="right_shadow"></div>
+    <div id='page_container'>
+      <div id='page'>
+        <div id='header'>
+		  <div class="logo"><img src="/images/logo.png" /></div>
+          <%= render :partial => "/shared/header" %>
+        </div>
+		<div class="left_nav">
+		<a href="#" class="for_brewers"></a>
+		<a href="#" class="for_retailers"></a>
+		<a href="#" class="about_beers"></a>
+		<a href="#" class="whats_new"></a>
+		</div>
+        <div id='body' class='clearfix'>
+			<div class="border">
+          		<%= yield %>
+			</div>
+        </div>
+      </div>
+	  <div id='footer'>
+        <%= render :partial => "/shared/footer" %>
+      </div>
+    </div>
+  </body>
+</html>
