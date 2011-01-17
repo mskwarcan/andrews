@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110115025651) do
+ActiveRecord::Schema.define(:version => 20110116215451) do
 
   create_table "beer_brands", :force => true do |t|
     t.integer  "image_id"
@@ -78,6 +78,16 @@ ActiveRecord::Schema.define(:version => 20110115025651) do
     t.datetime "updated_at"
   end
 
+  create_table "logos", :force => true do |t|
+    t.string   "title"
+    t.integer  "image_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "logos", ["id"], :name => "index_logos_on_id"
+
   create_table "managements", :force => true do |t|
     t.string   "title"
     t.string   "name"
@@ -132,6 +142,16 @@ ActiveRecord::Schema.define(:version => 20110115025651) do
   add_index "pages", ["lft"], :name => "index_pages_on_lft"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
   add_index "pages", ["rgt"], :name => "index_pages_on_rgt"
+
+  create_table "portfolio_images", :force => true do |t|
+    t.string   "title"
+    t.integer  "image_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "portfolio_images", ["id"], :name => "index_portfolio_images_on_id"
 
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"

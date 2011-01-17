@@ -41,7 +41,7 @@ gem 'refinerycms-inquiries',    '~> 0.9.8.8'
 # gem 'refinerycms-theming',    '~> 0.9.8'
 
 # Add i18n support (optional, you can remove this if you really want to).
-gem 'refinerycms-i18n',         '~> 0.9.8.7'
+gem 'refinerycms-i18n',         '~> 0.9.8.12'
 
 # Figure out how to get RMagick:
 rmagick_options = {:require => false}
@@ -63,3 +63,5 @@ gem 'refinerycms-managements', '1.0', :path => 'vendor/engines', :require => 'ma
 gem 'refinerycms-brewers', '1.0', :path => 'vendor/engines', :require => 'brewers'
 gem 'refinerycms-beer_brands', '1.0', :path => 'vendor/engines', :require => 'beer_brands'
 gem 'refinerycms-events', '1.0', :path => 'vendor/engines', :require => 'events'
+gem 'refinerycms-portfolio_images', '1.0', :path => 'vendor/engines', :require => 'portfolio_images'
+gem 'refinerycms-logos', '1.0', :path => 'vendor/engines', :require => 'logos'

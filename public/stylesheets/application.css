@@ -18,6 +18,16 @@ body
 	height:100%;
 }
 
+h2
+{
+	font-family:serif;
+}
+
+li
+{
+	font-size:14px;
+}
+
 a
 {
 	color:#ffc20e;
@@ -27,6 +37,11 @@ a
 a:hover
 {
 	color:#fff;
+}
+
+p
+{
+	font-size:14px;
 }
 
 .banner
@@ -70,10 +85,14 @@ a:hover
 	padding:0;
 }
 
+#body_content_left
+{
+	width:564px;
+}
+
 #body
 {
 	background:url('../images/body_bg.png');
-	border:1px solid #fff;
 	width:650px;
 	margin-top:20px;
 	float:right;
@@ -87,6 +106,12 @@ a:hover
 	margin:6px;
 	width:564px;
 	padding:13px 36px;
+	background:url('/images/blue_logo_bg.png') top right no-repeat;
+}
+
+.texas
+{
+	background:url('/images/texas_bg.png') no-repeat;
 }
 
 #footer
@@ -269,6 +294,72 @@ a:hover
 
 .left_nav a.whats_new
 {
-	background:url('../images/about.png');
+	background:url('../images/whats_new.png');
 	height:113px;
+}
+
+.left_nav a.whats_new:hover
+{
+	background-position:0 113px;
+}
+
+/* management */
+
+ul#management
+{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+ul#management li
+{
+	padding:9px 0;
+	border-bottom:solid #fff 1px;
+}
+
+ul#management li .title
+{
+	color:#ffc20e;
+}
+#fancybox-content
+{
+	color:#142E5E;
+	font-size:14px;
+}
+
+#fancybox-content .title
+{
+	position:relative;
+	top:2px;
+}
+
+#fancybox-content p
+{
+	margin:0;
+	clear:left;
+}
+
+ul#management li h2, #fancybox-content h2
+{
+	float:left;
+	margin:0 10px 0 0;
+}
+
+ul#management li a
+{
+	display:inline-block;
+	position:relative;
+	top:3px;
+}
+
+ul#management li p
+{
+	clear:left;
+	margin:3px 0 5px;
+}
+
+ul#management li .hide
+{
+	display:none;
 }

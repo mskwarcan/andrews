@@ -4,7 +4,9 @@ PATH
     refinerycms-beer_brands (1.0)
     refinerycms-brewers (1.0)
     refinerycms-events (1.0)
+    refinerycms-logos (1.0)
     refinerycms-managements (1.0)
+    refinerycms-portfolio_images (1.0)
 
 GEM
   remote: http://rubygems.org/
@@ -100,12 +102,14 @@ GEM
     rmagick (2.12.2)
     routing-filter (0.1.7)
       actionpack
-    sqlite3-ruby (1.3.2)
+    sqlite3 (1.3.3)
+    sqlite3-ruby (1.3.3)
+      sqlite3 (>= 1.3.3)
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     truncate_html (0.4.0)
-    tzinfo (0.3.23)
+    tzinfo (0.3.24)
     will_paginate (3.0.pre2)
 
 PLATFORMS
@@ -117,8 +121,10 @@ DEPENDENCIES
   refinerycms-beer_brands (= 1.0)!
   refinerycms-brewers (= 1.0)!
   refinerycms-events (= 1.0)!
-  refinerycms-i18n (~> 0.9.8.7)
+  refinerycms-i18n (~> 0.9.8.12)
   refinerycms-inquiries (~> 0.9.8.8)
+  refinerycms-logos (= 1.0)!
   refinerycms-managements (= 1.0)!
+  refinerycms-portfolio_images (= 1.0)!
   rmagick (~> 2.12.0)
   sqlite3-ruby
