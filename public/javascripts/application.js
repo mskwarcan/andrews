@@ -12,6 +12,7 @@ $(document).ready(function(){
 		'transitionIn'	: 'fade',
 		'transitionOut'	: 'fade',
 		'width': 590,
+		'height': 550;
 		'autoDimensions' :false,
 		'overlayColor':'#0F2348'
 	});
