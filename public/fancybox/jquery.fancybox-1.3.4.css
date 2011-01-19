@@ -75,7 +75,7 @@
 #fancybox-content {
 	width: 0;
 	height: 0;
-	padding: 20px 57px;
+	padding: 50px 57px;
 	outline: none;
 	position: relative;
 	overflow: hidden;
@@ -95,11 +95,11 @@
 
 #fancybox-close {
 	position: absolute;
-	top: -15px;
-	right: -15px;
-	width: 30px;
-	height: 30px;
-	background: transparent url('fancybox.png') -40px 0px;
+	top: 15px;
+	right: -30px;
+	width: 15px;
+	height: 15px;
+	background: transparent url('close.gif');
 	cursor: pointer;
 	z-index: 1103;
 	display: none;
