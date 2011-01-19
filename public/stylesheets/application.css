@@ -580,6 +580,7 @@ ul#management li .title
 {
 	color:#142E5E;
 	font-size:14px;
+	height:550px !important;
 }
 
 #fancybox-content .title
@@ -592,7 +593,8 @@ ul#management li .title
 {
 	margin:0 30px;
 	clear:left;
-	padding-bottom:10px;
+	border-bottom:1px solid #142E5E;
+	padding-bottom:15px;
 }
 
 ul#management li h2
@@ -624,8 +626,6 @@ ul#management li img
 ul#management li p
 {
 	margin:3px 0 5px;
-	width: 572px;
-	border-bottom:1px solid #142E5E;
 }
 
 ul#management li .hide
