@@ -320,18 +320,45 @@ p
 /* Subnav */
 ul.subnav
 {
-	list-style:none;
 	margin:0;
-	padding:10px 36px;
+	padding:6px 36px 10px;
 	background:url('/images/subnav.png');
 	width:564px;
 	position:relative;
 	left:-36px;
+	height:26px;
+}
+
+.our-community ul.subnav, .events ul.subnav
+{
+	padding:10px 36px 4px;
 }
 
 ul.subnav li
 {
-	display:inline-block;
+	text-transform:uppercase;
+	font-size:10px;
+	float:left;
+	list-style-image:url("/images/bullet.png");
+	margin:0 10px;
+}
+
+ul.subnav li a
+{
+	position:relative;
+	top:2px;
+}
+
+ul.subnav li:first-child
+{
+	list-style:none;
+}
+
+.brewers ul.subnav li:last-child, .our-portfolio ul.subnav li:last-child, .managements ul.subnav li:last-child, 
+.the-andrews-story ul.subnav li:last-child, .beer-brands ul.subnav li:last-child
+{
+	list-style:none;
+	clear:left;
 }
 
 /* Left Nav */
@@ -590,6 +617,44 @@ ul#management li p
 ul#management li .hide
 {
 	display:none;
+}
+
+/* Brewers */
+ul#brewers
+{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+ul#brewers li
+{
+	border-bottom:1px #fff solid;
+	padding:12px;
+	height:112px;
+}
+
+ul#brewers li .images
+{
+	width:248px;
+	height:112px;
+	float:left;
+}
+
+ul#brewers li h2
+{
+	margin:72px 0 3px;
+}
+
+ul#brewers li img
+{
+	margin-right:12px;
+	float:left;
+}
+
+ul#brewers li
+{
+	clear:left;
 }
 
 /* Events */

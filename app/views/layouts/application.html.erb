@@ -11,7 +11,8 @@
 	<div class="banner"></div>
       <div id='page'>
         <div id='header'>
-		  <div class="logo"><a href="/"><img src="/images/logo.png" /></a></div>
+		  <% logo = Logo.find(:limit => 1, :order =>"position ASC") %>
+		  <div class="logo"><a href="/"><%= image_fu logo.image, "122x122"%></a></div>
           <%= render :partial => "/shared/header" %>
         </div>
 		<div class="left_nav">
