@@ -605,6 +605,7 @@ ul#management li a
 	display:inline-block;
 	position:relative;
 	top:3px;
+	padding-bottom:3px;
 }
 
 ul#management li img
