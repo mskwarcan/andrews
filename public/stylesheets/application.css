@@ -283,7 +283,7 @@ p
 	padding-bottom:5px;
 }
 
-.our-portfolio .title_image, .brewers .title_image, .beer-brands .title_image
+.our-portfolio .title_image, .brewers .title_image, .beer_brands .title_image
 {
 	background:url('/images/our_portfolio.png') no-repeat;
 	width:285px;
@@ -347,6 +347,11 @@ ul.subnav li a
 {
 	position:relative;
 	top:2px;
+}
+
+.core-values ul.subnav li a
+{
+	z-index:15;
 }
 
 ul.subnav li:first-child
@@ -529,18 +534,12 @@ ul.subnav li:first-child
 {
 	position:absolute;
 	border:none;
-	cursor:pointer;
 	z-index:10;
 }
 
-#core .tab
+.core map area
 {
-	display:block;
-}
-
-#core .tab:hover
-{
-	background:#000;
+	cursor:pointer;
 }
 
 .value
@@ -606,6 +605,12 @@ ul#management li a
 	display:inline-block;
 	position:relative;
 	top:3px;
+}
+
+ul#management li img
+{
+	float:left;
+	margin-right:16px;
 }
 
 ul#management li p

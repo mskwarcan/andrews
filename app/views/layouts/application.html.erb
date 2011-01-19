@@ -12,7 +12,7 @@
       <div id='page'>
         <div id='header'>
 		  <% logo = Logo.first(:order =>"position ASC") %>
-		  <div class="logo"><a href="/"><%= image_fu logo.image, "122x122"%></a></div>
+		  <div class="logo"><a href="/"><% if logo %><%= image_fu logo.image, "122x122"%><% end %></a></div>
           <%= render :partial => "/shared/header" %>
         </div>
 		<div class="left_nav">
