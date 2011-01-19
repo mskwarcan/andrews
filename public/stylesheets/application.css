@@ -595,7 +595,13 @@ ul#management li .title
 	padding-bottom:10px;
 }
 
-ul#management li h2, #fancybox-content h2
+ul#management li h2
+{
+	float:left;
+	margin:0 10px 0 0px;
+}
+
+#fancybox-content h2
 {
 	float:left;
 	margin:15px 10px 0 30px;
