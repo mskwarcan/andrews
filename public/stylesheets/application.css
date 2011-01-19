@@ -580,7 +580,11 @@ ul#management li .title
 {
 	color:#142E5E;
 	font-size:14px;
-	height:550px !important;
+}
+
+#fancybox-content div
+{
+		overflow:visible !important;
 }
 
 #fancybox-content .title
