@@ -166,6 +166,7 @@ p
 	position:absolute;
 	top:5px;
 	left:410px;
+	z-index:2;
 }
 
 /* nav */
@@ -347,6 +348,16 @@ p
 	z-index:1;
 }
 
+.contact .top_right_image
+{
+	background:url('/images/business_card.png');
+	width:315px;
+	height:198px;
+	left:354px;
+	top:-40px;
+	z-index:1;
+}
+
 .destination-beer .top_right_image
 {
 	position:relative;
@@ -359,14 +370,6 @@ p
 	margin-bottom:-23px;
 	right:-45px;
 	z-index:1;
-}
-
-.visit
-{
-	position:absolute;
-	z-index:2;
-	top:340px;
-	left:280px;
 }
 
 /* Subnav */
@@ -763,6 +766,20 @@ ul#brewers li img
 	position:relative;
 	top:-100px;
 	margin-left:16px;
+}
+
+/* destination beer */
+.visit
+{
+	position:absolute;
+	z-index:2;
+	top:340px;
+	left:280px;
+}
+
+.destination-beer p
+{
+	margin-right:60px;
 }
 
 /* Events */
