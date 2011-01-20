@@ -149,6 +149,7 @@ p
 	background:url('../images/footer_bg.png');
 	width:100%;
 	height:33px;
+	z-index:2;
 }
 
 /* header */
@@ -812,6 +813,12 @@ ul#events li:first-child
 ul#events li img
 {
 	float:right;
+}
+
+/* Contact */
+p.indent
+{
+	padding-left:20px;
 }
 
 /* footer */
