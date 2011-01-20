@@ -41,7 +41,7 @@ a:hover
 
 p
 {
-	font-size:14px;
+	font-size:13.5px;
 }
 
 .yellow
@@ -120,6 +120,7 @@ p
 	width:564px;
 	padding:13px 36px;
 	background:url('/images/blue_logo_bg.png') top right no-repeat;
+	position:relative;
 }
 
 .texas
@@ -635,6 +636,33 @@ ul#management li p
 ul#management li .hide
 {
 	display:none;
+}
+
+/* Distribution */
+.distribution-area p
+{
+	width:270px;
+}
+
+.distribution-area h2
+{
+	font-size:30px;
+	margin:15px 0 3px 0;
+}
+
+.texas_map
+{
+	position:absolute;
+	left:290px;
+	top:0;
+}
+
+.print_map
+{
+	position:absolute;
+	left:390px;
+	top:280px;
+	z-index:2;
 }
 
 /* Brewers */

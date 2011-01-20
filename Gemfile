@@ -65,3 +65,4 @@ gem 'refinerycms-beer_brands', '1.0', :path => 'vendor/engines', :require => 'be
 gem 'refinerycms-events', '1.0', :path => 'vendor/engines', :require => 'events'
 gem 'refinerycms-portfolio_images', '1.0', :path => 'vendor/engines', :require => 'portfolio_images'
 gem 'refinerycms-logos', '1.0', :path => 'vendor/engines', :require => 'logos'
+gem 'refinerycms-donation_requests', '1.0', :path => 'vendor/engines', :require => 'donation_requests'
