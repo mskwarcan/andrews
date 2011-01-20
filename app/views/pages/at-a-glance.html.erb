@@ -1,0 +1,14 @@
+<% if @page.parent %>
+<ul class="subnav">
+	<% @page.parent.children.each do |child| %>
+		<li><%= link_to child.title, child.url -%></li>
+	<% end %>
+</ul>
+<% end %>
+
+<% portfolio = PortfolioImage.first(:order => "position ASC")%>
+
+<% if portfolio %>
+	<%= image_fu portfolio.image, '289x503', :class => 'portfolio_image' %>
+<% end %>
+<%= render :partial => "/shared/content_page" %>

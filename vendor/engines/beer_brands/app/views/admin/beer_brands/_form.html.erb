@@ -16,12 +16,32 @@
   
   <div class='field'>
     <%= f.label :main_category -%>
-    <%= f.text_field :main_category -%>
+    <select name="beer_brand[main_category]">
+    	<option>Domestic</option>
+    	<option>Imports</option>
+    	<option>Specialty & Craft</option>
+		<option>Non-Alcoholic</option>
+  	</select>
+  
   </div>
   
   <div class='field'>
     <%= f.label :sub_category -%>
-    <%= f.text_field :sub_category -%>
+    <select name="beer_brand[sub_category]">
+    	<option>Premium</option>
+    	<option>Near Premium</option>
+    	<option>Below Premium</option>
+		<option>Malt</option>
+		<option>Innovative</option>
+		<option>Mexican</option>
+		<option>European</option>
+		<option>All Other Imports</option>
+		<option>Specialty</option>
+		<option>Craft</option>
+		<option>Cider</option>
+		<option>Non-Alcoholic</option>
+		<option>Red Bull</option>
+  	</select>
   </div>
   
   <%= render :partial => "/shared/admin/form_actions",
