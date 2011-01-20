@@ -21,7 +21,8 @@ class DonationRequestsController < ApplicationController
              format.html { render :action => "new" }
              format.xml  { render :xml => @donation_requests.errors, :status => :unprocessable_entity }
            end
-         en
+      end
+    end
 
 protected
 
