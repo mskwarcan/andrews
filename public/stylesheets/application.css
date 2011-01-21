@@ -780,7 +780,7 @@ ul#brewers li img
 
 /* Beer Brands */
 
-.beer-brands ul
+.beer-brands--2 ul,.beer-brands ul
 {
 	list-style:none;
 	margin:0;
@@ -789,13 +789,19 @@ ul#brewers li img
 	clear:left;
 }
 
-.beer-brands ul li
+.beer-brands--2 ul li, .beer-brands ul li
 {
 	float:left;
 }
 
+.learn
+{
+	position:absolute;
+}
+
 .small_destination
 {
+	right:-70px;
 	float:right;
 	position:relative;
 }
