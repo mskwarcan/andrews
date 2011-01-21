@@ -17,6 +17,44 @@ $(document).ready(function(){
 		'overlayColor':'#0F2348'
 	});
 	
+	/////////////Beer Brands toggle//////////
+	$('#domestics').click(function() {
+	  $('.domestics').animate({
+	    height: 'toggle'
+	  }, 2000, function() {
+	    // Animation complete.
+		$('#domestics').html('collaspe section');
+	  });
+	});
+	
+	$('#imports').click(function() {
+	  $('.imports').animate({
+	    height: 'toggle'
+	  }, 2000, function() {
+	    // Animation complete.
+		$('#imports').html('collaspe section');
+	  });
+	});
+	
+	$('#specialty').click(function() {
+	  $('.specialty').animate({
+	    height: 'toggle'
+	  }, 2000, function() {
+	    // Animation complete.
+		$('#specialty').html('collaspe section');
+	  });
+	});
+	
+	$('#non-alcoholic').click(function() {
+	  $('.non-alcoholic').animate({
+	    height: 'toggle'
+	  }, 2000, function() {
+	    // Animation complete.
+		$('#non-alcoholic').html('collaspe section');
+	  });
+	});
+	
+	
 	
 	/////////// CORE VALUES /////////////
 	

@@ -815,6 +815,19 @@ ul#brewers li img
 	position:relative;
 }
 
+.show
+{
+	text-transform:uppercase;
+	font-size:10px;
+	position:absolute;
+	left:300px;
+}
+
+.imports, .domestics, .non-alcoholic, .specialty
+{
+	display:none;
+}
+
 /* Events */
 h2.events
 {
