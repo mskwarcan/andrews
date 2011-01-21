@@ -1,0 +1,21 @@
+<% if @page.parent %>
+<ul class="subnav">
+	<% @page.parent.children.each do |child| %>
+		<li><%= link_to child.title, child.url -%></li>
+	<% end %>
+</ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
+
+<% @events = Event.order("position ASC")%>
+<img src="/images/recent.png" />
+  <ul id="events">
+    <% @events.each do |event| %>
+      <li>
+		<%= event.image %>
+        <h2><%= event.title%></h2>
+		<%=raw event.description %>
+      </li>
+    <% end %>
+  </ul>

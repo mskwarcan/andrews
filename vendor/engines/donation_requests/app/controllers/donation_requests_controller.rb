@@ -18,7 +18,7 @@ class DonationRequestsController < ApplicationController
              format.html { redirect_to(:action => "index", :notice => 'Your donation request was successfully entered.') }
              format.xml  { render :xml => @donation_requests, :status => :created, :location => @donation_requests }
            else
-             format.html { render :action => "new" }
+             format.html { render :action => "index" }
              format.xml  { render :xml => @donation_requests.errors, :status => :unprocessable_entity }
            end
       end
