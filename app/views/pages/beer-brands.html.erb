@@ -15,7 +15,8 @@
 
 <img src="/images/domestic.png" />
 <h2>Premium</h2>
-<ul>
+<div class="domestics">
+<ul class="brands">
 <% @domestics.each do |brand| %>
 	<% if brand.sub_category == "Premium" %>
 		<li><%= image_fu brand.image %></li>
@@ -24,7 +25,7 @@
 </ul>
 
 <h2>Near Premium</h2>
-<ul>
+<ul class="brands">
 <% @domestics.each do |brand| %>
 	<% if brand.sub_category == "Near Premium" %>
 		<li><%= image_fu brand.image %></li>
@@ -33,7 +34,7 @@
 </ul>
 
 <h2>Below Premium</h2>
-<ul>
+<ul class="brands">
 <% @domestics.each do |brand| %>
 	<% if brand.sub_category == "Below Premium" %>
 		<li><%= image_fu brand.image %></li>
@@ -42,7 +43,7 @@
 </ul>
 
 <h2>Malt</h2>
-<ul>
+<ul class="brands">
 <% @domestics.each do |brand| %>
 	<% if brand.sub_category == "Malt" %>
 		<li><%= image_fu brand.image %></li>
@@ -51,15 +52,16 @@
 </ul>
 
 <h2>Innovative</h2>
-<ul>
+<ul class="brands">
 <% @domestics.each do |brand| %>
 	<% if brand.sub_category == "Innovative" %>
 		<li><%= image_fu brand.image %></li>
 	<% end %>
 <% end %>
-</ul>
-
+<ul class="brands">
+</div>
 <img src="/images/imports.png" />
+<div class="imports">
 <h2>Mexican</h2>
 <ul>
 <% @imports.each do |brand| %>
@@ -70,7 +72,7 @@
 </ul>
 
 <h2>European</h2>
-<ul>
+<ul class="brands">
 <% @imports.each do |brand| %>
 	<% if brand.sub_category == "European" %>
 		<li><%= image_fu brand.image %></li>
@@ -79,17 +81,18 @@
 </ul>
 
 <h2>All Other Imports</h2>
-<ul>
+<ul class="brands">
 <% @imports.each do |brand| %>
 	<% if brand.sub_category == "All Other Imports" %>
 		<li><%= image_fu brand.image %></li>
 	<% end %>
 <% end %>
 </ul>
-
+</div>
 <img src="/images/specialty_craft.png" />
+<div class="specialty">
 <h2>Specialty</h2>
-<ul>
+<ul class="brands">
 <% @craft.each do |brand| %>
 	<% if brand.sub_category == "Specialty" %>
 		<li><%= image_fu brand.image %></li>
@@ -98,7 +101,7 @@
 </ul>
 
 <h2>Craft</h2>
-<ul>
+<ul class="brands">
 <% @craft.each do |brand| %>
 	<% if brand.sub_category == "Craft" %>
 		<li><%= image_fu brand.image %></li>
@@ -107,17 +110,18 @@
 </ul>
 
 <h2>Cider</h2>
-<ul>
+<ul class="brands">
 <% @craft.each do |brand| %>
 	<% if brand.sub_category == "Cider" %>
 		<li><%= image_fu brand.image %></li>
 	<% end %>
 <% end %>
 </ul>
-
+</div>
 <img src="/images/non-alcoholic.png" />
+<div class="non-alcoholic">
 <h2>Non-Alcoholic</h2>
-<ul>
+<ul class="brands">
 <% @non.each do |brand| %>
 	<% if brand.sub_category == "Non-Alcoholic" %>
 		<li><%= image_fu brand.image %></li>
@@ -126,13 +130,13 @@
 </ul>
 
 <h2>Red Bull</h2>
-<ul>
+<ul class="brands">
 <% @non.each do |brand| %>
 	<% if brand.sub_category == "Red Bull" %>
 		<li><%= image_fu brand.image %></li>
 	<% end %>
 <% end %>
 </ul>
-
+</div>
 <img class="small_destination" src="/images/destination_small.png" />
 <a class="learn" href="http://destinationbeer.com"><img src="/images/learn_more.png" /></a>

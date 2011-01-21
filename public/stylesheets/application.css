@@ -339,7 +339,7 @@ p
 	position:absolute;
 }
 
-.brewers .top_right_image, .beer-brands .top_right_image
+.brewers .top_right_image, .beer-brands .top_right_image, .beer-brands--2 .top_right_image
 {
 	background:url('/images/bottle_cap.png');
 	width:305px;
@@ -780,16 +780,23 @@ ul#brewers li img
 
 /* Beer Brands */
 
-.beer-brands--2 ul,.beer-brands ul
+.beer-brands--2 ul.brands,.beer-brands ul.brands
 {
 	list-style:none;
 	margin:0;
-	padding:0;
+	padding:0 0 15px 0;
 	border-bottom: 1px #fff solid;
 	clear:left;
+	display:inline-block;
+	width:564px;
 }
 
-.beer-brands--2 ul li, .beer-brands ul li
+.beer-brands--2 h2,.beer-brands h2
+{
+	margin-top:15px;
+}
+
+.beer-brands--2 ul.brands li, .beer-brands ul.brands li
 {
 	float:left;
 }
@@ -797,12 +804,14 @@ ul#brewers li img
 .learn
 {
 	position:absolute;
+	bottom:40px;
 }
 
 .small_destination
 {
 	right:-70px;
 	float:right;
+	bottom:-40px;
 	position:relative;
 }
 
