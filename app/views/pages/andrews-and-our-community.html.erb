@@ -13,7 +13,7 @@
   <ul id="events">
     <% @events.each do |event| %>
       <li>
-		<%= event.image %>
+		<%= image_fu event.image, "200x600" %>
         <h2><%= event.title%></h2>
 		<%=raw event.description %>
       </li>
