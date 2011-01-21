@@ -818,7 +818,8 @@ ul#brewers li img
 {
 	right:-70px;
 	float:right;
-	bottom:-40px;
+	bottom:-20px;
+	margin-bottom:-20px;
 	position:relative;
 }
 .brand_type

@@ -27,28 +27,28 @@ $(document).ready(function(){
 	$('a#domestics').click(function() {
 	  $('div.domestics').animate({
 	    height: 'toggle'
-	  }, 1000);
+	  }, 500);
 	  return false;
 	});
 	
 	$('a#imports').click(function() {
 	  $('div.imports').animate({
 	    height: 'toggle'
-	  }, 1000);
+	  }, 500);
 	  return false;
 	});
 	
 	$('a#specialty').click(function() {
 	  $('div.specialty').animate({
 	    height: 'toggle'
-	  }, 1000);
+	  }, 500);
 	  return false;
 	});
 	
 	$('a#non-alcoholic').click(function() {
 	  $('div.non-alcoholic').animate({
 	    height: 'toggle'
-	  }, 1000);
+	  }, 500);
 	  return false;
 	});
 	
