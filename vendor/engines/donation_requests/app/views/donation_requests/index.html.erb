@@ -1,3 +1,11 @@
+<% if @page.parent %>
+<ul class="subnav">
+	<% @page.parent.children.each do |child| %>
+		<li><%= link_to child.title, child.url -%></li>
+	<% end %>
+</ul>
+<% end %>
+
 <% form_for @donation_requests do |f| -%>
   <%= render :partial => "/shared/admin/error_messages", :locals => {
     :object => @donation_requests,

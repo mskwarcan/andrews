@@ -309,7 +309,7 @@ p
 	left:-5px;
 }
 
-.our-community .title_image, .events .title_image
+.our-community .title_image, .donation_requests .title_image
 {
 	background:url('/images/our_community.png') no-repeat;
 	width:466px;
@@ -356,20 +356,6 @@ p
 	height:198px;
 	left:354px;
 	top:-40px;
-	z-index:1;
-}
-
-.destination-beer .top_right_image
-{
-	position:relative;
-	background:url('/images/destination_beer.png');
-	width:355px;
-	height:328px;
-	float:right;
-	top:-73px;
-	margin-left:-100px;
-	margin-bottom:-23px;
-	right:-45px;
 	z-index:1;
 }
 
@@ -778,9 +764,18 @@ ul#brewers li img
 	left:280px;
 }
 
-.destination-beer p
+.destination-beer .destination_beer
 {
-	margin-right:60px;
+	position:relative;
+	background:url('/images/destination_beer.png');
+	width:355px;
+	height:328px;
+	float:right;
+	top:-110px;
+	margin-left:-45px;
+	margin-bottom:-23px;
+	right:-45px;
+	z-index:1;
 }
 
 /* Events */
@@ -803,6 +798,14 @@ ul#events
 ul#events li
 {
 	border-top:solid 1px #fff;
+	padding:15px 0;
+	clear:left;
+	display:inline-block;
+}
+
+ul#events li h2
+{
+	margin-top:0;
 }
 
 ul#events li:first-child
@@ -812,7 +815,15 @@ ul#events li:first-child
 
 ul#events li img
 {
+	margin-left:20px;
 	float:right;
+}
+
+/* Donation Request */
+table td
+{
+	vertical-align:top;
+	font-size:13.5px;
 }
 
 /* Contact */
