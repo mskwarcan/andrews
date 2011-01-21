@@ -1,0 +1,138 @@
+<% if @page.parent %>
+<ul class="subnav">
+	<% @page.parent.children.each do |child| %>
+		<li><%= link_to child.title, child.url -%></li>
+	<% end %>
+</ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
+
+<% @domestics = BeerBrand.where(:main_category => "Domestic") %>
+<% @imports = BeerBrand.where(:main_category => "Imports") %>
+<% @craft = BeerBrand.where(:main_category => "Special & Craft") %>
+<% @non = BeerBrand.where(:main_category => "Non-Alcoholic") %>
+
+<img src="/images/domestic.png" />
+<h2>Premium</h2>
+<ul>
+<% @domestics.each do |brand| %>
+	<% if brand.sub_category == "Premium" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<h2>Near Premium</h2>
+<ul>
+<% @domestics.each do |brand| %>
+	<% if brand.sub_category == "Near Premium" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<h2>Below Premium</h2>
+<ul>
+<% @domestics.each do |brand| %>
+	<% if brand.sub_category == "Below Premium" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<h2>Malt</h2>
+<ul>
+<% @domestics.each do |brand| %>
+	<% if brand.sub_category == "Malt" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<h2>Innovative</h2>
+<ul>
+<% @domestics.each do |brand| %>
+	<% if brand.sub_category == "Innovative" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<img src="/images/imports.png" />
+<h2>Mexican</h2>
+<ul>
+<% @imports.each do |brand| %>
+	<% if brand.sub_category == "Mexican" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<h2>European</h2>
+<ul>
+<% @imports.each do |brand| %>
+	<% if brand.sub_category == "European" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<h2>All Other Imports</h2>
+<ul>
+<% @imports.each do |brand| %>
+	<% if brand.sub_category == "All Other Imports" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<img src="/images/specialty_craft.png" />
+<h2>Specialty</h2>
+<ul>
+<% @craft.each do |brand| %>
+	<% if brand.sub_category == "Specialty" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<h2>Craft</h2>
+<ul>
+<% @craft.each do |brand| %>
+	<% if brand.sub_category == "Craft" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<h2>Cider</h2>
+<ul>
+<% @craft.each do |brand| %>
+	<% if brand.sub_category == "Cider" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<img src="/images/non-alcoholic.png" />
+<h2>Non-Alcoholic</h2>
+<ul>
+<% @non.each do |brand| %>
+	<% if brand.sub_category == "Non-Alcoholic" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<h2>Red Bull</h2>
+<ul>
+<% @non.each do |brand| %>
+	<% if brand.sub_category == "Red Bull" %>
+		<li><% image_fu brand.image %></li>
+	<% end %>
+<% end %>
+</ul>
+
+<img class="small_destination" src="/images/destination_small.png" />
+<a href="http://destinationbeer.com"><img src="/images/learn_more.png" /></a>

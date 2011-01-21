@@ -772,10 +772,32 @@ ul#brewers li img
 	height:328px;
 	float:right;
 	top:-110px;
-	margin-left:-45px;
+	margin-left:-35px;
 	margin-bottom:-23px;
 	right:-45px;
 	z-index:1;
+}
+
+/* Beer Brands */
+
+.beer-brands ul
+{
+	list-style:none;
+	margin:0;
+	padding:0;
+	border-bottom: 1px #fff solid;
+	clear:left;
+}
+
+.beer-brands ul li
+{
+	float:left;
+}
+
+.small_destination
+{
+	float:right;
+	position:relative;
 }
 
 /* Events */
