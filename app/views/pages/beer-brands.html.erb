@@ -13,8 +13,10 @@
 <% @craft = BeerBrand.where(:main_category => "Specialty & Craft") %>
 <% @non = BeerBrand.where(:main_category => "Non-Alcoholic") %>
 
+<div class="brand_type">
 <img src="/images/domestic.png" />
 <a id="domestics" class="show" href="#">expand section</a>
+</div>
 <div class="domestics">
 <h2>Premium</h2>
 <ul class="brands">
@@ -61,8 +63,10 @@
 <% end %>
 </ul>
 </div>
+<div class="brand_type">
 <img src="/images/imports.png" />
 <a id="imports" class="show" href="#">expand section</a>
+</div>
 <div class="imports">
 <h2>Mexican</h2>
 <ul class="brands">
@@ -91,8 +95,10 @@
 <% end %>
 </ul>
 </div>
+<div class="brand_type">
 <img src="/images/specialty_craft.png" />
 <a id="specialty" class="show" href="#">expand section</a>
+</div>
 <div class="specialty">
 <h2>Specialty</h2>
 <ul class="brands">
@@ -121,8 +127,10 @@
 <% end %>
 </ul>
 </div>
+<div class="brand_type">
 <img src="/images/non-alcoholic.png" />
 <a id="non-alcoholic" class="show" href="#">expand section</a>
+</div>
 <div class="non-alcoholic">
 <h2>Non-Alcoholic</h2>
 <ul class="brands">

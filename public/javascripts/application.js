@@ -18,43 +18,36 @@ $(document).ready(function(){
 	});
 	
 	/////////////Beer Brands toggle//////////
-	$('#domestics').click(function() {
-	  $('.domestics').animate({
+	if(('a.show').html() = "expand section")
+	{
+		if(('a.show').html("collaspe section");
+	}
+	
+	$('a#domestics').click(function() {
+	  $('div.domestics').animate({
 	    height: 'toggle'
-	  }, 2000, function() {
-	    // Animation complete.
-		$('#domestics').html('collaspe section');
-	  });
+	  }, 1000);
 	  return false;
 	});
 	
-	$('#imports').click(function() {
-	  $('.imports').animate({
+	$('a#imports').click(function() {
+	  $('div.imports').animate({
 	    height: 'toggle'
-	  }, 2000, function() {
-	    // Animation complete.
-		$('#imports').html('collaspe section');
-	  });
+	  }, 1000);
 	  return false;
 	});
 	
-	$('#specialty').click(function() {
-	  $('.specialty').animate({
+	$('a#specialty').click(function() {
+	  $('div.specialty').animate({
 	    height: 'toggle'
-	  }, 2000, function() {
-	    // Animation complete.
-		$('#specialty').html('collaspe section');
-	  });
+	  }, 1000);
 	  return false;
 	});
 	
-	$('#non-alcoholic').click(function() {
-	  $('.non-alcoholic').animate({
+	$('a#non-alcoholic').click(function() {
+	  $('div.non-alcoholic').animate({
 	    height: 'toggle'
-	  }, 2000, function() {
-	    // Animation complete.
-		$('#non-alcoholic').html('collaspe section');
-	  });
+	  }, 1000);
 	  return false;
 	});
 	
