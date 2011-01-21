@@ -18,10 +18,11 @@ $(document).ready(function(){
 	});
 	
 	/////////////Beer Brands toggle//////////
-	if(('a.show').html() = "expand section")
-	{
-		if(('a.show').html("collaspe section");
-	}
+	$('a.show').toggle(function() {
+	  $(this).html('collaspe section');
+	}, function() {
+	  $(this).html('expand section');
+	});
 	
 	$('a#domestics').click(function() {
 	  $('div.domestics').animate({
