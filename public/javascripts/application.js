@@ -25,6 +25,7 @@ $(document).ready(function(){
 	    // Animation complete.
 		$('#domestics').html('collaspe section');
 	  });
+	  return false;
 	});
 	
 	$('#imports').click(function() {
@@ -34,6 +35,7 @@ $(document).ready(function(){
 	    // Animation complete.
 		$('#imports').html('collaspe section');
 	  });
+	  return false;
 	});
 	
 	$('#specialty').click(function() {
@@ -43,6 +45,7 @@ $(document).ready(function(){
 	    // Animation complete.
 		$('#specialty').html('collaspe section');
 	  });
+	  return false;
 	});
 	
 	$('#non-alcoholic').click(function() {
@@ -52,6 +55,7 @@ $(document).ready(function(){
 	    // Animation complete.
 		$('#non-alcoholic').html('collaspe section');
 	  });
+	  return false;
 	});
 	
 	

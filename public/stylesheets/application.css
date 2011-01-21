@@ -807,6 +807,13 @@ ul#brewers li img
 	bottom:40px;
 }
 
+.image_block
+{
+	float:right;
+	height:35px;
+	width:230px;
+}
+
 .small_destination
 {
 	right:-70px;

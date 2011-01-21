@@ -5,7 +5,7 @@
 	<% end %>
 </ul>
 <% end %>
-
+<div class="image_block"></div>
 <%= render :partial => "/shared/content_page" %>
 
 <% @domestics = BeerBrand.where(:main_category => "Domestic") %>
@@ -15,8 +15,8 @@
 
 <img src="/images/domestic.png" />
 <a id="domestics" class="show" href="#">expand section</a>
-<h2>Premium</h2>
 <div class="domestics">
+<h2>Premium</h2>
 <ul class="brands">
 <% @domestics.each do |brand| %>
 	<% if brand.sub_category == "Premium" %>
