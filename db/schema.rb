@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110120002858) do
+ActiveRecord::Schema.define(:version => 20110122012333) do
 
   create_table "beer_brands", :force => true do |t|
     t.integer   "image_id"
@@ -36,22 +36,22 @@ ActiveRecord::Schema.define(:version => 20110120002858) do
   add_index "brewers", ["id"], :name => "index_brewers_on_id"
 
   create_table "donation_requests", :force => true do |t|
-    t.string   "event_region"
-    t.string   "event_name"
-    t.string   "event_location"
-    t.text     "event_address"
-    t.string   "expected_attendence"
-    t.string   "event_contact_name"
-    t.string   "event_contact_number"
-    t.string   "event_contact_email"
-    t.string   "event_concessionaire"
-    t.string   "event_concessionaire_phone"
-    t.string   "charity_501c3"
-    t.string   "wine_spirits_served"
-    t.text     "additional_comments"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "event_region"
+    t.string    "event_name"
+    t.string    "event_location"
+    t.text      "event_address"
+    t.string    "expected_attendence"
+    t.string    "event_contact_name"
+    t.string    "event_contact_number"
+    t.string    "event_contact_email"
+    t.string    "event_concessionaire"
+    t.string    "event_concessionaire_phone"
+    t.string    "charity_501c3"
+    t.string    "wine_spirits_served"
+    t.text      "additional_comments"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "donation_requests", ["id"], :name => "index_donation_requests_on_id"
@@ -187,6 +187,16 @@ ActiveRecord::Schema.define(:version => 20110120002858) do
   end
 
   add_index "refinery_settings", ["name"], :name => "index_refinery_settings_on_name"
+
+  create_table "regions", :force => true do |t|
+    t.string   "title"
+    t.string   "email"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "regions", ["id"], :name => "index_regions_on_id"
 
   create_table "resources", :force => true do |t|
     t.string    "file_mime_type"
