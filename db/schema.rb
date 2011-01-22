@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110122012333) do
+ActiveRecord::Schema.define(:version => 20110122021102) do
 
   create_table "beer_brands", :force => true do |t|
     t.integer   "image_id"
@@ -66,6 +66,16 @@ ActiveRecord::Schema.define(:version => 20110122012333) do
   end
 
   add_index "events", ["id"], :name => "index_events_on_id"
+
+  create_table "homepage_images", :force => true do |t|
+    t.string   "title"
+    t.integer  "image_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "homepage_images", ["id"], :name => "index_homepage_images_on_id"
 
   create_table "images", :force => true do |t|
     t.string    "image_mime_type"

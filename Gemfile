@@ -67,3 +67,4 @@ gem 'refinerycms-portfolio_images', '1.0', :path => 'vendor/engines', :require =
 gem 'refinerycms-logos', '1.0', :path => 'vendor/engines', :require => 'logos'
 gem 'refinerycms-donation_requests', '1.0', :path => 'vendor/engines', :require => 'donation_requests'
 gem 'refinerycms-regions', '1.0', :path => 'vendor/engines', :require => 'regions'
+gem 'refinerycms-homepage_images', '1.0', :path => 'vendor/engines', :require => 'homepage_images'
