@@ -359,6 +359,17 @@ p
 	z-index:1;
 }
 
+/* Home */
+.homepage
+{
+	position:relative;
+}
+
+.home p
+{
+	width:300px;
+}
+
 /* Subnav */
 ul.subnav
 {
