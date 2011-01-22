@@ -1,66 +1,69 @@
-  <div>
-    <h3>Event Region</h3>
-    <%=raw @donation_request.event_region %>
-  </div>
+<table>
+  <tr>
+    <td><h3>Event Region</h3></td>
+    <td><%=raw @donation_request.event_region %></td>
+  </tr>
   
-  <div>
-    <h3>Event Name</h3>
-    <%=raw @donation_request.event_name %>
-  </div>
+  <tr>
+    <td><h3>Event Name</h3></td>
+    <td><%=raw @donation_request.event_name %></td>
+  </tr>
   
-  <div>
-    <h3>Event Location</h3>
-    <%=raw @donation_request.event_location %>
-  </div>
+  <tr>
+    <td><h3>Event Location</h3></td>
+    <td><%=raw @donation_request.event_location %></td>
+  </tr>
   
-  <div>
-    <h3>Event Address</h3>
-    <%=raw @donation_request.event_address %>
-  </div>
+  <tr>
+    <td><h3>Event Address</h3></td>
+    <td><%=raw @donation_request.event_address %></td>
+  </tr>
   
-  <div>
-    <h3>Expected Attendence</h3>
-    <%=raw @donation_request.expected_attendence %>
-  </div>
+  <tr>
+    <td><h3>Expected Attendance</h3></td>
+    <td><%=raw @donation_request.expected_attendence %></td>
+  </tr>
   
-  <div>
-    <h3>Event Contact Name</h3>
-    <%=raw @donation_request.event_contact_name %>
-  </div>
+  <tr>
+    <td><h3>Event Contact Name</h3></td>
+    <td><%=raw @donation_request.event_contact_name %></td>
+  </tr>
   
-  <div>
-    <h3>Event Contact Number</h3>
-    <%=raw @donation_request.event_contact_number %>
-  </div>
+  <tr>
+    <td><h3>Event Contact Number</h3></td>
+    <td><%=raw @donation_request.event_contact_number %></td>
+  </tr>
+<% if !@donation_request.event_contact_email.empty? %>
+  <tr>
+    <td><h3>Event Contact Email</h3></td>
+    <td><%=raw @donation_request.event_contact_email %></td>
+  </tr>
+<% end %>
+  <tr>
+    <td><h3>Event Concessionaire</h3></td>
+    <td><%=raw @donation_request.event_concessionaire %></td>
+  </tr>
   
-  <div>
-    <h3>Event Contact Email</h3>
-    <%=raw @donation_request.event_contact_email %>
-  </div>
+  <tr>
+    <td><h3>Event Concessionaire Phone</h3></td>
+    <td><%=raw @donation_request.event_concessionaire_phone %></td>
+  </tr>
   
-  <div>
-    <h3>Event Concessionaire</h3>
-    <%=raw @donation_request.event_concessionaire %>
-  </div>
+  <tr>
+    <td><h3>Charity 501c3</h3></td>
+    <td><%=raw @donation_request.charity_501c3 %></td>
+  </tr>
   
-  <div>
-    <h3>Event Concessionaire Phone</h3>
-    <%=raw @donation_request.event_concessionaire_phone %>
-  </div>
-  
-  <div>
-    <h3>Charity 501c3</h3>
-    <%=raw @donation_request.charity_501c3 %>
-  </div>
-  
-  <div>
-    <h3>Wine Spirits Served</h3>
-    <%=raw @donation_request.wine_spirits_served %>
-  </div>
-  
-  <div>
-    <h3>Additional Comments</h3>
-    <%=raw @donation_request.additional_comments %>
-  </div>
+  <tr>
+    <td><h3>Wine Spirits Served</h3></td>
+    <td><%=raw @donation_request.wine_spirits_served %></td>
+  </tr>
+<% if !@donation_request.additional_comments.empty? %>
+  <tr>
+    <td><h3>Additional Comments</h3></td>
+    <td><%=raw @donation_request.additional_comments %></td>
+  </tr>
+<% end %>
+</table>
 
 

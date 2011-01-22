@@ -23,8 +23,10 @@
   <tr>
     <td  class="right"><%= f.label :event_region -%></td>
     <td><select name="donation_request[event_region]">
-				<option value="Dallas/Fort Worth">Dallas/Fort Worth</option>
-				<option value="Corpus Christi">Corpus Christi</option>
+				<% @regions = Region.all()%>
+				<% @regions.each do |region|%>
+					<option value="<%= region.title %>"><%= region.title %></option>
+				<% end %>
 			</select>
 		</td>
   </div>
@@ -45,7 +47,7 @@
   </div>
   
   <tr>
-    <td  class="right"><%= f.label :expected_attendence -%></td>
+    <td  class="right"><%= f.label :expected_attendence, "Event Attendance" -%></td>
     <td><%= f.text_field :expected_attendence -%></td>
   </div>
   
@@ -81,7 +83,10 @@
   
   <tr>
     <td class="right"><%= f.label :wine_spirits_served -%></td>
-    <td><%= f.text_field :wine_spirits_served -%></td>
+    <td><select name="donation_request[wine_spirits_served]">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+			</select></td>
   </div>
   
   <tr>
