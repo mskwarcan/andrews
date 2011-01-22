@@ -1,0 +1,54 @@
+<% form_for [:admin, @for_brewer] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+    :object => @for_brewer,
+    :include_object_name => true
+  } %>
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :ogg_file -%>
+
+    <%= render :partial => "/shared/admin/resource_picker", :locals => {
+      :f => f,
+      :field => :ogg_file_id,
+      :resource => @for_brewer.ogg_file,
+    } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :m4v_file -%>
+
+    <%= render :partial => "/shared/admin/resource_picker", :locals => {
+      :f => f,
+      :field => :m4v_file_id,
+      :resource => @for_brewer.m4v_file,
+    } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :display_image -%>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {
+      :f => f,
+      :field => :display_image_id,
+      :image => @for_brewer.display_image,
+      :toggle_image_display => false
+    } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :text -%>
+    <%= f.text_area :text, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.for_brewers.for_brewer.delete'),
+                :delete_confirmation => t('shared.admin.delete.message', :title => @for_brewer.title)
+              } %>
+<% end -%>

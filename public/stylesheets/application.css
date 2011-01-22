@@ -471,6 +471,7 @@ ul.subnav li:first-child
 {
 	background:url('../images/about.png');
 	height:120px;
+	margin:5px 0 3px;
 }
 
 .left_nav a.about_beers:hover

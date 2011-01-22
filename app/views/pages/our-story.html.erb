@@ -1,0 +1,23 @@
+<% if @page.parent %>
+<ul class="subnav">
+	<% @page.parent.children.each do |child| %>
+		<li><%= link_to child.title, child.url -%></li>
+	<% end %>
+</ul>
+<% end %>
+
+<p>“Our mission is simply to be the nation’s leading beverage brand builder measured in valuable growth. Brand building is what we do.”<br />
+- Barry Andrews, CEO</p>
+
+<video width="525" height="296" controls poster="/videos/CompanyHistory.jpg">
+	<source src="/videos/CompanyHistory-Aars.m4v"  type="video/mp4" />
+	<source src="/videos/CompanyHistory.ogg"  type="video/ogg" />
+	<object width="640" height="360" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf">
+		<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf" />
+		<param name="flashvars" value="controlbar=over&amp;image=/videos/CompanyHistory.jpg&amp;file=/videos/CompanyHistory-Aars.m4v" />
+	</object>
+</video>
+
+<%= render :partial => "/shared/content_page" %>
+
+
