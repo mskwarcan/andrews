@@ -6,80 +6,97 @@
 </ul>
 <% end %>
 
-<% form_for @donation_requests do |f| -%>
+<% content_for :body_content_left do %>
+
+<% form_for @donation_request do |f| -%>
   <%= render :partial => "/shared/admin/error_messages", :locals => {
-    :object => @donation_requests,
+    :object => @donation_request,
     :include_object_name => true
   } %>
-<table>
+
+<p>Please fill out the form below and an Andrews representative will contact you concerning your request as soon as possible.</p>
+<table id="donation">
   <tr>
-    <td><%= f.label :event_region -%></td>
-    <td><%= f.text_field :event_region -%></td>
+		<td></td>
+		<td><span class="yellow">*</span>Required</td>
+	</tr>
+  <tr>
+    <td  class="right"><%= f.label :event_region -%></td>
+    <td><select name="donation_request[:event_region]">
+				<option value="Dallas/Fort Worth">Dallas/Fort Worth</option>
+				<option value="Corpus Christi">Corpus Christi</option>
+			</select>
+		</td>
   </div>
   
   <tr>
-    <td><%= f.label :event_name -%></td>
+    <td  class="right"><%= f.label :event_name -%></td>
     <td><%= f.text_field :event_name -%></td>
   </div>
   
   <tr>
-    <td><%= f.label :event_location -%></td>
+    <td  class="right"><%= f.label :event_location -%></td>
     <td><%= f.text_field :event_location -%></td>
   </div>
   
   <tr>
-    <td><%= f.label :event_address -%></td>
-    <td><%= f.text_area :event_address, :rows => 5, :class => 'wymeditor widest' -%></td>
+    <td  class="right"><%= f.label :event_address -%></td>
+    <td><%= f.text_area :event_address, :rows => 3, :class => 'wymeditor widest' -%></td>
   </div>
   
   <tr>
-    <td><%= f.label :expected_attendence -%></td>
+    <td  class="right"><%= f.label :expected_attendence -%></td>
     <td><%= f.text_field :expected_attendence -%></td>
   </div>
   
   <tr>
-    <td><%= f.label :event_contact_name -%></td>
+    <td  class="right"><%= f.label :event_contact_name -%></td>
     <td><%= f.text_field :event_contact_name -%></td>
   </div>
   
   <tr>
-    <td><%= f.label :event_contact_number -%></td>
+    <td  class="right"><%= f.label :event_contact_number -%></td>
     <td><%= f.text_field :event_contact_number -%></td>
   </div>
   
   <tr>
-    <td><%= f.label :event_contact_email -%></td>
+    <td  class="right"><%= f.label :event_contact_email -%></td>
     <td><%= f.text_field :event_contact_email -%></td>
   </div>
   
   <tr>
-    <td><%= f.label :event_concessionaire -%></td>
+    <td class="right"><%= f.label :event_concessionaire -%></td>
     <td><%= f.text_field :event_concessionaire -%></td>
   </div>
   
   <tr>
-    <td><%= f.label :event_concessionaire_phone -%></td>
+    <td class="right"><%= f.label :event_concessionaire_phone -%></td>
     <td><%= f.text_field :event_concessionaire_phone -%></td>
   </div>
   
   <tr>
-    <td><%= f.label :charity_501c3, "Charity/501C3" -%></td>
+    <td class="right"><%= f.label :charity_501c3, "Charity/501C3" -%></td>
     <td><%= f.text_field :charity_501c3 -%></td>
   </div>
   
   <tr>
-    <td><%= f.label :wine_spirits_served -%></td>
+    <td class="right"><%= f.label :wine_spirits_served -%></td>
     <td><%= f.text_field :wine_spirits_served -%></td>
   </div>
   
   <tr>
-    <td><%= f.label :additional_comments -%></td>
-    <td><%= f.text_area :additional_comments, :rows => 10, :class => 'wymeditor widest' -%></td>
+    <td class="right"><%= f.label :additional_comments -%></td>
+    <td><%= f.text_area :additional_comments, :rows => 5, :class => 'wymeditor widest' -%></td>
   </div>
   
   <tr>
-	<td><%= f.submit %></td>
+	<td></td>
+	<td><%= f.submit "Submit", :class => "submit" %></td>
   </tr>
 </table>
 <% end -%>
+
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
 

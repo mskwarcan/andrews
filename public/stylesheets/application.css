@@ -889,6 +889,27 @@ table td
 	font-size:13.5px;
 }
 
+table#donation input, table#donation textarea
+{
+	width:350px;
+}
+
+input.submit
+{
+	width:150px !important;
+	cursor:pointer;
+}
+
+td.right
+{
+	text-align:right;
+}
+
+table#donation td
+{
+	padding:5px;
+}
+
 /* Contact */
 p.indent
 {

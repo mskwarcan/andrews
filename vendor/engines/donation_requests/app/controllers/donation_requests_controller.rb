@@ -7,23 +7,22 @@ class DonationRequestsController < ApplicationController
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @donation_request in the line below:
     present(@page)
-    @donation_requests = DonationRequest.new
-    end
+    @donation_request = DonationRequest.new
+  end
 
-    def create
-      @donation_requests = DonationRequest.new(params[:donation_requests])
-      
-      respond_to do |format|
-           if @donation_requests.save
-             DonationMailer.request_email(@donation_requests).deliver
-             format.html {redirect_to('/about-us/board-service-form-thank-you')}
-             format.xml  { render :xml => @donation_requests, :status => :created, :location => @donation_requests }
-           else
-             format.html { render :action => "index" }
-             format.xml  { render :xml => @donation_requests.errors, :status => :unprocessable_entity }
-           end
-        end
-      end
+def create
+  @donation_request = DonationRequest.new(params[:donation_request])
+
+  respond_to do |format|
+    if @donation_request.save
+         DonationMailer.request_email(@donation_request).deliver
+         format.xml  { render :xml => @donation_request, :status => :created, :location => @donation_request }
+    else
+         format.html { render :action => "index" }
+         format.xml  { render :xml => @donation_request.errors, :status => :unprocessable_entity }
+    end
+  end
+end
 
 
 protected
