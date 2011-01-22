@@ -360,15 +360,23 @@ p
 }
 
 /* Home */
+.welcome
+{
+	position:absolute;
+	top:10px;
+	left:10px;
+}
+
 .homeImage
 {
 	float:right;
+	margin:-70px -100px -271px;
 	position:relative;
 }
 
 .home p
 {
-	width:300px;
+	width:250px;
 }
 
 /* Subnav */
