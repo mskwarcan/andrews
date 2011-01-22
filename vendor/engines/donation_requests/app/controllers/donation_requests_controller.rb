@@ -12,15 +12,17 @@ class DonationRequestsController < ApplicationController
 
     def create
       @donation_requests = DonationRequest.new(params[:donation_requests])
-
+      
       respond_to do |format|
            if @donation_requests.save
-             format.html { redirect_to(:action => "index", :notice => 'Your donation request was successfully entered.') }
+             DonationMailer.request_email(@donation_requests).deliver
+             format.html {redirect_to('/about-us/board-service-form-thank-you')}
              format.xml  { render :xml => @donation_requests, :status => :created, :location => @donation_requests }
            else
              format.html { render :action => "index" }
              format.xml  { render :xml => @donation_requests.errors, :status => :unprocessable_entity }
            end
+         end
       end
     end
 
