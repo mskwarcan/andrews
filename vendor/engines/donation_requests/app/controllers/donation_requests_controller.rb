@@ -22,9 +22,9 @@ class DonationRequestsController < ApplicationController
              format.html { render :action => "index" }
              format.xml  { render :xml => @donation_requests.errors, :status => :unprocessable_entity }
            end
-         end
+        end
       end
-    end
+
 
 protected
 
