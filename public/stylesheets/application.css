@@ -360,8 +360,9 @@ p
 }
 
 /* Home */
-.homepage
+.homeImage
 {
+	float:right;
 	position:relative;
 }
 
