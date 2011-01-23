@@ -6,7 +6,7 @@
                   :dialog => true,
                   :update_resource => 'current_resource',
                   :update_text => 'current_resource_text',
-                  :callback => 'resource_changed',
+                  :callback => "resource_changed",
                   :field => [f.object.class.name.underscore.downcase, field].join('_'),
                   :current_link => "#{resource.url if resource.present?}",
                   :height => 480

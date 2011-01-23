@@ -21,6 +21,10 @@ $(document).ready(function(){
 		getStaticContentFrom : "#for_retailers"
 	});
 	
+	jQuery("a.for_brewers").modalBox({
+		getStaticContentFrom : "#for_brewers"
+	});
+	
 	
 	$('body.management--2 a#fancybox-close').append("BACK TO MANAGEMENT");
 	
