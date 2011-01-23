@@ -32,7 +32,7 @@ div#modalBoxFaderLayer {
 	top:0;
 	background-color:#0F2348 !important; 
 	left:0; 
-	opacity:.85 !important;
+	opacity:.92 !important;
 	width:100%; 
 	height:100%; 
 	z-index:9999;
@@ -52,7 +52,7 @@ div#modalBox {
 	background-color:transparent;
 }
 div#modalBox {
-	width:600px; /* default wide */
+	width:720px; /* default wide */
 }
 div#modalBox.small {
 	width:400px;
