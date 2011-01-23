@@ -84,7 +84,7 @@
 				});
 				</script>
 				<div class="video_slide <%= brewer.id %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
-					<video width="525" height="296" controls poster="<%= brewer.display_image.url %>" loop="false">
+					<video width="525" height="296" controls <%if brewer.display_image %> poster="<%= brewer.display_image.url %>"<% end %> loop="false">
 						<source src="<%= brewer.m4v_file.url %>"  type="video/mp4" />
 						<source src="https://s3.amazonaws.com/andrews_distributing/2011/01/22/15/31/32/316/CompanyHistory.ogg"  type="video/ogg" />
 						<object width="525" height="296" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf">
@@ -135,7 +135,7 @@
 						$('div.modal_titles a').removeClass('active');
 						$('.<%= retailer.id %>').addClass('active');
 
-						var position = (<%= brewer.id %> -1) * -525
+						var position = (<%= retailer.id %> -1) * -525
 						  $('.image_slider').animate({						
 						    left: position
 						  }, 1000	, function() {
@@ -148,7 +148,7 @@
 				});
 				</script>
 				<div class="video_slide <%= retailer.id %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
-					<video width="525" height="296" controls poster="<%= retailer.display_image.url %>" loop="false">
+					<video width="525" height="296" controls <%if retailer.display_image %> poster="<%= retailer.display_image.url %>"<% end %> loop="false">
 						<source src="<%= retailer.m4v_file.url %>"  type="video/mp4" />
 						<source src="https://s3.amazonaws.com/andrews_distributing/2011/01/22/15/31/32/316/CompanyHistory.ogg"  type="video/ogg" />
 						<object width="525" height="296" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf">
@@ -157,7 +157,7 @@
 						</object>
 					</video>
 					<div class="text">
-					<%=raw brewer.text %>
+					<%=raw retailer.text %>
 					</div>
 				</div>
 				<%end%>
