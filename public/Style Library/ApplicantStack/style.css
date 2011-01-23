@@ -1,0 +1,97 @@
+body
+{
+	border:none;
+	background:none;
+	margin:0; 
+	padding:0;
+}
+
+html, iframe { margin:0; padding:0; height:100%; }
+
+
+p
+{
+	color:#E1E1E1;
+}
+
+#contenttitle
+{
+	text-indent:-9999px;
+	background:url('/images/openings.png');
+	width:544px;
+	height:71px;
+	margin:0;
+}
+
+#ascontainer table.displaytable
+{
+	border-top:1px solid #ffc20e;
+	border-bottom:1px solid #ffc20e;
+}
+
+#ascontainer table
+{
+	background:none;
+	color:#fff;
+	margin:0;
+	width:100%;
+}
+
+#ascontainer table.displaytable th
+{
+	border-bottom:1px solid #ffc20e;
+	padding:6px 0;
+}
+
+#ascontainer table th
+{
+	color:#ffc20e;
+}
+
+#ascontainer table.displaytable td
+{
+	background:none;
+}
+
+#ascontainer table td a
+{
+	color:#fff;
+	padding:6px;
+}
+
+#asbreadcrumbs
+{
+	color:#ffc20e;
+}
+
+#asbreadcrumbs a
+{
+	color:#fff;
+}
+
+#asbranding
+{
+	display:none;
+}
+
+.tablepager
+{
+	color:#ffc20e;
+}
+
+.tablepager a
+{
+	color:#fff;
+}
+
+.buttons button, .buttons a
+{
+	background-color:#666;
+}
+
+ul
+{
+	list-style-image:url('/images/yellow_bullet.png');
+	padding-left:15px;
+	margin:5px 0;
+}

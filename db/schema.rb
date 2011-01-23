@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110122164354) do
+ActiveRecord::Schema.define(:version => 20110123002533) do
 
   create_table "beer_brands", :force => true do |t|
     t.integer   "image_id"
@@ -289,5 +289,16 @@ ActiveRecord::Schema.define(:version => 20110122164354) do
   end
 
   add_index "users", ["id"], :name => "index_users_on_id"
+
+  create_table "whats_news", :force => true do |t|
+    t.string   "title"
+    t.integer  "image_id"
+    t.text     "body"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "whats_news", ["id"], :name => "index_whats_news_on_id"
 
 end

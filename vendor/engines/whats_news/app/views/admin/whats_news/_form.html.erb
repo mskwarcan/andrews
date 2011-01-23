@@ -1,0 +1,34 @@
+<% form_for [:admin, @whats_new] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+    :object => @whats_new,
+    :include_object_name => true
+  } %>
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :image -%>
+    <%= render :partial => "/shared/admin/image_picker", :locals => {
+      :f => f,
+      :field => :image_id,
+      :image => @whats_new.image,
+      :toggle_image_display => false
+    } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :body -%>
+    <%= f.text_area :body, :rows => 20, :class => 'wymeditor widest' -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions",
+              :locals => {
+                :f => f,
+                :continue_editing => false,
+                :delete_title => t('admin.whats_news.whats_new.delete'),
+                :delete_confirmation => t('shared.admin.delete.message', :title => @whats_new.title)
+              } %>
+<% end -%>

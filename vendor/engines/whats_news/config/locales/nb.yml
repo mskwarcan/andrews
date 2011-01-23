@@ -1,0 +1,19 @@
+nb:
+  plugins:
+    whats_news:
+      title: Whats News
+  admin:
+    whats_news:
+      index:
+        create_new: Lag en ny Whats New
+        reorder: Endre rekkefølgen på Whats News
+        reorder_done: Ferdig å endre rekkefølgen Whats News
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Whats News enda. Klikk på "Lag en ny Whats New" for å legge til din første whats new.
+      whats_new:
+        view_live: Vis hvordan denne whats new ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne whats new
+        delete: Fjern denne whats new permanent
+  whats_news:
+    show:
+      other: Andre Whats News

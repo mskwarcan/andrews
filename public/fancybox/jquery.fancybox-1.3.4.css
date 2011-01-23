@@ -95,11 +95,12 @@
 
 #fancybox-close {
 	position: absolute;
-	top: 15px;
-	right: -30px;
-	width: 15px;
-	height: 15px;
-	background: transparent url('close.gif');
+	top: 20px;
+	right: -20px;
+	font-size:10px;
+	color:#142E5E;
+	padding-right:20px;
+	background: transparent url('close.gif') right no-repeat;
 	cursor: pointer;
 	z-index: 1103;
 	display: none;

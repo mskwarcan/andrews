@@ -1,0 +1,19 @@
+nl:
+  plugins:
+    whats_news:
+      title: Whats News
+  admin:
+    whats_news:
+      index:
+        create_new: Maak een nieuwe Whats New
+        reorder: Wijzig de volgorde van de Whats News
+        reorder_done: Klaar met het wijzingen van de volgorde van de Whats News
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Whats News. Druk op 'Maak een nieuwe Whats New' om de eerste aan te maken.
+      whats_new:
+        view_live: Bekijk deze whats new op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze whats new
+        delete: Verwijder deze whats new voor eeuwig
+  whats_news:
+    show:
+      other: Andere Whats News

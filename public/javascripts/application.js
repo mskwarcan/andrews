@@ -12,10 +12,17 @@ $(document).ready(function(){
 		'transitionIn'	: 'fade',
 		'transitionOut'	: 'fade',
 		'width': 590,
-		'height': 570,
+		'height': 610,
 		'autoDimensions' :false,
 		'overlayColor':'#0F2348'
 	});
+	
+	jQuery("a.for_retailers").modalBox({
+		getStaticContentFrom : "#for_retailers"
+	});
+	
+	
+	$('body.management--2 a#fancybox-close').append("BACK TO MANAGEMENT");
 	
 	/////////////Beer Brands toggle//////////
 	$('a.show').toggle(function() {

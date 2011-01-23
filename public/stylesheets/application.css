@@ -323,6 +323,7 @@ p
 	background:url('/images/careers.png') no-repeat;
 	width:276px;
 	height:103px;
+	margin-bottom:20px;
 }
 
 .contact .title_image
@@ -330,6 +331,42 @@ p
 	background:url('/images/contact.png') no-repeat;
 	width:327px;
 	height:65px;
+	margin:10px 0 0 0;
+	left:-20px;
+}
+
+.whats-new .title_image
+{
+	background:url('/images/whats_new_title.png') no-repeat;
+	width:299px;
+	height:72px;
+	margin:10px 0 0 0;
+	left:-20px;
+}
+
+.terms .title_image
+{
+	background:url('/images/terms.png') no-repeat;
+	width:390px;
+	height:105px;
+	margin:10px 0 0 0;
+	left:-20px;
+}
+
+.privacy-policy .title_image
+{
+	background:url('/images/privacy_policy.png') no-repeat;
+	width:397px;
+	height:112px;
+	margin:10px 0 0 0;
+	left:-20px;
+}
+
+.site-map .title_image
+{
+	background:url('/images/sitemap.png') no-repeat;
+	width:235px;
+	height:88px;
 	margin:10px 0 0 0;
 	left:-20px;
 }
@@ -504,6 +541,16 @@ ul.subnav li:first-child
 	top:-80px;
 	width:461px;
 	height:461px;
+}
+
+.core-values h3
+{
+	margin:7px 0 0;
+}
+
+.core-values p
+{
+	margin:5px 0;
 }
 
 .core-values .hover
@@ -889,7 +936,12 @@ ul#events li
 
 ul#events li h2
 {
-	margin-top:0;
+	margin:0 0 5px;
+}
+
+ul#events li p
+{
+	margin-top:5px;
 }
 
 ul#events li:first-child
@@ -929,6 +981,12 @@ td.right
 table#donation td
 {
 	padding:5px;
+}
+
+/* Careers */
+.iframe
+{
+	border:none;
 }
 
 /* Contact */

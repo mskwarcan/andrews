@@ -70,3 +70,4 @@ gem 'refinerycms-regions', '1.0', :path => 'vendor/engines', :require => 'region
 gem 'refinerycms-homepage_images', '1.0', :path => 'vendor/engines', :require => 'homepage_images'
 gem 'refinerycms-for_brewers', '1.0', :path => 'vendor/engines', :require => 'for_brewers'
 gem 'refinerycms-for_retailers', '1.0', :path => 'vendor/engines', :require => 'for_retailers'
+gem 'refinerycms-whats_news', '1.0', :path => 'vendor/engines', :require => 'whats_news'
