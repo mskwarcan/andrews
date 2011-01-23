@@ -40,7 +40,7 @@
 		<div id="for_brewers" style="display:none">
 		<script type="text/javascript">
 			$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/fancybox/close.gif' />");
-			$('.video_slide.active .text').fadeIn();
+			$('#for_brewers .video_slide.active .text').fadeIn();
 		</script>
 			<div class="modal_titles">
 				<ul>
@@ -62,21 +62,21 @@
        }
 				
 				$(document).ready(function(){
-					$('a.<%= brewer.id %>').click(function() {
-					if (!$('.<%= brewer.id %>').hasClass('active'))
+					$('#for_brewers a.<%= brewer.id %>').click(function() {
+					if (!$('#for_brewers .<%= brewer.id %>').hasClass('active'))
 					{
 						$('.video_slide.active .text').fadeOut();
 						playPause();
-						$('div.video_slide').removeClass('active');
-						$('div.modal_titles a').removeClass('active');
-						$('.<%= brewer.id %>').addClass('active');
+						$('#for_brewers div.video_slide').removeClass('active');
+						$('#for_brewers div.modal_titles a').removeClass('active');
+						$('#for_brewers .<%= brewer.id %>').addClass('active');
 
 						var position = (<%= brewer.id %> -1) * -525
-						  $('.image_slider').animate({						
+						  $('#for_brewers .image_slider').animate({						
 						    left: position
 						  }, 1000	, function() {
 								    // Animation complete.
-										$('.video_slide.active .text').fadeIn();
+										$('#for_brewers .video_slide.active .text').fadeIn();
 								  });
 						}
 						return false;
@@ -104,7 +104,7 @@
 <% retailers = ForRetailer.order("position ASC")%>
 		<div id="for_retailers" style="display:none"><script type="text/javascript">
 			$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/fancybox/close.gif' />");
-			$('.video_slide.active .text').fadeIn();
+			$('#for_retailers .video_slide.active .text').fadeIn();
 		</script>
 			<div class="modal_titles">
 				<ul>
@@ -126,21 +126,21 @@
        }
 				
 				$(document).ready(function(){
-					$('a.<%= retailer.id %>').click(function() {
-					if (!$('.<%= retailer.id %>').hasClass('active'))
+					$('#for_retailers a.<%= retailer.id %>').click(function() {
+					if (!$('#for_retailers .<%= retailer.id %>').hasClass('active'))
 					{
-						$('.video_slide.active .text').fadeOut();
+						$('#for_retailers .video_slide.active .text').fadeOut();
 						playPause();
-						$('div.video_slide').removeClass('active');
-						$('div.modal_titles a').removeClass('active');
-						$('.<%= retailer.id %>').addClass('active');
+						$('#for_retailers div.video_slide').removeClass('active');
+						$('#for_retailers div.modal_titles a').removeClass('active');
+						$('#for_retailers .<%= retailer.id %>').addClass('active');
 
 						var position = (<%= retailer.id %> -1) * -525
-						  $('.image_slider').animate({						
+						  $('#for_retailers .image_slider').animate({						
 						    left: position
 						  }, 1000	, function() {
 								    // Animation complete.
-										$('.video_slide.active .text').fadeIn();
+										$('#for_retailers .video_slide.active .text').fadeIn();
 								  });
 						}
 						return false;
@@ -162,6 +162,7 @@
 				</div>
 				<%end%>
 			</div>
-			<a class="portal" href="http://sp.adntx.com/">Visit Our Customer Portal >></a>/div>
+			<a class="portal" href="http://sp.adntx.com/">Visit Our Customer Portal >></a>
+			</div>
   </body>
 </html>
