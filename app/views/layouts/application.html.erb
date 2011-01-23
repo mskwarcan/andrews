@@ -35,12 +35,47 @@
         	<%= render :partial => "/shared/footer" %>
       </div>
     </div>
-		<div id="for_retailers">
-			<img src="/images/forRetailers.png" />
-			<% brewers = ForBrewer.order("position ASC")%>
-			<% brewers.each do |brewer|%>
-				<%= brewer.title %>
-				<%= brewer.m4v_file %>
+<% brewers = ForBrewer.order("position ASC")%>
+<% count = ForBrewer.count %>
+
+		<div id="for_retailers" style="display:none">
+		<div class="brewer_titles">
+			<ul>
+				<% brewers.each_with_index do |brewer, i|%>
+							<li><a href="#" class="<%= brewer.id %> <% if i==0%> active<% end %>"><%= brewer.title %></a></li>
+				<% end %>
+			</ul>
+		</div>
+			<img src="/images/forRetailers.png"  />
+			<div class="image_slider">
+			<% brewers.each_with_index do |brewer, i|%>
+			<% position = 525*i %>
+			<script type="text/javascript">
+			$(document).ready(function(){
+				$('a.<%= brewer.id %>').click(function() {
+					$('div.video_slide').removeClass('active');
+					$('div.brewer_titles a').removeClass('active');
+					$('.<%= brewer.id %>').addClass('active');
+					
+					var position = (<%= brewer.id %> -1) * -525
+					  $('.image_slider').animate({						
+					    left: position
+					  }, 1000);
+
+					return false;
+				});
+			});
+			</script>
+			<div class="video_slide <%= brewer.id %> <% if i==0%> active<% end %>" value="<%= position %>" style="left:<%= position %>px;">
+				<video width="525" height="296" controls poster="<%= brewer.display_image.url %>">
+					<source src="<%= brewer.m4v_file.url %>"  type="video/mp4" />
+					<source src="https://s3.amazonaws.com/andrews_distributing/2011/01/22/15/31/32/316/CompanyHistory.ogg"  type="video/ogg" />
+					<object width="525" height="296" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf">
+						<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf" />
+						<param name="flashvars" value="controlbar=over&amp;image=<%= brewer.display_image.url %>"
+					</object>
+				</video>
+			</div>
 			<%end%>
 		</div>
 		<div id="for_brewers" style="display:none">TESTING</div>

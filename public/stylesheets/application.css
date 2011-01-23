@@ -995,6 +995,53 @@ p.indent
 	padding-left:20px;
 }
 
+/* Video Slider */
+div#modalBox
+{
+	top:0 !important;
+}
+
+.brewer_titles
+{
+	background:#000;
+	width:170px;
+	position:absolute;
+	z-index:20;
+	right:0;
+}
+
+.brewer_titles ul
+{
+	padding:50px 0 50px;
+	margin:0;
+	list-style:none;
+}
+
+.brewer_titles ul li a
+{
+	display:inline-block;
+	width:140px;
+	padding:8px 15px;
+	max-height:49px;
+}
+
+.brewer_titles ul li a.active
+{
+	background:url('/images/active.png');
+}
+
+.image_slider
+{
+	height:100%;
+	position:absolute;
+}
+
+.video_slide
+{
+	position:absolute;
+	top:0px;
+}
+
 /* footer */
 #footer_content
 {

@@ -17,6 +17,11 @@ $(document).ready(function(){
 		'overlayColor':'#0F2348'
 	});
 	
+	
+	$('body.management--2 a#fancybox-close').append("BACK TO MANAGEMENT");
+	
+	////////////////For Brewers/Retailers//////////////
+	
 	jQuery("a.for_retailers").modalBox({
 		getStaticContentFrom : "#for_retailers"
 	});
@@ -25,8 +30,6 @@ $(document).ready(function(){
 		getStaticContentFrom : "#for_brewers"
 	});
 	
-	
-	$('body.management--2 a#fancybox-close').append("BACK TO MANAGEMENT");
 	
 	/////////////Beer Brands toggle//////////
 	$('a.show').toggle(function() {
