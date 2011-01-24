@@ -16,6 +16,7 @@ def create
   respond_to do |format|
     if @donation_request.save
          DonationMailer.request_email(@donation_request).deliver
+         format.html { render :action => "index" }
          format.xml  { render :xml => @donation_request, :status => :created, :location => @donation_request }
     else
          format.html { render :action => "index" }
@@ -28,7 +29,7 @@ end
 protected
 
   def find_all_donation_requests
-    @donation_requests = DonationRequest.find(:all, :order => "position ASC")
+    @donation_requests = DonationRequest.find(:all, :order => "position DESC")
   end
 
   def find_page

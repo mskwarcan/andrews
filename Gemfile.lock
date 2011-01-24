@@ -12,7 +12,7 @@ PATH
     refinerycms-managements (1.0)
     refinerycms-portfolio_images (1.0)
     refinerycms-regions (1.0)
-    refinerycms-whats_news (1.0)
+    refinerycms-whats_new_stories (1.0)
 
 GEM
   remote: http://rubygems.org/
@@ -144,6 +144,6 @@ DEPENDENCIES
   refinerycms-managements (= 1.0)!
   refinerycms-portfolio_images (= 1.0)!
   refinerycms-regions (= 1.0)!
-  refinerycms-whats_news (= 1.0)!
+  refinerycms-whats_new_stories (= 1.0)!
   rmagick (~> 2.12.0)
   sqlite3-ruby

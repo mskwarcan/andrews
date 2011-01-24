@@ -11,37 +11,37 @@
 <table id="inquiries">
 			<tr>
 				<td style="width:100px"></td>
-				<td><span class="yellow">*</span>Required</td>
+				<td><span class="yellow">*</span>Required Fields</td>
 				<td></td>
 				<td></td>
 			</tr>
       <tr>
-        <td><%= f.required_label :name %></td>
-        <td><%= f.text_field :name %></td>
-        <td><%= f.required_label :last_name %></td>
-        <td><%= f.text_field :last_name %></td>
+        <td><label for="inquiry[name]"><span class="yellow">*</span>First Name:</label></td>
+        <td><%= f.text_field :name, :class => "required" %></td>
+        <td><label for="inquiry[last_name]"><span class="yellow">*</span>Last Name:</label></td>
+        <td><%= f.text_field :last_name, :class => "required" %></td>
       </tr>
       <tr>
-        <td><%= f.required_label :email %></td>
-        <td><%= f.text_field :email %></td>
-        <td><%= f.required_label :phone %></td>
-        <td><%= f.text_field :phone %></td>
+        <td><label for="inquiry[email]"><span class="yellow">*</span>Email:</label></td>
+        <td><%= f.text_field :email, :class => "required email" %></td>
+        <td><label for="inquiry[phone]"><span class="yellow">*</span>Phone:</label></td>
+        <td><%= f.text_field :phone, :class => "required phoneUS" %></td>
       </tr>
       <tr>
-				<td><%= f.label :company %></td>
+				<td><label for="inquiry[company]">Company Name:<br /><span class="yellow">(optional)</span></label></td>
         <td><%= f.text_field :company %></td>
-        <td><%= f.label :title %></td>
+        <td><label for="inquiry[title]">Title:<br /><span class="yellow">(optional)</span></label></td>
         <td><%= f.text_field :title %></td>
       <tr>
       <tr>
-				<td><%= f.label :site %></td>
+				<td><label for="inquiry[site]">Company Website:<br /><span class="yellow">(optional)</span></label></td>
         <td><%= f.text_field :site %></td>
 				<td></td>
 				<td></td>
       <tr>
       <tr>
-        <td><%= f.required_label :message, "Reason For Contacting"  %></td>
-        <td colspan="3"><%= f.text_area :message, :rows => 8 %></td>
+        <td><label for="inquiry[message]"><span class="yellow">*</span>Reason for Contacting:</label></td>
+        <td colspan="3" width="300"><%= f.text_area :message, :rows => 8, :class => "required" %></td>
       </tr>
       <tr>
 				<td></td>
@@ -50,6 +50,10 @@
 				<td></td>
         <%= link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if RefinerySetting.find_or_set(:show_contact_privacy_link, false) %>
       </tr>
+			<tr>
+				<td></td>
+				<td colspan="3"><div class="sent">Your donation request has been sent. Thank you.</div></td>
+			</tr>
 </table>
     <% end %>
   </div>

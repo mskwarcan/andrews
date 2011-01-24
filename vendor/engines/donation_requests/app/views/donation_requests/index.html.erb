@@ -33,57 +33,57 @@
   
   <tr>
     <td  class="right"><%= f.label :event_name -%></td>
-    <td><%= f.text_field :event_name -%></td>
+    <td class="input"><%= f.text_field :event_name, :class => "required" -%></td>
   </div>
   
   <tr>
     <td  class="right"><%= f.label :event_location -%></td>
-    <td><%= f.text_field :event_location -%></td>
+    <td class="input"><%= f.text_field :event_location, :class => "required" -%></td>
   </div>
   
   <tr>
     <td  class="right"><%= f.label :event_address -%></td>
-    <td><%= f.text_area :event_address, :rows => 3, :class => 'wymeditor widest' -%></td>
+    <td class="input"><%= f.text_area :event_address, :rows => 3, :class => 'wymeditor widest', :class => "required" -%></td>
   </div>
   
   <tr>
     <td  class="right"><%= f.label :expected_attendence, "Event Attendance" -%></td>
-    <td><%= f.text_field :expected_attendence -%></td>
+    <td class="input"><%= f.text_field :expected_attendence, :class => "required" -%></td>
   </div>
   
   <tr>
     <td  class="right"><%= f.label :event_contact_name -%></td>
-    <td><%= f.text_field :event_contact_name -%></td>
+    <td class="input"><%= f.text_field :event_contact_name, :class => "required" -%></td>
   </div>
   
   <tr>
     <td  class="right"><%= f.label :event_contact_number -%></td>
-    <td><%= f.text_field :event_contact_number -%></td>
+    <td class="input"><%= f.text_field :event_contact_number, :class => "required phoneUS" -%></td>
   </div>
   
   <tr>
     <td  class="right"><%= f.label :event_contact_email -%></td>
-    <td><%= f.text_field :event_contact_email -%></td>
+    <td class="input"><%= f.text_field :event_contact_email, :class => "email" -%></td>
   </div>
   
   <tr>
     <td class="right"><%= f.label :event_concessionaire -%></td>
-    <td><%= f.text_field :event_concessionaire -%></td>
+    <td class="input"><%= f.text_field :event_concessionaire, :class => "required" -%></td>
   </div>
   
   <tr>
     <td class="right"><%= f.label :event_concessionaire_phone -%></td>
-    <td><%= f.text_field :event_concessionaire_phone -%></td>
+    <td class="input"><%= f.text_field :event_concessionaire_phone, :class => "phoneUS required" -%></td>
   </div>
   
   <tr>
     <td class="right"><%= f.label :charity_501c3, "Charity/501C3" -%></td>
-    <td><%= f.text_field :charity_501c3 -%></td>
+    <td class="input"><%= f.text_field :charity_501c3, :class => "required" -%></td>
   </div>
   
   <tr>
     <td class="right"><%= f.label :wine_spirits_served -%></td>
-    <td><select name="donation_request[wine_spirits_served]">
+    <td class="input"><select name="donation_request[wine_spirits_served]">
 					<option value="Yes">Yes</option>
 					<option value="No">No</option>
 			</select></td>
@@ -98,6 +98,10 @@
 	<td></td>
 	<td><%= f.submit "Submit", :class => "submit" %></td>
   </tr>
+	<tr>
+		<td></td>
+		<td><div class="sent">Your donation request has been sent. Thank you.</div></td>
+	</tr>
 </table>
 <% end -%>
 

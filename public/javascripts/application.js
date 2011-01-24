@@ -20,6 +20,52 @@ $(document).ready(function(){
 	
 	$('body.management--2 a#fancybox-close').append("BACK TO MANAGEMENT");
 	
+	///////////// AJAX FORM SUBMITS //////////////////////
+	
+	$("#new_donation_request").validate();
+	$("#new_inquiry").validate();
+	
+	// jQuery Form Plugin options
+	var myFormOptions = {
+	  target:        '#new_inquiry',
+	  beforeSubmit:  formBeforeSubmit,
+	  success:       formAfterSubmit
+	};
+	
+	var myFormOptions2 = {
+	  target:        '#new_donation_request',
+	  beforeSubmit:  formBeforeSubmit2,
+	  success:       formAfterSubmit2
+	};
+
+	function formBeforeSubmit() {
+	  // PERFORM ACTIONS BEFORE FORM SUBMIT HERE
+	  	$("#new_inquiry")[0].reset();
+		$('.sent').show();
+	  return true;
+	}
+
+	function formAfterSubmit()  {
+	  // PERFORM ACTIONS AFTER FORM SUBMIT HERE
+		$.post("/contact", $("#new_inquiry").serialize());
+	}
+	
+	function formBeforeSubmit2() {
+	  // PERFORM ACTIONS BEFORE FORM SUBMIT HERE
+	  	$("#new_donation_request")[0].reset();
+		$('.sent').show();
+	  return true;
+	}
+
+	function formAfterSubmit2()  {
+	  // PERFORM ACTIONS AFTER FORM SUBMIT HERE
+		$.post("/donation_requests", $("#new_donation_request").serialize());
+	}
+	
+	// Make form use jQuery Form Plugin
+	$('#new_donation_request').ajaxForm(myFormOptions2);
+	$('#new_inquiry').ajaxForm(myFormOptions);
+	
 	////////////////For Brewers/Retailers//////////////
 	
 	jQuery("a.for_retailers").modalBox({

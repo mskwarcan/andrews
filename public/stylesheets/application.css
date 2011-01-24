@@ -428,7 +428,7 @@ ul.subnav
 	height:26px;
 }
 
-.our-community ul.subnav, .events ul.subnav
+.our-community ul.subnav, .events ul.subnav, .donation_requests ul.subnav
 {
 	padding:10px 36px 4px;
 }
@@ -962,6 +962,16 @@ table td
 	font-size:13.5px;
 }
 
+table#donation td.input
+{
+	width:350px;
+}
+
+table#donation label
+{
+	width:120px;
+}
+
 table#donation input, table#donation textarea
 {
 	width:350px;
@@ -998,16 +1008,53 @@ p.indent
 .inquiries form input
 {
 	width:150px;
+	margin-right:20px;
+}
+
+.inquiries form textarea
+{
+	clear:left;
+	margin-right:150px;
+}
+
+input.error, textarea.error
+{
+	background:#ffc20e;
+	color:#000;
+	border:#ffc20e 1px solid;
+}
+
+label.error
+{
+	float:none !important;
+	font-size:11px;
+	color:#ffc20e;
 }
 
 .inquiries form label
 {
-	width:100px;
+	width:115px;
 }
 
 table#inquiries
 {
+	font-size:14px;
 	width:564px;
+}
+
+table#inquiries td
+{
+	padding:7px 0;
+}
+
+.sent
+{
+	background:#ffc20e;
+	color:#000;
+	padding:5px;
+	border:2px solid #b38d1d;
+	display:none;
+	margin-right:20px;
 }
 
 /* Video Slider */
