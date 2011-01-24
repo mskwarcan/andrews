@@ -335,7 +335,7 @@ p
 	left:-20px;
 }
 
-.whats-new .title_image
+.whats_new_stories .title_image
 {
 	background:url('/images/whats_new_title.png') no-repeat;
 	width:299px;
@@ -518,6 +518,7 @@ ul.subnav li:first-child
 
 .left_nav a.whats_new
 {
+	position:relative;
 	background:url('../images/whats_new.png');
 	height:113px;
 }
@@ -693,9 +694,19 @@ ul#management li .title, ul#whats_new_stories li .title
 	font-size:14px;
 }
 
+.management--2 #fancybox-content
+{
+	height:710px !important;
+}
+
 #fancybox-content div
 {
 		overflow:visible !important;
+}
+
+.fancy_box
+{
+	padding:50px 37px 50px 57px;
 }
 
 #fancybox-content .title
@@ -1163,6 +1174,25 @@ a.portal
 	padding:3px 0;
 	font-size:11px;
 	top:306px;
+}
+
+/* Whats New */
+.whats_new_thumb
+{
+	position:relative;
+	top:6px;
+	left:6px;
+}
+
+.whats_new_title
+{
+	color:#fff;
+	font-size:13px;
+	display:inline-block;
+	width:130px;
+	position:absolute;
+	left:130px;
+	top:70px;
 }
 
 /* footer */

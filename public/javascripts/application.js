@@ -11,15 +11,16 @@ $(document).ready(function(){
 	$("a.fancy").fancybox({
 		'transitionIn'	: 'fade',
 		'transitionOut'	: 'fade',
-		'width': 590,
-		'height': 610,
+		'width': 670,
+		'height': 710,
 		'autoDimensions' :false,
 		'overlayColor':'#0F2348'
 	});
 	
-	$("a.fancy").fancybox({
+	$("a.whats-new-link").fancybox({
 		'transitionIn'	: 'fade',
 		'transitionOut'	: 'fade',
+		'width': 590,
 		'overlayColor':'#0F2348'
 	});
 	

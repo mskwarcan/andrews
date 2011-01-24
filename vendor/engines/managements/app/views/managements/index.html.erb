@@ -7,7 +7,7 @@
 		<h2><%= management.name %></h2> <a href="#<%= management.position %>" class="fancy">Read More >></a><br />
 		<%=raw management.bio[0, 250] %>...
 		<div class="hide">
-			<div id="<%= management.position %>">
+			<div class="fancy_box" id="<%= management.position %>">
 				<%= image_fu management.main_image %>
 				<h2><%= management.name %></h2><span class="title"><%= management.title %></span><br />
 				<%=raw management.bio %>

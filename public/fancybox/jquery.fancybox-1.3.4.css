@@ -75,7 +75,7 @@
 #fancybox-content {
 	width: 0;
 	height: 0;
-	padding: 50px 37px 50px 57px;
+	padding: 0;
 	outline: none;
 	position: relative;
 	overflow: hidden;
@@ -96,7 +96,7 @@
 #fancybox-close {
 	position: absolute;
 	top: 20px;
-	right: -20px;
+	right: 60px;
 	font-size:10px;
 	color:#142E5E;
 	padding-right:20px;
