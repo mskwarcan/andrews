@@ -1200,6 +1200,16 @@ a.portal
 	max-width:700px;
 }
 
+.whats_new_stories .thumb
+{
+	width:112px;
+}
+
+ul#whats_new_stories li
+{
+	min-height:112px;
+}
+
 .whats_new_stories #fancybox-content img
 {
 	float:left;
