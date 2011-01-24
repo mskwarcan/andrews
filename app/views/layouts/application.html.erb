@@ -90,7 +90,7 @@
 				});
 				</script>
 				<div class="video_slide <%= brewer.position %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
-					<video preload="none" width="525" height="296" controls <%if brewer.display_image %> poster="<%= brewer.display_image.url %>"<% end %> loop="false">
+					<video preload="metadata" width="525" height="296" controls <%if brewer.display_image %> poster="<%= brewer.display_image.url %>"<% end %> loop="false">
 						<source src="<%= brewer.m4v_file.url %>"  type="video/mp4" />
 						<source src="<%= brewer.ogg_file.url %>"  type="video/ogg" />
 						<object width="525" height="296" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf">
@@ -157,7 +157,7 @@
 				});
 				</script>
 				<div class="video_slide <%= retailer.position %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
-					<video preload="none" width="525" height="296" controls <%if retailer.display_image %> poster="<%= retailer.display_image.url %>"<% end %> loop="false">
+					<video preload="metadata" width="525" height="296" controls <%if retailer.display_image %> poster="<%= retailer.display_image.url %>"<% end %> loop="false">
 						<source src="<%= retailer.m4v_file.url %>"  type="video/mp4" />
 						<source src="<%= retailer.ogg_file.url %>"  type="video/ogg" />
 						<object width="525" height="296" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf">
