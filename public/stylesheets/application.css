@@ -995,13 +995,28 @@ p.indent
 	padding-left:20px;
 }
 
+.inquiries form input
+{
+	width:150px;
+}
+
+.inquiries form label
+{
+	width:100px;
+}
+
+table#inquiries
+{
+	width:564px;
+}
+
 /* Video Slider */
 div#modalBox
 {
 	top:0 !important;
 }
 
-.modal_titles
+.modal_titles, .brewer_titles
 {
 	background:#000;
 	width:170px;
@@ -1010,14 +1025,14 @@ div#modalBox
 	right:0;
 }
 
-.modal_titles ul
+.modal_titles ul, .brewer_titles ul
 {
 	padding:104px 0 2250px;
 	margin:0;
 	list-style:none;
 }
 
-.modal_titles ul li a
+.modal_titles ul li a, .brewer_titles ul li a
 {
 	display:inline-block;
 	width:140px;
@@ -1053,7 +1068,7 @@ div#modalBox
 	top:3px;
 }
 
-.modal_titles ul li a.active
+.modal_titles ul li a.active, .brewer_titles ul li a.active
 {
 	color:#000;
 	background:url('/images/active.png');

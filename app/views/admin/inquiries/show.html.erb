@@ -39,19 +39,47 @@
         <strong><%= t('.from') %></strong>
       </td>
       <td>
-        <%= @inquiry.name %> [<%= mail_to @inquiry.email, @inquiry.email, {:title => t('.click_to_email')} %>]
+        <%= @inquiry.name %> <% @inquiry.last_name %> [<%= mail_to @inquiry.email, @inquiry.email, {:title => t('.click_to_email')} %>]
       </td>
     </tr>
-    <% unless @inquiry.phone.blank? %>
-      <tr>
-        <td>
-          <strong><%= t('.phone') %></strong>
-        </td>
-        <td>
-          <%= @inquiry.phone %>
-        </td>
-      </tr>
-    <% end %>
+    <tr>
+      <td>
+        <strong><%= t('.phone') %></strong>
+      </td>
+      <td>
+        <%= @inquiry.phone %>
+      </td>
+    </tr>
+	<% if !@inquiry.company.empty? %>
+			<tr>
+	      <td>
+	        <strong>Company Name:</strong>
+	      </td>
+	      <td>
+	        <%= @inquiry.company %>
+	      </td>
+	    </tr>
+		<% end %>
+		<% if !@inquiry.title.empty? %>
+			<tr>
+	      <td>
+	        <strong>Title:</strong>
+	      </td>
+	      <td>
+	        <%= @inquiry.title %>
+	      </td>
+	    </tr>
+	<% end %>
+	<% if !@inquiry.site.empty? %>
+			<tr>
+	      <td>
+	        <strong>Company website:</strong>
+	      </td>
+	      <td>
+	        <%= @inquiry.site %>
+	      </td>
+	    </tr>
+	<% end %>
     <tr>
       <td>
         <strong><%= t('.date') %></strong>

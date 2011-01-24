@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110123002533) do
+ActiveRecord::Schema.define(:version => 20110123212954) do
 
   create_table "beer_brands", :force => true do |t|
     t.integer   "image_id"
@@ -68,27 +68,27 @@ ActiveRecord::Schema.define(:version => 20110123002533) do
   add_index "events", ["id"], :name => "index_events_on_id"
 
   create_table "for_brewers", :force => true do |t|
-    t.string   "title"
-    t.integer  "ogg_file_id"
-    t.integer  "m4v_file_id"
-    t.integer  "display_image_id"
-    t.text     "text"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.integer   "ogg_file_id"
+    t.integer   "m4v_file_id"
+    t.integer   "display_image_id"
+    t.text      "text"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "for_brewers", ["id"], :name => "index_for_brewers_on_id"
 
   create_table "for_retailers", :force => true do |t|
-    t.string   "title"
-    t.integer  "ogg_file_id"
-    t.integer  "m4v_file_id"
-    t.integer  "display_image_id"
-    t.text     "text"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.integer   "ogg_file_id"
+    t.integer   "m4v_file_id"
+    t.integer   "display_image_id"
+    t.text      "text"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "for_retailers", ["id"], :name => "index_for_retailers_on_id"
@@ -125,6 +125,10 @@ ActiveRecord::Schema.define(:version => 20110123002533) do
     t.timestamp "created_at"
     t.timestamp "updated_at"
     t.boolean   "spam",       :default => false
+    t.string    "last_name"
+    t.string    "title"
+    t.string    "company"
+    t.string    "site"
   end
 
   create_table "inquiry_settings", :force => true do |t|
@@ -291,12 +295,12 @@ ActiveRecord::Schema.define(:version => 20110123002533) do
   add_index "users", ["id"], :name => "index_users_on_id"
 
   create_table "whats_news", :force => true do |t|
-    t.string   "title"
-    t.integer  "image_id"
-    t.text     "body"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.integer   "image_id"
+    t.text      "body"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "whats_news", ["id"], :name => "index_whats_news_on_id"
