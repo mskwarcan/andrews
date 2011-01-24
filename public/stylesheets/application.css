@@ -1203,6 +1203,14 @@ a.portal
 .whats_new_stories .thumb
 {
 	width:112px;
+	margin-right:16px;
+	height:112px;
+	float:left;
+}
+
+.whats_new_stories .thumb img
+{
+	border:1px #fff solid;
 }
 
 ul#whats_new_stories li
