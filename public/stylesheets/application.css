@@ -665,25 +665,25 @@ ul.subnav li:first-child
 
 /* management */
 
-ul#management
+ul#management, ul#whats_new_stories
 {
 	margin:0;
 	padding:0;
 	list-style:none;
 }
 
-ul#management li
+ul#management li, ul#whats_new_stories li
 {
 	padding:9px 0;
 	border-bottom:solid #fff 1px;
 }
 
-ul#management li:last-child
+ul#management li:last-child, ul#whats_new_stories li:last-child
 {
 	border:none;
 }
 
-ul#management li .title
+ul#management li .title, ul#whats_new_stories li .title
 {
 	color:#ffc20e;
 }
@@ -712,7 +712,7 @@ ul#management li .title
 	padding-bottom:15px;
 }
 
-ul#management li h2
+ul#management li h2, ul#whats_new_stories li h2
 {
 	float:left;
 	margin:0 10px 0 0px;
@@ -724,7 +724,7 @@ ul#management li h2
 	margin:15px 10px 0 30px;
 }
 
-ul#management li a
+ul#management li a, ul#whats_new_stories li a
 {
 	display:inline-block;
 	position:relative;
@@ -732,7 +732,7 @@ ul#management li a
 	padding-bottom:5px;
 }
 
-ul#management li img
+ul#management li img, ul#whats_new_stories li img
 {
 	float:left;
 	margin-right:16px;
@@ -743,7 +743,7 @@ ul#management li p
 	margin:3px 0 5px;
 }
 
-ul#management li .hide
+ul#management li .hide, ul#whats_new_stories .hide
 {
 	display:none;
 }

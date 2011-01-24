@@ -19,7 +19,7 @@
 		<a href="javascript:void(0);" class="for_brewers"></a>
 		<a href="javascript:void(0);" class="for_retailers"></a>
 		<a href="/our-portfolio/destination-beer" class="about_beers"></a>
-		<a href="#" class="whats_new"></a>
+		<a href="/whats_new_stories" class="whats_new"></a>
 		</div>
         <div id='body' class='clearfix'>
 		<div class="texas">
@@ -71,7 +71,7 @@
 						$('.image_slider.brewer div.video_slide').removeClass('active');
 						$('div.brewer_titles a').removeClass('active');
 						$('div.brewer_titles a.<%= brewer.position %>').addClass('active');
-						$('div.video_slide.<%= brewer.position %>').addClass('active');
+						$('.image_slider.brewer div.video_slide.<%= brewer.position %>').addClass('active');
 
 						var position = <%= brewer.position %> * -525
 						  $('.image_slider.brewer').animate({						
@@ -138,7 +138,7 @@
 						$('.image_slider.retailer div.video_slide').removeClass('active');
 						$('div.modal_titles a').removeClass('active');
 						$('div.modal_titles a.<%= retailer.position %>').addClass('active');
-						$('div.video_slide.<%= retailer.position %>').addClass('active');
+						$('.image_slider.retailer div.video_slide.<%= retailer.position %>').addClass('active');
 
 						var position = <%= retailer.position %> * -525
 						  $('.image_slider.retailer').animate({						

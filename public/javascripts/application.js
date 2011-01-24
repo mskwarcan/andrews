@@ -17,7 +17,13 @@ $(document).ready(function(){
 		'overlayColor':'#0F2348'
 	});
 	
+	$("a.fancy").fancybox({
+		'transitionIn'	: 'fade',
+		'transitionOut'	: 'fade',
+		'overlayColor':'#0F2348'
+	});
 	
+	$('body.whats_new_stories a#fancybox-close').append("BACK TO WHATS NEW");
 	$('body.management--2 a#fancybox-close').append("BACK TO MANAGEMENT");
 	
 	///////////// AJAX FORM SUBMITS //////////////////////

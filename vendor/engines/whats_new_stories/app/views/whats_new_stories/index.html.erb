@@ -2,7 +2,17 @@
   <ul id="whats_new_stories">
     <% @whats_new_stories.each do |whats_new_story| %>
       <li>
-        <%= link_to whats_new_story.title, whats_new_story_url(whats_new_story) %>
+				<% image_fu whats_new_story.thumbnail, '110x110', :class => "thumb" %>
+				<span class="title"><%= whats_new_story.title %></span> <a href="#<%= whats_new_story.position %>" class="whats_new">Read More >></a>
+				<%= whats_new_story.text[0, 150] %>
+				
+				<div class="hide">
+					<div id="<%= whats_new_story.position %>">
+						<%= image_fu whats_new_story.image %>
+						<span class="title"><%= whats_new_story.title %></span><br />
+						<%=raw management.bio %>
+					</div>
+				</div>
       </li>
     <% end %>
   </ul>
