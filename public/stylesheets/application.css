@@ -715,7 +715,7 @@ ul#management li .title, ul#whats_new_stories li .title
 	top:18px;
 }
 
-#fancybox-content p
+.management--2 #fancybox-content p
 {
 	margin:0 30px;
 	clear:left;
@@ -729,13 +729,13 @@ ul#management li h2, ul#whats_new_stories li h2
 	margin:0 10px 0 0px;
 }
 
-#fancybox-content h2
+.management--2 #fancybox-content h2
 {
 	float:left;
 	margin:15px 10px 0 30px;
 }
 
-ul#management li a, ul#whats_new_stories li a
+ul#management li a, ul#whats_new_stories li a.whats-new-link
 {
 	display:inline-block;
 	position:relative;
@@ -1180,8 +1180,8 @@ a.portal
 .whats_new_thumb
 {
 	position:relative;
-	top:6px;
-	left:6px;
+	top:7px;
+	left:7px;
 }
 
 .whats_new_title
@@ -1194,6 +1194,18 @@ a.portal
 	left:130px;
 	top:70px;
 }
+
+.whats_new_stories .fancy_box
+{
+	max-width:700px;
+}
+
+.whats_new_stories #fancybox-content img
+{
+	float:left;
+	margin:0 16px 16px 0;
+}
+
 
 /* footer */
 #footer_content

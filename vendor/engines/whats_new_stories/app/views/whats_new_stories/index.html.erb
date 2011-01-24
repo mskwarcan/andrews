@@ -1,15 +1,16 @@
 <% content_for :body_content_left do %>
   <ul id="whats_new_stories">
+	<% @whats_new_stories = WhatsNewStory.order("position DESC")%>
     <% @whats_new_stories.each do |whats_new_story| %>
       <li>
-				<% image_fu whats_new_story.thumbnail, '110x110', :class => "thumb" %>
+				<%= image_fu whats_new_story.thumbnail, '110x110', :class => "thumb" %>
 				<h2><%= whats_new_story.title %></h2> <a href="#<%= whats_new_story.position %>" class="whats-new-link">Read More >></a>
-				<%=raw whats_new_story.text[0, 150] %>...
+				<%=raw whats_new_story.text[0, 200] %>...
 				
 				<div class="hide">
 					<div class="fancy_box" id="<%= whats_new_story.position %>">
 						<%= image_fu whats_new_story.image %>
-						<h2><%= whats_new_story.title %></h2><br />
+						<h2><%= whats_new_story.title %></h2>
 						<%=raw whats_new_story.text %>
 					</div>
 				</div>
