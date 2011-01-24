@@ -694,9 +694,9 @@ ul#management li .title, ul#whats_new_stories li .title
 	font-size:14px;
 }
 
-.management--2 #fancybox-content
+.management--2 .fancy_box
 {
-	height:710px !important;
+	max-width:580px;
 }
 
 #fancybox-content div

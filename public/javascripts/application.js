@@ -11,9 +11,6 @@ $(document).ready(function(){
 	$("a.fancy").fancybox({
 		'transitionIn'	: 'fade',
 		'transitionOut'	: 'fade',
-		'width': 670,
-		'height': 710,
-		'autoDimensions' :false,
 		'overlayColor':'#0F2348'
 	});
 	

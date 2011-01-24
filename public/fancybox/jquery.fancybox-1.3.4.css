@@ -39,7 +39,7 @@
 }
 
 #fancybox-overlay {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -96,7 +96,7 @@
 #fancybox-close {
 	position: absolute;
 	top: 20px;
-	right: 60px;
+	right: 65px;
 	font-size:10px;
 	color:#142E5E;
 	padding-right:20px;
