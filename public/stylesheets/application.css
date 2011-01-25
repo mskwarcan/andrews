@@ -1097,6 +1097,8 @@ div#modalBox
 	padding:8px 15px;
 	max-height:49px;
 	color:#fff;
+	font-size:11px;
+	text-transform:uppercase;
 }
 
 .modal_image

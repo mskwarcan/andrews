@@ -44,6 +44,7 @@
 	left: 0;
 	width: 100%;
 	z-index: 1100;
+	opacity:.92 !important;
 	display: none;
 }
 
