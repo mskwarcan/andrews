@@ -37,141 +37,15 @@
       </div>
 	<div id='footer'>
         	<%= render :partial => "/shared/footer" %>
-      </div>
-    </div>
-<% brewers = ForBrewer.order("position ASC")%>
+  </div>
+</div>
 
 		<div id="for_brewers" style="display:none">
-		<script type="text/javascript">
-			$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/fancybox/close.gif' />");
-			$('.image_slider.brewer .video_slide .text').hide();
-			$('.image_slider.brewer .video_slide.active .text').fadeIn();
-		</script>
-			<div class="brewer_titles">
-				<ul>
-					<% brewers.each_with_index do |brewer, i|%>
-								<li><a href="#" class="<%= brewer.position %> brewer <% if i==0%> active<% end %>"><%= brewer.title %></a></li>
-					<% end %>
-				</ul>
-			</div>
-				<img src="/images/forBrewers.png" class="modal_image"  />
-				<div class="image_slider brewer">
-				<% brewers.each_with_index do |brewer, i|%>
-				<% position = 525*i %>
-				<script type="text/javascript">
-				function playPause() {
-
-       		var myVideo = document.getElementsByTagName('video')[0];
-
-           myVideo.pause();
-       }
-				
-				$(document).ready(function(){
-					$('div.brewer_titles a.<%= brewer.position %>').click(function() {
-					if (!$('.image_slider.brewer .<%= brewer.position %>').hasClass('active'))
-					{
-						$('.image_slider.brewer .video_slide.active .text').fadeOut();
-						playPause();
-						$('.image_slider.brewer div.video_slide').removeClass('active');
-						$('div.brewer_titles a').removeClass('active');
-						$('div.brewer_titles a.<%= brewer.position %>').addClass('active');
-						$('.image_slider.brewer div.video_slide.<%= brewer.position %>').addClass('active');
-
-						var position = <%= brewer.position %> * -525
-						  $('.image_slider.brewer').animate({						
-						    left: position
-						  }, 1000	, function() {
-								    // Animation complete.
-										$('.image_slider.brewer .video_slide.active .text').fadeIn();
-								  });
-						}
-						return false;
-					});
-				});
-				</script>
-				<div class="video_slide <%= brewer.position %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
-					<video preload="metadata" width="525" height="296" controls <%if brewer.display_image %> poster="<%= brewer.display_image.url %>"<% end %> loop="false">
-						<source src="<%= brewer.m4v_file.url %>"  type="video/mp4" />
-						<source src="<%= brewer.ogg_file.url %>"  type="video/ogg" />
-						<object width="525" height="296" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf">
-							<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf" />
-							<param name="flashvars" value="controlbar=over&amp;image=<%= brewer.display_image.url %>"
-						</object>
-					</video>
-					<div class="text">
-					<%=raw brewer.text %>
-					</div>
-				</div>
-				<%end%>
-			</div>
-			<a class="portal" href="http://cp.adntx.com/">Visit Our Supplier Portal >></a>
+			<%= render :partial => "/shared/brewers" %>
 		</div>
 		
-<% retailers = ForRetailer.order("position ASC")%>
 		<div id="for_retailers" style="display:none">
-		<script type="text/javascript">
-			$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/fancybox/close.gif' />");
-			$('.image_slider.retailer .video_slide .text').hide();
-			$('.image_slider.retailer .video_slide.active .text').fadeIn();
-		</script>
-			<div class="modal_titles">
-				<ul>
-					<% retailers.each_with_index do |retailer, i|%>
-								<li><a href="#" class="<%= retailer.position %> <% if i==0%> active<% end %>"><%= retailer.title %></a></li>
-					<% end %>
-				</ul>
-			</div>
-				<img src="/images/forRetailers.png" class="modal_image"  />
-				<div class="image_slider retailer">
-				<% retailers.each_with_index do |retailer, i|%>
-				<% position = 525*i %>
-				<script type="text/javascript">
-				function playPause() {
-
-       		var myVideo = document.getElementsByTagName('video')[0];
-
-           myVideo.pause();
-       }
-				
-				$(document).ready(function(){
-					$('div.modal_titles a.<%= retailer.position %>').click(function() {
-					if (!$('.image_slider.retailer.<%= retailer.id %>').hasClass('active'))
-					{
-						$('.image_slider.retailer .video_slide.active .text').fadeOut();
-						playPause();
-						$('.image_slider.retailer div.video_slide').removeClass('active');
-						$('div.modal_titles a').removeClass('active');
-						$('div.modal_titles a.<%= retailer.position %>').addClass('active');
-						$('.image_slider.retailer div.video_slide.<%= retailer.position %>').addClass('active');
-
-						var position = <%= retailer.position %> * -525
-						  $('.image_slider.retailer').animate({						
-						    left: position
-						  }, 1000	, function() {
-								    // Animation complete.
-										$('.image_slider.retailer .video_slide.active .text').fadeIn();
-								  });
-						}
-						return false;
-					});
-				});
-				</script>
-				<div class="video_slide <%= retailer.position %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
-					<video preload="metadata" width="525" height="296" controls <%if retailer.display_image %> poster="<%= retailer.display_image.url %>"<% end %> loop="false">
-						<source src="<%= retailer.m4v_file.url %>"  type="video/mp4" />
-						<source src="<%= retailer.ogg_file.url %>"  type="video/ogg" />
-						<object width="525" height="296" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf">
-							<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf" />
-							<param name="flashvars" value="controlbar=over&amp;image=<%= retailer.display_image.url %>"
-						</object>
-					</video>
-					<div class="text">
-					<%=raw retailer.text %>
-					</div>
-				</div>
-				<%end%>
-			</div>
-			<a class="portal" href="http://sp.adntx.com/">Visit Our Customer Portal >></a>
-			</div>
+				<%= render :partial => "/shared/retailers" %>
+		</div>
   </body>
 </html>

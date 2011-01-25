@@ -22,6 +22,8 @@ class PagesController < ApplicationController
   #   GET /pages/mission
   #   GET /about/mission
   #
+  
+  
   def show
     @page = if params[:path]
       Page.find(params[:path].split('/').last, :include => [:parts, :slugs])

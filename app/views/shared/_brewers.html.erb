@@ -1,0 +1,62 @@
+<% brewers = ForBrewer.order("position ASC")%>
+
+<script type="text/javascript">
+	$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/fancybox/close.gif' />");
+	$('.image_slider.brewer .video_slide .text').hide();
+	$('.image_slider.brewer .video_slide.active .text').fadeIn();
+</script>
+	<div class="brewer_titles">
+		<ul>
+			<% brewers.each_with_index do |brewer, i|%>
+						<li><a href="#" class="<%= brewer.position %> brewer <% if i==0%> active<% end %>"><%= brewer.title %></a></li>
+			<% end %>
+		</ul>
+	</div>
+		<img src="/images/forBrewers.png" class="modal_image"  />
+		<div class="image_slider brewer">
+		<% brewers.each_with_index do |brewer, i|%>
+		<% position = 525*i %>
+		<script type="text/javascript">
+		function playPause() {
+
+   		var myVideo = document.getElementsByTagName('video')[0];
+
+       myVideo.pause();
+   }
+		
+		$(document).ready(function(){
+			$('div.brewer_titles a.<%= brewer.position %>').click(function() {
+			if (!$('.image_slider.brewer .<%= brewer.position %>').hasClass('active'))
+			{
+				$('.image_slider.brewer .video_slide.active .text').fadeOut();
+				playPause();
+				$('.image_slider.brewer div.video_slide').removeClass('active');
+				$('div.brewer_titles a').removeClass('active');
+				$('div.brewer_titles a.<%= brewer.position %>').addClass('active');
+				$('.image_slider.brewer div.video_slide.<%= brewer.position %>').addClass('active');
+
+				var position = <%= brewer.position %> * -525
+				  $('.image_slider.brewer').animate({						
+				    left: position
+				  }, 1000	, function() {
+						    // Animation complete.
+								$('.image_slider.brewer .video_slide.active .text').fadeIn();
+						  });
+				}
+				return false;
+			});
+		});
+		</script>
+		<div class="video_slide <%= brewer.position %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
+			<video preload="none" width="525" height="296" controls <%if brewer.display_image %> poster="<%= brewer.display_image.url %>"<% end %> loop="false">
+				<source src="<%= brewer.m4v_file.url %>"  type="video/mp4" />
+				<source src="<%= brewer.ogg_file.url %>"  type="video/ogg" />
+
+			</video>
+			<div class="text">
+			<%=raw brewer.text %>
+			</div>
+		</div>
+		<%end%>
+	</div>
+	<a class="portal" href="http://cp.adntx.com/">Visit Our Supplier Portal >></a>

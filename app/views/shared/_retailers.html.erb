@@ -1,0 +1,61 @@
+<% retailers = ForRetailer.order("position ASC")%>
+<script type="text/javascript">
+	$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/fancybox/close.gif' />");
+	$('.image_slider.retailer .video_slide .text').hide();
+	$('.image_slider.retailer .video_slide.active .text').fadeIn();
+</script>
+	<div class="modal_titles">
+		<ul>
+			<% retailers.each_with_index do |retailer, i|%>
+						<li><a href="#" class="<%= retailer.position %> <% if i==0%> active<% end %>"><%= retailer.title %></a></li>
+			<% end %>
+		</ul>
+	</div>
+		<img src="/images/forRetailers.png" class="modal_image"  />
+		<div class="image_slider retailer">
+		<% retailers.each_with_index do |retailer, i|%>
+		<% position = 525*i %>
+		<script type="text/javascript">
+		function playPause() {
+
+   		var myVideo = document.getElementsByTagName('video')[0];
+
+       myVideo.pause();
+   }
+		
+		$(document).ready(function(){
+			$('div.modal_titles a.<%= retailer.position %>').click(function() {
+			if (!$('.image_slider.retailer.<%= retailer.id %>').hasClass('active'))
+			{
+				$('.image_slider.retailer .video_slide.active .text').fadeOut();
+				playPause();
+				$('.image_slider.retailer div.video_slide').removeClass('active');
+				$('div.modal_titles a').removeClass('active');
+				$('div.modal_titles a.<%= retailer.position %>').addClass('active');
+				$('.image_slider.retailer div.video_slide.<%= retailer.position %>').addClass('active');
+
+				var position = <%= retailer.position %> * -525
+				  $('.image_slider.retailer').animate({						
+				    left: position
+				  }, 1000	, function() {
+						    // Animation complete.
+								$('.image_slider.retailer .video_slide.active .text').fadeIn();
+						  });
+				}
+				return false;
+			});
+		});
+		</script>
+		<div class="video_slide <%= retailer.position %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
+			<video preload="none" width="525" height="296" controls <%if retailer.display_image %> poster="<%= retailer.display_image.url %>"<% end %> loop="false">
+				<source src="<%= retailer.m4v_file.url %>"  type="video/mp4" />
+				<source src="<%= retailer.ogg_file.url %>"  type="video/ogg" />
+
+			</video>
+			<div class="text">
+			<%=raw retailer.text %>
+			</div>
+		</div>
+		<%end%>
+	</div>
+	<a class="portal" href="http://sp.adntx.com/">Visit Our Customer Portal >></a>

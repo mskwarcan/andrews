@@ -76,6 +76,10 @@ $(document).ready(function(){
 		getStaticContentFrom : "#for_retailers"
 	});
 	
+	$('.ajax-load-retailer').click(function (){
+		$('.retailers').load('/for-retailers-videos #videos');
+	});
+	
 	jQuery("a.for_brewers").modalBox({
 		getStaticContentFrom : "#for_brewers"
 	});
