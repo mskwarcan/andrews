@@ -1,10 +1,4 @@
-<% if @page.parent %>
-<ul class="subnav">
-	<% @page.parent.children.each do |child| %>
-		<li><%= link_to child.title, child.url -%></li>
-	<% end %>
-</ul>
-<% end %>
+<%= render :partial => "/shared/subnav" %>
 
 <img class="texas_map" src="/images/texas.png" />
 <p class="print_map"><a  href="/images/AndrewsDistributionMap.pdf">printable map</a></p>

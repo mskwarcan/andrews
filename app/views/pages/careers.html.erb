@@ -1,10 +1,4 @@
-<% if @page.parent %>
-<ul class="subnav">
-	<% @page.parent.children.each do |child| %>
-		<li><%= link_to child.title, child.url -%></li>
-	<% end %>
-</ul>
-<% end %>
+<%= render :partial => "/shared/subnav" %>
 
 <video width="525" height="296" controls poster="/images/WorkAtAndrews.jpg">
 	<source src="https://s3.amazonaws.com/andrews_distributing/2011/01/22/10/57/31/607/WorkingforAndrews-Aars-H.264.m4v"  type="video/mp4" />

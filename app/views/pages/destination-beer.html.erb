@@ -1,12 +1,6 @@
-<% if @page.parent %>
-<ul class="subnav">
-	<% @page.parent.children.each do |child| %>
-		<li><%= link_to child.title, child.url -%></li>
-	<% end %>
-</ul>
-<% end %>
+<%= render :partial => "/shared/subnav" %>
 
 <div class="destination_beer"></div>
 
-<a target="_blank" href="http://www.destinationbeer.com"><img class="visit" src="/images/visit_destination.png" /></a>
+<a target="_blank" href="http://www.destinationbeer.com"><div class="visit"></div></a>
 <%= render :partial => "/shared/content_page" %>

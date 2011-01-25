@@ -3,7 +3,7 @@
 	<% @whats_new_stories = WhatsNewStory.order("position DESC")%>
     <% @whats_new_stories.each do |whats_new_story| %>
       <li>
-				<div class="thumb"><%= image_fu whats_new_story.thumbnail, '110x110' %></div>
+				<div class="thumb"><%= image_fu whats_new_story.thumbnail, '108x100' %></div>
 				<h2><%= whats_new_story.title %></h2> <a href="#<%= whats_new_story.position %>" class="whats-new-link">Read More >></a>
 				<%=raw whats_new_story.text[0, 200] %>...
 				

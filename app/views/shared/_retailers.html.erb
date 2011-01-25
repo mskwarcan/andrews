@@ -1,6 +1,6 @@
 <% retailers = ForRetailer.order("position ASC")%>
 <script type="text/javascript">
-	$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/fancybox/close.gif' />");
+	$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/images/close.png' />");
 	$('.image_slider.retailer .video_slide .text').hide();
 	$('.image_slider.retailer .video_slide.active .text').fadeIn();
 </script>
@@ -14,7 +14,7 @@
 		<img src="/images/forRetailers.png" class="modal_image"  />
 		<div class="image_slider retailer">
 		<% retailers.each_with_index do |retailer, i|%>
-		<% position = 525*i %>
+		<% position = 550*i %>
 		<script type="text/javascript">
 		function playPause() {
 
@@ -34,7 +34,7 @@
 				$('div.modal_titles a.<%= retailer.position %>').addClass('active');
 				$('.image_slider.retailer div.video_slide.<%= retailer.position %>').addClass('active');
 
-				var position = <%= retailer.position %> * -525
+				var position = <%= retailer.position %> * -550
 				  $('.image_slider.retailer').animate({						
 				    left: position
 				  }, 1000	, function() {
@@ -47,7 +47,7 @@
 		});
 		</script>
 		<div class="video_slide <%= retailer.position %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
-			<video preload="none" width="525" height="296" controls <%if retailer.display_image %> poster="<%= retailer.display_image.url %>"<% end %> loop="false">
+			<video preload="metadata" width="525" height="296" controls <%if retailer.display_image %> poster="<%= retailer.display_image.url %>"<% end %> loop="false">
 				<source src="<%= retailer.m4v_file.url %>"  type="video/mp4" />
 				<source src="<%= retailer.ogg_file.url %>"  type="video/ogg" />
 
@@ -58,4 +58,4 @@
 		</div>
 		<%end%>
 	</div>
-	<a class="portal" href="http://sp.adntx.com/">Visit Our Customer Portal >></a>
+	<a class="portal" href="http://cp.adntx.com/">Visit Our Customer Portal >></a>

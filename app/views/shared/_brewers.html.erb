@@ -1,7 +1,7 @@
 <% brewers = ForBrewer.order("position ASC")%>
 
 <script type="text/javascript">
-	$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/fancybox/close.gif' />");
+	$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/images/close.png' />");
 	$('.image_slider.brewer .video_slide .text').hide();
 	$('.image_slider.brewer .video_slide.active .text').fadeIn();
 </script>
@@ -15,7 +15,7 @@
 		<img src="/images/forBrewers.png" class="modal_image"  />
 		<div class="image_slider brewer">
 		<% brewers.each_with_index do |brewer, i|%>
-		<% position = 525*i %>
+		<% position = 550*i %>
 		<script type="text/javascript">
 		function playPause() {
 
@@ -35,7 +35,7 @@
 				$('div.brewer_titles a.<%= brewer.position %>').addClass('active');
 				$('.image_slider.brewer div.video_slide.<%= brewer.position %>').addClass('active');
 
-				var position = <%= brewer.position %> * -525
+				var position = <%= brewer.position %> * -550
 				  $('.image_slider.brewer').animate({						
 				    left: position
 				  }, 1000	, function() {
@@ -48,7 +48,7 @@
 		});
 		</script>
 		<div class="video_slide <%= brewer.position %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
-			<video preload="none" width="525" height="296" controls <%if brewer.display_image %> poster="<%= brewer.display_image.url %>"<% end %> loop="false">
+			<video preload="metadata" width="525" height="296" controls <%if brewer.display_image %> poster="<%= brewer.display_image.url %>"<% end %> loop="false">
 				<source src="<%= brewer.m4v_file.url %>"  type="video/mp4" />
 				<source src="<%= brewer.ogg_file.url %>"  type="video/ogg" />
 
@@ -59,4 +59,4 @@
 		</div>
 		<%end%>
 	</div>
-	<a class="portal" href="http://cp.adntx.com/">Visit Our Supplier Portal >></a>
+	<a class="portal" href="http://sp.adntx.com/">Visit Our Supplier Portal >></a>

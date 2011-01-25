@@ -12,12 +12,12 @@
     </li>
   <% if !searching? and Brewer.count > 1 %>
     <li>
-      <%= link_to t('refinery.reorder', :what => "Brewers"),
+      <%= link_to "Reorder Brewers",
                    admin_brewers_url,
                    :id => "reorder_action",
                    :class => "reorder_icon" %>
 
-      <%= link_to t('refinery.reorder_done', :what => "Brewers"),
+      <%= link_to "Done Reordering Brewers",
                    admin_brewers_url,
                    :id => "reorder_action_done",
                    :style => "display: none;",
