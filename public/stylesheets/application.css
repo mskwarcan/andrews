@@ -148,7 +148,7 @@ p
 	bottom:0;
 	background:url('../images/footer_bg.png');
 	width:100%;
-	height:33px;
+	height:32px;
 	z-index:2;
 }
 
@@ -1134,7 +1134,6 @@ div#modalBox
 
 .image_slider
 {
-	height:100%;
 	position:absolute;
 }
 
