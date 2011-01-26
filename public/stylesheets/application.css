@@ -1175,6 +1175,7 @@ div#modalBox
 
 .image_slider
 {
+  left:0;
   top:110px;
 	position:absolute;
 }
