@@ -8,35 +8,10 @@
     <%= f.label :title -%>
     <%= f.text_field :title, :class => 'larger widest' -%>
   </div>
-  
-  <div class='field'>
-    <%= f.label :ogg_file -%>
 
-    <%= render :partial => "/shared/admin/resource_picker", :locals => {
-      :f => f,
-      :field => :ogg_file_id,
-      :resource => @for_brewer.ogg_file,
-    } %>
-  </div>
-  
   <div class='field'>
-    <%= f.label :m4v_file -%>
-
-    <%= render :partial => "/shared/admin/resource_picker2", :locals => {
-      :f => f,
-      :field => :m4v_file_id,
-      :resource => @for_brewer.m4v_file,
-    } %>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :display_image -%>
-    <%= render :partial => "/shared/admin/image_picker", :locals => {
-      :f => f,
-      :field => :display_image_id,
-      :image => @for_brewer.display_image,
-      :toggle_image_display => false
-    } %>
+    <%= f.label :vimeo, "Vimeo Embed Code" -%>
+    <%= f.text_area :vimeo, :rows => 5 -%>
   </div>
   
   <div class='field'>

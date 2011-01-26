@@ -48,11 +48,7 @@
 		});
 		</script>
 		<div class="video_slide <%= brewer.position %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
-			<video preload="metadata" width="525" height="296" controls <%if brewer.display_image %> poster="<%= brewer.display_image.url %>"<% end %> loop="false">
-				<source src="<%= brewer.m4v_file.url %>"  type="video/mp4" />
-				<source src="<%= brewer.ogg_file.url %>"  type="video/ogg" />
-
-			</video>
+			<%=raw brewer.vimeo %>
 			<div class="text">
 			<%=raw brewer.text %>
 			</div>

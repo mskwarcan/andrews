@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110124030850) do
+ActiveRecord::Schema.define(:version => 20110126004512) do
 
   create_table "beer_brands", :force => true do |t|
     t.integer   "image_id"
@@ -68,27 +68,29 @@ ActiveRecord::Schema.define(:version => 20110124030850) do
   add_index "events", ["id"], :name => "index_events_on_id"
 
   create_table "for_brewers", :force => true do |t|
-    t.string    "title"
-    t.integer   "ogg_file_id"
-    t.integer   "m4v_file_id"
-    t.integer   "display_image_id"
-    t.text      "text"
-    t.integer   "position"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "title"
+    t.integer  "ogg_file_id"
+    t.integer  "m4v_file_id"
+    t.integer  "display_image_id"
+    t.text     "text"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "vimeo"
   end
 
   add_index "for_brewers", ["id"], :name => "index_for_brewers_on_id"
 
   create_table "for_retailers", :force => true do |t|
-    t.string    "title"
-    t.integer   "ogg_file_id"
-    t.integer   "m4v_file_id"
-    t.integer   "display_image_id"
-    t.text      "text"
-    t.integer   "position"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "title"
+    t.integer  "ogg_file_id"
+    t.integer  "m4v_file_id"
+    t.integer  "display_image_id"
+    t.text     "text"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "vimeo"
   end
 
   add_index "for_retailers", ["id"], :name => "index_for_retailers_on_id"
@@ -116,19 +118,19 @@ ActiveRecord::Schema.define(:version => 20110124030850) do
   end
 
   create_table "inquiries", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.text     "message"
-    t.integer  "position"
-    t.boolean  "open",       :default => true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "spam",       :default => false
-    t.string   "last_name"
-    t.string   "title"
-    t.string   "company"
-    t.string   "site"
+    t.string    "name"
+    t.string    "email"
+    t.string    "phone"
+    t.text      "message"
+    t.integer   "position"
+    t.boolean   "open",       :default => true
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.boolean   "spam",       :default => false
+    t.string    "last_name"
+    t.string    "title"
+    t.string    "company"
+    t.string    "site"
   end
 
   create_table "inquiry_settings", :force => true do |t|
@@ -295,13 +297,13 @@ ActiveRecord::Schema.define(:version => 20110124030850) do
   add_index "users", ["id"], :name => "index_users_on_id"
 
   create_table "whats_new_stories", :force => true do |t|
-    t.string   "title"
-    t.integer  "thumbnail_id"
-    t.integer  "image_id"
-    t.text     "text"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.integer   "thumbnail_id"
+    t.integer   "image_id"
+    t.text      "text"
+    t.integer   "position"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "whats_new_stories", ["id"], :name => "index_whats_new_stories_on_id"

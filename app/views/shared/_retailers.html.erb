@@ -47,11 +47,7 @@
 		});
 		</script>
 		<div class="video_slide <%= retailer.position %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
-			<video preload="metadata" width="525" height="296" controls <%if retailer.display_image %> poster="<%= retailer.display_image.url %>"<% end %> loop="false">
-				<source src="<%= retailer.m4v_file.url %>"  type="video/mp4" />
-				<source src="<%= retailer.ogg_file.url %>"  type="video/ogg" />
-
-			</video>
+			<%=raw retailer.vimeo %>
 			<div class="text">
 			<%=raw retailer.text %>
 			</div>
