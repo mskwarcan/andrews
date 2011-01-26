@@ -665,7 +665,7 @@ ul.subnav li:first-child
 	display:none;
 }
 
-.core-values .active, .core-values .active_hover
+.core-values #body_content .active, .core-values #body_content .active_hover
 {
 	display:block !important;
 }
@@ -766,7 +766,7 @@ ul#management li .hide, ul#whats_new_stories .hide
 }
 
 /* Distribution */
-.distribution-area p
+.distribution-area #body_content p
 {
 	width:270px;
 }
@@ -1183,6 +1183,8 @@ div#modalBox
 	color:#fff;
 	position:absolute;
 	top:0px;
+	width:525px;
+	min-height:296px;
 }
 
 .video_slide .text

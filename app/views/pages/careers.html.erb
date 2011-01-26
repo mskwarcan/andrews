@@ -1,13 +1,6 @@
 <%= render :partial => "/shared/subnav" %>
 
-<video width="525" height="296" controls poster="/images/WorkAtAndrews.jpg">
-	<source src="https://s3.amazonaws.com/andrews_distributing/2011/01/22/10/57/31/607/WorkingforAndrews-Aars-H.264.m4v"  type="video/mp4" />
-	<source src="https://s3.amazonaws.com/andrews_distributing/2011/01/22/10/57/31/607/WorkingforAndrews.ogg"  type="video/ogg" />
-	<object width="525" height="296" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf">
-		<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.5.swf" />
-		<param name="flashvars" value="controlbar=over&amp;image=/images/WorkAtAndrews.jpg&amp;file=https://s3.amazonaws.com/andrews_distributing/2011/01/22/10/57/31/607/WorkingforAndrews-Aars-H.264.m4v" />
-	</object>
-</video>
+<iframe src="http://player.vimeo.com/video/19191357" width="525" height="296" frameborder="0"></iframe>
 
 <%= render :partial => "/shared/content_page" %>
 

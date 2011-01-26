@@ -2,10 +2,10 @@
 <div class="image_block"></div>
 <%= render :partial => "/shared/content_page" %>
 
-<% @domestics = BeerBrand.where(:main_category => "Domestic") %>
-<% @imports = BeerBrand.where(:main_category => "Imports") %>
-<% @craft = BeerBrand.where(:main_category => "Specialty & Craft") %>
-<% @non = BeerBrand.where(:main_category => "Non-Alcoholic") %>
+<% @domestics = BeerBrand.where(:main_category => "Domestic", :order => "position ASC") %>
+<% @imports = BeerBrand.where(:main_category => "Imports", :order => "position ASC") %>
+<% @craft = BeerBrand.where(:main_category => "Specialty & Craft", :order => "position ASC") %>
+<% @non = BeerBrand.where(:main_category => "Non-Alcoholic", :order => "position ASC") %>
 
 <div class="brand_type">
 <img src="/images/domestic.png" />

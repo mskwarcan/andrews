@@ -16069,3 +16069,857 @@ Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middle
   [1m[36mPagePart Load (2.2ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC[0m
 Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (88.7ms)
 Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (98.1ms)
+
+
+Started GET "/our-portfolio/at-a-glance" for 127.0.0.1 at Tue Jan 25 19:28:22 -0600 2011
+  [1m[35mSQL (1.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.3ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by PagesController#show as HTML
+  Parameters: {"path"=>"our-portfolio/at-a-glance", "locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."cached_slug" = 'at-a-glance') LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 17) ORDER BY position ASC
+  [1m[36mSlug Load (0.3ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs"."sluggable_id" = 17 and "slugs"."sluggable_type" = 'Page') ORDER BY id DESC[0m
+  [1m[35mSlug Load (0.3ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 17 AND "slugs".sluggable_type = 'Page') ORDER BY id DESC LIMIT 1
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mPage Load (0.7ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 11) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mPagePart Load (1.2ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 11) ORDER BY position ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1
+Rendered shared/_subnav.html.erb (38.8ms)
+  [1m[36mPortfolioImage Load (0.3ms)[0m  [1mSELECT "portfolio_images".* FROM "portfolio_images" ORDER BY position ASC LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 102) LIMIT 1
+Rendered shared/_content_page.html.erb (3.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (9.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 11) ORDER BY position ASC[0m
+Rendered shared/_head.html.erb (6.9ms)
+  [1m[35mLogo Load (0.3ms)[0m  SELECT "logos".* FROM "logos" ORDER BY position ASC LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 222) LIMIT 1[0m
+  [1m[35mPage Load (1.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (1.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 5 AND "pages"."rgt" <= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 6 AND "pages"."rgt" >= 7) AND ("pages".id != 14) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 8 AND "pages"."rgt" >= 9) AND ("pages".id != 15) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 10 AND "pages"."rgt" >= 11) AND ("pages".id != 25) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 12 AND "pages"."rgt" >= 13) AND ("pages".id != 16) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+Rendered shared/_menu_branch.html.erb (74.9ms)
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 16 AND "pages"."rgt" >= 17) AND ("pages".id != 17) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 18 AND "pages"."rgt" >= 19) AND ("pages".id != 8) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 20 AND "pages"."rgt" >= 21) AND ("pages".id != 18) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 22 AND "pages"."rgt" >= 23) AND ("pages".id != 31) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+Rendered shared/_menu_branch.html.erb (78.7ms)
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 25 AND "pages"."rgt" <= 30) AND ("pages".id != 12) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 12) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 12) LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 26 AND "pages"."rgt" >= 27) AND ("pages".id != 27) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 25 AND "pages"."rgt" >= 30) AND ("pages".id != 12) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 28 AND "pages"."rgt" >= 29) AND ("pages".id != 26) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 25 AND "pages"."rgt" >= 30) AND ("pages".id != 12) ORDER BY "lft"
+Rendered shared/_menu_branch.html.erb (178.7ms)
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 33 AND "pages"."rgt" <= 36) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered shared/_menu_branch.html.erb (675.8ms)
+Rendered shared/_menu.html.erb (720.7ms)
+Rendered shared/_header.html.erb (722.6ms)
+  [1m[36mWhatsNewStory Load (0.4ms)[0m  [1mSELECT "whats_new_stories".* FROM "whats_new_stories" ORDER BY position DESC LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 230) LIMIT 1
+Rendered shared/_footer.html.erb (0.6ms)
+  [1m[36mForBrewer Load (0.6ms)[0m  [1mSELECT "for_brewers".* FROM "for_brewers" ORDER BY position ASC[0m
+Rendered shared/_brewers.html.erb (151.9ms)
+  [1m[35mForRetailer Load (0.6ms)[0m  SELECT "for_retailers".* FROM "for_retailers" ORDER BY position ASC
+Rendered shared/_retailers.html.erb (28.6ms)
+Rendered pages/at-a-glance.html.erb within layouts/application (1205.9ms)
+Completed 200 OK in 1462ms (Views: 1223.5ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/img/ajax-loader.gif" for 127.0.0.1 at Tue Jan 25 19:28:24 -0600 2011
+  [1m[36mSQL (1.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by PagesController#show as HTML
+  Parameters: {"path"=>"img/ajax-loader.gif", "locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT DISTINCT "pages".id FROM "pages" LEFT OUTER JOIN "page_parts" ON "page_parts"."page_id" = "pages"."id" LEFT OUTER JOIN "slugs" ON "slugs"."sluggable_id" = "pages"."id" AND "slugs"."sluggable_type" = 'Page' WHERE ("pages"."cached_slug" = 'ajax-loader.gif') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT sluggable_id FROM slugs WHERE ((slugs.sluggable_type = 'Page' AND slugs.name = 'ajax-loader.gif' AND slugs.sequence = 1))[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 0) LIMIT 1
+Completed   in 193ms
+
+ActiveRecord::RecordNotFound (Couldn't find Page with ID=ajax-loader.gif):
+  app/controllers/pages_controller.rb:29:in `show'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  [1m[36mPage Load (3.1ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (1.5ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (112.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (127.7ms)
+
+
+Started GET "/brewers" for 127.0.0.1 at Tue Jan 25 19:28:29 -0600 2011
+  [1m[36mSQL (1.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.4ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by BrewersController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mBrewer Load (0.9ms)[0m  SELECT "brewers".* FROM "brewers" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/brewers') LIMIT 1[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 11) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1
+  [1m[36mPagePart Load (0.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 11) ORDER BY position ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 54) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 55) LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 43) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 56) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 57) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 40) LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 63) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 66) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 67) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 47) LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 65) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 42) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 39) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 44) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 62) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 48) LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 61) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 53) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 71) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 45) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 59) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 72) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 52) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 41) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 58) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 46) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 64) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 77) LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 73) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 74) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 75) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 49) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 70) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 69) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 51) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 50) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 68) LIMIT 1
+  [1m[36mPagePart Load (0.3ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 8) ORDER BY position ASC[0m
+Rendered shared/_content_page.html.erb (5.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (7.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 11) ORDER BY position ASC
+Rendered shared/_head.html.erb (6.3ms)
+  [1m[36mLogo Load (0.3ms)[0m  [1mSELECT "logos".* FROM "logos" ORDER BY position ASC LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 222) LIMIT 1
+  [1m[36mPage Load (1.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (1.2ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 5 AND "pages"."rgt" <= 14) AND ("pages".id != 3) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 6 AND "pages"."rgt" >= 7) AND ("pages".id != 14) ORDER BY "lft"
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 8 AND "pages"."rgt" >= 9) AND ("pages".id != 15) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 10 AND "pages"."rgt" >= 11) AND ("pages".id != 25) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 12 AND "pages"."rgt" >= 13) AND ("pages".id != 16) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"[0m
+Rendered shared/_menu_branch.html.erb (70.3ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 15 AND "pages"."rgt" <= 24) AND ("pages".id != 11) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 16 AND "pages"."rgt" >= 17) AND ("pages".id != 17) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 18 AND "pages"."rgt" >= 19) AND ("pages".id != 8) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 20 AND "pages"."rgt" >= 21) AND ("pages".id != 18) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 22 AND "pages"."rgt" >= 23) AND ("pages".id != 31) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"
+Rendered shared/_menu_branch.html.erb (65.6ms)
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 25 AND "pages"."rgt" <= 30) AND ("pages".id != 12) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 12) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 12) LIMIT 1[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 26 AND "pages"."rgt" >= 27) AND ("pages".id != 27) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 25 AND "pages"."rgt" >= 30) AND ("pages".id != 12) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 28 AND "pages"."rgt" >= 29) AND ("pages".id != 26) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 25 AND "pages"."rgt" >= 30) AND ("pages".id != 12) ORDER BY "lft"[0m
+Rendered shared/_menu_branch.html.erb (179.1ms)
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 33 AND "pages"."rgt" <= 36) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered shared/_menu_branch.html.erb (667.5ms)
+Rendered shared/_menu.html.erb (707.6ms)
+Rendered shared/_header.html.erb (709.3ms)
+  [1m[35mWhatsNewStory Load (0.4ms)[0m  SELECT "whats_new_stories".* FROM "whats_new_stories" ORDER BY position DESC LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 230) LIMIT 1[0m
+Rendered shared/_footer.html.erb (0.5ms)
+  [1m[35mForBrewer Load (0.6ms)[0m  SELECT "for_brewers".* FROM "for_brewers" ORDER BY position ASC
+Rendered shared/_brewers.html.erb (154.7ms)
+  [1m[36mForRetailer Load (0.6ms)[0m  [1mSELECT "for_retailers".* FROM "for_retailers" ORDER BY position ASC[0m
+Rendered shared/_retailers.html.erb (27.2ms)
+Rendered vendor/engines/brewers/app/views/brewers/index.html.erb within layouts/application (1302.0ms)
+Completed 200 OK in 1534ms (Views: 1323.0ms | ActiveRecord: 27.7ms)
+
+
+Started GET "/img/ajax-loader.gif" for 127.0.0.1 at Tue Jan 25 19:28:32 -0600 2011
+  [1m[35mSQL (1.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.7ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by PagesController#show as HTML
+  Parameters: {"path"=>"img/ajax-loader.gif", "locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT DISTINCT "pages".id FROM "pages" LEFT OUTER JOIN "page_parts" ON "page_parts"."page_id" = "pages"."id" LEFT OUTER JOIN "slugs" ON "slugs"."sluggable_id" = "pages"."id" AND "slugs"."sluggable_type" = 'Page' WHERE ("pages"."cached_slug" = 'ajax-loader.gif') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT sluggable_id FROM slugs WHERE ((slugs.sluggable_type = 'Page' AND slugs.name = 'ajax-loader.gif' AND slugs.sequence = 1))
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 0) LIMIT 1[0m
+Completed   in 86ms
+
+ActiveRecord::RecordNotFound (Couldn't find Page with ID=ajax-loader.gif):
+  app/controllers/pages_controller.rb:29:in `show'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[35mPage Load (2.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (1.3ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC[0m
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (206.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (212.3ms)
+
+
+Started GET "/brewers" for 127.0.0.1 at Tue Jan 25 19:29:15 -0600 2011
+  [1m[35mSQL (1.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.3ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by BrewersController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mBrewer Load (0.9ms)[0m  [1mSELECT "brewers".* FROM "brewers" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/brewers') LIMIT 1
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mPage Load (0.7ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 11) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 11) ORDER BY position ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 54) LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 55) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 43) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 56) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 57) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 40) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 63) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 66) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 67) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 47) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 65) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 42) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 39) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 44) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 62) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 48) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 61) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 53) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 71) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 45) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 59) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 72) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 52) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 41) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 58) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 46) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 64) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 77) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 73) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 74) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 75) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 49) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 70) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 69) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 51) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 50) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 68) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 8) ORDER BY position ASC
+Rendered shared/_content_page.html.erb (5.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (9.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 11) ORDER BY position ASC[0m
+Rendered shared/_head.html.erb (7.0ms)
+  [1m[35mLogo Load (0.3ms)[0m  SELECT "logos".* FROM "logos" ORDER BY position ASC LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 222) LIMIT 1[0m
+  [1m[35mPage Load (1.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (1.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.7ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 5 AND "pages"."rgt" <= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 6 AND "pages"."rgt" >= 7) AND ("pages".id != 14) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 8 AND "pages"."rgt" >= 9) AND ("pages".id != 15) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 10 AND "pages"."rgt" >= 11) AND ("pages".id != 25) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 12 AND "pages"."rgt" >= 13) AND ("pages".id != 16) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+Rendered shared/_menu_branch.html.erb (202.0ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 15 AND "pages"."rgt" <= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 16 AND "pages"."rgt" >= 17) AND ("pages".id != 17) ORDER BY "lft"
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 18 AND "pages"."rgt" >= 19) AND ("pages".id != 8) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 20 AND "pages"."rgt" >= 21) AND ("pages".id != 18) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 22 AND "pages"."rgt" >= 23) AND ("pages".id != 31) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+Rendered shared/_menu_branch.html.erb (66.8ms)
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 25 AND "pages"."rgt" <= 30) AND ("pages".id != 12) ORDER BY "lft"
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 12) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 12) LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 26 AND "pages"."rgt" >= 27) AND ("pages".id != 27) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 25 AND "pages"."rgt" >= 30) AND ("pages".id != 12) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 28 AND "pages"."rgt" >= 29) AND ("pages".id != 26) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 25 AND "pages"."rgt" >= 30) AND ("pages".id != 12) ORDER BY "lft"
+Rendered shared/_menu_branch.html.erb (33.8ms)
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 33 AND "pages"."rgt" <= 36) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered shared/_menu_branch.html.erb (656.2ms)
+Rendered shared/_menu.html.erb (699.2ms)
+Rendered shared/_header.html.erb (700.9ms)
+  [1m[36mWhatsNewStory Load (0.4ms)[0m  [1mSELECT "whats_new_stories".* FROM "whats_new_stories" ORDER BY position DESC LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 230) LIMIT 1
+Rendered shared/_footer.html.erb (0.6ms)
+  [1m[36mForBrewer Load (0.6ms)[0m  [1mSELECT "for_brewers".* FROM "for_brewers" ORDER BY position ASC[0m
+Rendered shared/_brewers.html.erb (26.0ms)
+  [1m[35mForRetailer Load (0.6ms)[0m  SELECT "for_retailers".* FROM "for_retailers" ORDER BY position ASC
+Rendered shared/_retailers.html.erb (150.9ms)
+Rendered vendor/engines/brewers/app/views/brewers/index.html.erb within layouts/application (1294.4ms)
+Completed 200 OK in 1529ms (Views: 1315.3ms | ActiveRecord: 27.2ms)
+
+
+Started GET "/img/ajax-loader.gif" for 127.0.0.1 at Tue Jan 25 19:29:17 -0600 2011
+  [1m[36mSQL (2.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.3ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by PagesController#show as HTML
+  Parameters: {"path"=>"img/ajax-loader.gif", "locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT DISTINCT "pages".id FROM "pages" LEFT OUTER JOIN "page_parts" ON "page_parts"."page_id" = "pages"."id" LEFT OUTER JOIN "slugs" ON "slugs"."sluggable_id" = "pages"."id" AND "slugs"."sluggable_type" = 'Page' WHERE ("pages"."cached_slug" = 'ajax-loader.gif') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT sluggable_id FROM slugs WHERE ((slugs.sluggable_type = 'Page' AND slugs.name = 'ajax-loader.gif' AND slugs.sequence = 1))[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 0) LIMIT 1
+Completed   in 173ms
+
+ActiveRecord::RecordNotFound (Couldn't find Page with ID=ajax-loader.gif):
+  app/controllers/pages_controller.rb:29:in `show'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  [1m[36mPage Load (2.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (1.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (215.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (231.2ms)
+
+
+Started GET "/brewers" for 127.0.0.1 at Tue Jan 25 19:32:54 -0600 2011
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.3ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by BrewersController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mBrewer Load (1.0ms)[0m  SELECT "brewers".* FROM "brewers" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/brewers') LIMIT 1[0m
+  [1m[35mPage Load (1.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (1.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC[0m
+Completed   in 269ms
+
+NameError (undefined local variable or method `brewers' for #<BrewersController:0x105947090>):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (60.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (66.2ms)
+
+
+Started GET "/brewers" for 127.0.0.1 at Tue Jan 25 19:33:06 -0600 2011
+  [1m[35mSQL (1.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.1ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by BrewersController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mBrewer Load (1.0ms)[0m  [1mSELECT "brewers".* FROM "brewers" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/brewers') LIMIT 1
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 11) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mPagePart Load (0.3ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 11) ORDER BY position ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 54) LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 55) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 43) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 56) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 57) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 40) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 63) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 66) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 67) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 47) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 65) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 42) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 39) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 44) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 62) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 48) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 61) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 53) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 71) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 45) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 59) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 72) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 52) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 41) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 58) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 46) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 64) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 77) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 73) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 74) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 75) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 49) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 70) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 69) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 51) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 50) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 68) LIMIT 1[0m
+  [1m[35mPagePart Load (0.3ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 8) ORDER BY position ASC
+Rendered shared/_content_page.html.erb (5.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (8.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 11) ORDER BY position ASC[0m
+Rendered shared/_head.html.erb (6.5ms)
+  [1m[35mLogo Load (0.3ms)[0m  SELECT "logos".* FROM "logos" ORDER BY position ASC LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 222) LIMIT 1[0m
+  [1m[35mPage Load (1.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (1.3ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 5 AND "pages"."rgt" <= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 6 AND "pages"."rgt" >= 7) AND ("pages".id != 14) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 8 AND "pages"."rgt" >= 9) AND ("pages".id != 15) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 10 AND "pages"."rgt" >= 11) AND ("pages".id != 25) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 12 AND "pages"."rgt" >= 13) AND ("pages".id != 16) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+Rendered shared/_menu_branch.html.erb (66.8ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 15 AND "pages"."rgt" <= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 16 AND "pages"."rgt" >= 17) AND ("pages".id != 17) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 18 AND "pages"."rgt" >= 19) AND ("pages".id != 8) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 20 AND "pages"."rgt" >= 21) AND ("pages".id != 18) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 22 AND "pages"."rgt" >= 23) AND ("pages".id != 31) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+Rendered shared/_menu_branch.html.erb (209.2ms)
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 25 AND "pages"."rgt" <= 30) AND ("pages".id != 12) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 12) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 12) LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 26 AND "pages"."rgt" >= 27) AND ("pages".id != 27) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 25 AND "pages"."rgt" >= 30) AND ("pages".id != 12) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 28 AND "pages"."rgt" >= 29) AND ("pages".id != 26) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 25 AND "pages"."rgt" >= 30) AND ("pages".id != 12) ORDER BY "lft"
+Rendered shared/_menu_branch.html.erb (33.7ms)
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 33 AND "pages"."rgt" <= 36) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered shared/_menu_branch.html.erb (525.6ms)
+Rendered shared/_menu.html.erb (566.2ms)
+Rendered shared/_header.html.erb (568.0ms)
+  [1m[36mWhatsNewStory Load (0.4ms)[0m  [1mSELECT "whats_new_stories".* FROM "whats_new_stories" ORDER BY position DESC LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 230) LIMIT 1
+Rendered shared/_footer.html.erb (0.6ms)
+  [1m[36mForBrewer Load (0.6ms)[0m  [1mSELECT "for_brewers".* FROM "for_brewers" ORDER BY position ASC[0m
+Rendered shared/_brewers.html.erb (27.4ms)
+  [1m[35mForRetailer Load (0.6ms)[0m  SELECT "for_retailers".* FROM "for_retailers" ORDER BY position ASC
+Rendered shared/_retailers.html.erb (29.5ms)
+Rendered vendor/engines/brewers/app/views/brewers/index.html.erb within layouts/application (1290.3ms)
+Completed 200 OK in 1412ms (Views: 1311.9ms | ActiveRecord: 34.2ms)
+
+
+Started GET "/img/ajax-loader.gif" for 127.0.0.1 at Tue Jan 25 19:33:08 -0600 2011
+  [1m[36mSQL (1.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by PagesController#show as HTML
+  Parameters: {"path"=>"img/ajax-loader.gif", "locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT DISTINCT "pages".id FROM "pages" LEFT OUTER JOIN "page_parts" ON "page_parts"."page_id" = "pages"."id" LEFT OUTER JOIN "slugs" ON "slugs"."sluggable_id" = "pages"."id" AND "slugs"."sluggable_type" = 'Page' WHERE ("pages"."cached_slug" = 'ajax-loader.gif') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT sluggable_id FROM slugs WHERE ((slugs.sluggable_type = 'Page' AND slugs.name = 'ajax-loader.gif' AND slugs.sequence = 1))[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 0) LIMIT 1
+Completed   in 85ms
+
+ActiveRecord::RecordNotFound (Couldn't find Page with ID=ajax-loader.gif):
+  app/controllers/pages_controller.rb:29:in `show'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  [1m[36mPage Load (2.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (1.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (219.3ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (229.0ms)
+
+
+Started GET "/brewers" for 127.0.0.1 at Tue Jan 25 19:34:40 -0600 2011
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by BrewersController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mBrewer Load (1.0ms)[0m  SELECT "brewers".* FROM "brewers" ORDER BY position ASC
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/brewers') LIMIT 1[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 11) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1
+  [1m[36mPagePart Load (0.3ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 11) ORDER BY position ASC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+Rendered shared/_subnav.html.erb (60.3ms)
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 54) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 55) LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 43) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 56) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 57) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 40) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 63) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 66) LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 67) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 47) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 65) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 42) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 39) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 44) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 62) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 48) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 61) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 53) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 71) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 45) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 59) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 72) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 52) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 41) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 58) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 46) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 64) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 77) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 73) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 74) LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 75) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 49) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 70) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 69) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 51) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 50) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 68) LIMIT 1
+  [1m[36mPagePart Load (0.3ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 8) ORDER BY position ASC[0m
+Rendered shared/_content_page.html.erb (6.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (10.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 11) ORDER BY position ASC
+Rendered shared/_head.html.erb (8.3ms)
+  [1m[36mLogo Load (0.3ms)[0m  [1mSELECT "logos".* FROM "logos" ORDER BY position ASC LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 222) LIMIT 1
+  [1m[36mPage Load (1.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (1.5ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 5 AND "pages"."rgt" <= 14) AND ("pages".id != 3) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 6 AND "pages"."rgt" >= 7) AND ("pages".id != 14) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 8 AND "pages"."rgt" >= 9) AND ("pages".id != 15) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 10 AND "pages"."rgt" >= 11) AND ("pages".id != 25) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 12 AND "pages"."rgt" >= 13) AND ("pages".id != 16) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"[0m
+Rendered shared/_menu_branch.html.erb (206.6ms)
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 15 AND "pages"."rgt" <= 24) AND ("pages".id != 11) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 16 AND "pages"."rgt" >= 17) AND ("pages".id != 17) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 18 AND "pages"."rgt" >= 19) AND ("pages".id != 8) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 20 AND "pages"."rgt" >= 21) AND ("pages".id != 18) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 22 AND "pages"."rgt" >= 23) AND ("pages".id != 31) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"
+Rendered shared/_menu_branch.html.erb (66.5ms)
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 25 AND "pages"."rgt" <= 30) AND ("pages".id != 12) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 12) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 12) LIMIT 1[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 26 AND "pages"."rgt" >= 27) AND ("pages".id != 27) ORDER BY "lft"
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 25 AND "pages"."rgt" >= 30) AND ("pages".id != 12) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 28 AND "pages"."rgt" >= 29) AND ("pages".id != 26) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 25 AND "pages"."rgt" >= 30) AND ("pages".id != 12) ORDER BY "lft"[0m
+Rendered shared/_menu_branch.html.erb (33.4ms)
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 33 AND "pages"."rgt" <= 36) AND ("pages".id != 4) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1[0m
+Rendered shared/_menu_branch.html.erb (670.0ms)
+Rendered shared/_menu.html.erb (713.3ms)
+Rendered shared/_header.html.erb (715.9ms)
+  [1m[35mWhatsNewStory Load (0.4ms)[0m  SELECT "whats_new_stories".* FROM "whats_new_stories" ORDER BY position DESC LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 230) LIMIT 1[0m
+Rendered shared/_footer.html.erb (0.6ms)
+  [1m[35mForBrewer Load (0.6ms)[0m  SELECT "for_brewers".* FROM "for_brewers" ORDER BY position ASC
+Rendered shared/_brewers.html.erb (28.9ms)
+  [1m[36mForRetailer Load (0.6ms)[0m  [1mSELECT "for_retailers".* FROM "for_retailers" ORDER BY position ASC[0m
+Rendered shared/_retailers.html.erb (149.7ms)
+Rendered vendor/engines/brewers/app/views/brewers/index.html.erb within layouts/application (1325.7ms)
+Completed 200 OK in 1558ms (Views: 1347.6ms | ActiveRecord: 27.1ms)
+
+
+Started GET "/img/ajax-loader.gif" for 127.0.0.1 at Tue Jan 25 19:34:42 -0600 2011
+  [1m[35mSQL (1.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.6ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by PagesController#show as HTML
+  Parameters: {"path"=>"img/ajax-loader.gif", "locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT DISTINCT "pages".id FROM "pages" LEFT OUTER JOIN "page_parts" ON "page_parts"."page_id" = "pages"."id" LEFT OUTER JOIN "slugs" ON "slugs"."sluggable_id" = "pages"."id" AND "slugs"."sluggable_type" = 'Page' WHERE ("pages"."cached_slug" = 'ajax-loader.gif') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT sluggable_id FROM slugs WHERE ((slugs.sluggable_type = 'Page' AND slugs.name = 'ajax-loader.gif' AND slugs.sequence = 1))
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 0) LIMIT 1[0m
+Completed   in 152ms
+
+ActiveRecord::RecordNotFound (Couldn't find Page with ID=ajax-loader.gif):
+  app/controllers/pages_controller.rb:29:in `show'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  [1m[35mPage Load (2.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (1.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC[0m
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (82.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (247.6ms)
+
+
+Started GET "/brewers" for 127.0.0.1 at Tue Jan 25 19:34:54 -0600 2011
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.6ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by BrewersController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mBrewer Load (0.9ms)[0m  [1mSELECT "brewers".* FROM "brewers" ORDER BY position ASC[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."link_url" = '/brewers') LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages".parent_id = 11) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mPagePart Load (0.3ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 11) ORDER BY position ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 11) LIMIT 1
+Rendered shared/_subnav.html.erb (60.0ms)
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 54) LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 55) LIMIT 1
+  [1m[36mImage Load (0.3ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 43) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 56) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 57) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 40) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 63) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 66) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 67) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 47) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 65) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 42) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 39) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 44) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 62) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 48) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 61) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 53) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 71) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 45) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 59) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 72) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 52) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 41) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 58) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 46) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 64) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 77) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 73) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 74) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 75) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 49) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 70) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 69) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 51) LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 50) LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 68) LIMIT 1[0m
+  [1m[35mPagePart Load (0.4ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 8) ORDER BY position ASC
+Rendered shared/_content_page.html.erb (5.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (8.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id = 11) ORDER BY position ASC[0m
+Rendered shared/_head.html.erb (137.6ms)
+  [1m[35mLogo Load (0.3ms)[0m  SELECT "logos".* FROM "logos" ORDER BY position ASC LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE ("images"."id" = 222) LIMIT 1[0m
+  [1m[35mPage Load (1.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC
+  [1m[36mPagePart Load (1.4ms)[0m  [1mSELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC[0m
+  [1m[35mPage Load (0.6ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 5 AND "pages"."rgt" <= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 3) LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 6 AND "pages"."rgt" >= 7) AND ("pages".id != 14) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 8 AND "pages"."rgt" >= 9) AND ("pages".id != 15) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 10 AND "pages"."rgt" >= 11) AND ("pages".id != 25) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 12 AND "pages"."rgt" >= 13) AND ("pages".id != 16) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 5 AND "pages"."rgt" >= 14) AND ("pages".id != 3) ORDER BY "lft"
+Rendered shared/_menu_branch.html.erb (69.8ms)
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 15 AND "pages"."rgt" <= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 16 AND "pages"."rgt" >= 17) AND ("pages".id != 17) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 18 AND "pages"."rgt" >= 19) AND ("pages".id != 8) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 20 AND "pages"."rgt" >= 21) AND ("pages".id != 18) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 22 AND "pages"."rgt" >= 23) AND ("pages".id != 31) ORDER BY "lft"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 15 AND "pages"."rgt" >= 24) AND ("pages".id != 11) ORDER BY "lft"[0m
+Rendered shared/_menu_branch.html.erb (67.6ms)
+  [1m[35mPage Load (0.4ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 25 AND "pages"."rgt" <= 30) AND ("pages".id != 12) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."id" = 12) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 12) LIMIT 1
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 26 AND "pages"."rgt" >= 27) AND ("pages".id != 27) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.2ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 25 AND "pages"."rgt" >= 30) AND ("pages".id != 12) ORDER BY "lft"
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 28 AND "pages"."rgt" >= 29) AND ("pages".id != 26) ORDER BY "lft"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."lft" <= 25 AND "pages"."rgt" >= 30) AND ("pages".id != 12) ORDER BY "lft"
+Rendered shared/_menu_branch.html.erb (36.0ms)
+  [1m[36mPage Load (0.4ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."lft" >= 33 AND "pages"."rgt" <= 36) AND ("pages".id != 4) ORDER BY "lft"[0m
+  [1m[35mPage Load (0.3ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 4) LIMIT 1
+Rendered shared/_menu_branch.html.erb (524.5ms)
+Rendered shared/_menu.html.erb (566.5ms)
+Rendered shared/_header.html.erb (568.4ms)
+  [1m[36mWhatsNewStory Load (0.4ms)[0m  [1mSELECT "whats_new_stories".* FROM "whats_new_stories" ORDER BY position DESC LIMIT 1[0m
+  [1m[35mImage Load (0.3ms)[0m  SELECT "images".* FROM "images" WHERE ("images"."id" = 230) LIMIT 1
+Rendered shared/_footer.html.erb (0.6ms)
+  [1m[36mForBrewer Load (0.6ms)[0m  [1mSELECT "for_brewers".* FROM "for_brewers" ORDER BY position ASC[0m
+Rendered shared/_brewers.html.erb (27.3ms)
+  [1m[35mForRetailer Load (0.6ms)[0m  SELECT "for_retailers".* FROM "for_retailers" ORDER BY position ASC
+Rendered shared/_retailers.html.erb (27.4ms)
+Rendered vendor/engines/brewers/app/views/brewers/index.html.erb within layouts/application (1175.2ms)
+Completed 200 OK in 1418ms (Views: 1197.4ms | ActiveRecord: 34.8ms)
+
+
+Started GET "/img/ajax-loader.gif" for 127.0.0.1 at Tue Jan 25 19:34:56 -0600 2011
+  [1m[36mSQL (1.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.5ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by PagesController#show as HTML
+  Parameters: {"path"=>"img/ajax-loader.gif", "locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (1.8ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mPage Load (1.8ms)[0m  SELECT DISTINCT "pages".id FROM "pages" LEFT OUTER JOIN "page_parts" ON "page_parts"."page_id" = "pages"."id" LEFT OUTER JOIN "slugs" ON "slugs"."sluggable_id" = "pages"."id" AND "slugs"."sluggable_type" = 'Page' WHERE ("pages"."cached_slug" = 'ajax-loader.gif') LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT sluggable_id FROM slugs WHERE ((slugs.sluggable_type = 'Page' AND slugs.name = 'ajax-loader.gif' AND slugs.sequence = 1))[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT "pages".* FROM "pages" WHERE ("pages"."id" = 0) LIMIT 1
+Completed   in 279ms
+
+ActiveRecord::RecordNotFound (Couldn't find Page with ID=ajax-loader.gif):
+  app/controllers/pages_controller.rb:29:in `show'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  [1m[36mPage Load (2.6ms)[0m  [1mSELECT "pages".* FROM "pages" WHERE ("pages"."show_in_menu" = 't') AND ("pages"."draft" = 'f') ORDER BY lft ASC[0m
+  [1m[35mPagePart Load (1.5ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (90.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (103.2ms)
