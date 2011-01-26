@@ -93,11 +93,13 @@ $(document).ready(function(){
 	
 	/////////////Beer Brands toggle//////////
 	$('a.show').toggle(function() {
-	  $(this).html('collaspe section');
+	  $(this).removeClass('expand');
+	  $(this).addClass('collapse');
 	  //IE FIX
 	  $('#footer').css({'position':'absolute'});
 	}, function() {
-	  $(this).html('expand section');
+	  $(this).addClass('expand');
+	  $(this).removeClass('collapse');
 	  //IE FIX
 	  $('#footer').css({'position':'absolute'});
 	});

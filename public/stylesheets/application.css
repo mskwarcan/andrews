@@ -933,11 +933,33 @@ ul#brewers li img
 
 .show
 {
-	text-transform:uppercase;
-	font-size:10px;
 	position:absolute;
-	left:373px;
-	top:33px;
+	left:356px;
+	top:30px;
+	display:inline-block;
+	width:120px;
+	height:15px;
+	background:url('/images/expand.png');
+}
+
+.expand
+{
+	background-position:0 0px;
+}
+
+.expand:hover
+{
+	background-position:0 -14px;
+}
+
+.collapse
+{
+	background-position:0 -28px;
+}
+
+.collapse:hover
+{
+	background-position:0 -44px;
 }
 
 .imports, .domestics, .non-alcoholic, .specialty
