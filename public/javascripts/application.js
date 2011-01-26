@@ -26,8 +26,14 @@ $(document).ready(function(){
 	
 	///////////// AJAX FORM SUBMITS //////////////////////
 	
+	$('.submit').click(function () {
+  	$("#body").css({'position':'relative'});
+	});
+	
 	$("#new_donation_request").validate();
+
 	$("#new_inquiry").validate();
+
 	
 	// jQuery Form Plugin options
 	var myFormOptions = {
@@ -88,8 +94,12 @@ $(document).ready(function(){
 	/////////////Beer Brands toggle//////////
 	$('a.show').toggle(function() {
 	  $(this).html('collaspe section');
+	  //IE FIX
+	  $('#footer').css({'position':'absolute'});
 	}, function() {
 	  $(this).html('expand section');
+	  //IE FIX
+	  $('#footer').css({'position':'absolute'});
 	});
 	
 	$('a#domestics').click(function() {
@@ -137,6 +147,8 @@ $(document).ready(function(){
 	  $("#integrity").addClass("active");
 	  $('.core-values .hover').removeClass('active');
 	  $(".core-values #integrity_hover").addClass("active");
+	  //IE FIX
+	  $(".core-values #body").css({'background':'url("/images/body_bg.png")'});
 	});
 	
 	$(".core-values #core .family").mouseover(
@@ -153,6 +165,8 @@ $(document).ready(function(){
 	  $("#family").addClass("active");
 	  $('.core-values .hover').removeClass('active');
 	  $(".core-values #family_hover").addClass("active");
+	  //IE FIX
+	  $(".core-values #body").css({'background':'url("/images/body_bg.png")'});
 	});
 	
 	$(".core-values #core .trust").mouseover(
@@ -169,6 +183,8 @@ $(document).ready(function(){
 	  $("#trust").addClass("active");
 	  $('.core-values .hover').removeClass('active');
 	  $(".core-values #trust_hover").addClass("active");
+	  //IE FIX
+	  $(".core-values #body").css({'background':'url("/images/body_bg.png")'});
 	});
 	
 	$(".core-values #core .team").mouseover(
@@ -185,6 +201,8 @@ $(document).ready(function(){
 	  $("#team").addClass("active");
 	  $('.core-values .hover').removeClass('active');
 	  $(".core-values #team_hover").addClass("active");
+	  //IE FIX
+	  $(".core-values #body").css({'background':'url("/images/body_bg.png")'});
 	});
 	
 	$(".core-values #core .open_door").mouseover(
@@ -201,6 +219,8 @@ $(document).ready(function(){
 	  $("#open_door").addClass("active");
 	  $('.core-values .hover').removeClass('active');
 	  $(".core-values #open_door_hover").addClass("active");
+	  //IE FIX
+	  $(".core-values #body").css({'background':'url("/images/body_bg.png")'});
 	});
 	
 	$(".core-values #core .dedication").mouseover(
@@ -217,6 +237,8 @@ $(document).ready(function(){
 	  $("#dedication").addClass("active");
 	  $('.core-values .hover').removeClass('active');
 	  $(".core-values #dedication_hover").addClass("active");
+	  //IE FIX
+	  $(".core-values #body").css({'background':'url("/images/body_bg.png")'});
 	});
 	
 	$(".core-values #core .attitude").mouseover(
@@ -233,6 +255,8 @@ $(document).ready(function(){
 	  $("#attitude").addClass("active");
 	  $('.core-values .hover').removeClass('active');
 	  $(".core-values #attitude_hover").addClass("active");
+	  //IE FIX
+	  $(".core-values #body").css({'background':'url("/images/body_bg.png")'});
 	});
 	
 	$(".core-values #core .image").mouseover(
@@ -249,6 +273,8 @@ $(document).ready(function(){
 	  $("#image").addClass("active");
 	  $('.core-values .hover').removeClass('active');
 	  $(".core-values #image_hover").addClass("active");
+	  //IE FIX
+	  $(".core-values #body").css({'background':'url("/images/body_bg.png")'});
 	});
 	
 	$(".core-values #core .accountability").mouseover(
@@ -265,6 +291,8 @@ $(document).ready(function(){
 	  $("#accountability").addClass("active");
 	  $('.core-values .hover').removeClass('active');
 	  $(".core-values #accountability_hover").addClass("active");
+	  //IE FIX
+	  $(".core-values #body").css({'background':'url("/images/body_bg.png")'});
 	});
 	
 });

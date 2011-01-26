@@ -140,6 +140,7 @@ p
 
 .texas
 {
+  display:inline-block;
 	background:url('/images/texas_bg.png') no-repeat;
 }
 
