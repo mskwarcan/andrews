@@ -1266,6 +1266,13 @@ ul#whats_new_stories li
 	margin:0 16px 16px 0;
 }
 
+/* Privacy and Terms */
+
+.privacy-policy h1, .privacy-policy h2, .privacy-policy h3, .terms h1, .terms h2, .terms h3
+{
+	color:#ffc20e;
+}
+
 
 /* footer */
 #footer_content

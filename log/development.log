@@ -16923,3 +16923,738 @@ Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middle
   [1m[35mPagePart Load (1.5ms)[0m  SELECT "page_parts".* FROM "page_parts" WHERE ("page_parts".page_id IN (3,14,15,25,16,11,17,8,18,31,12,27,26,13,4)) ORDER BY position ASC
 Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (90.0ms)
 Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (103.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at Tue Jan 25 19:58:50 -0600 2011
+  [1m[36mSQL (1.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.1ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+
+
+Started GET "/refinery" for 127.0.0.1 at Tue Jan 25 19:58:51 -0600 2011
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.2ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by Admin::DashboardController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 175ms
+
+
+Started GET "/session/new" for 127.0.0.1 at Tue Jan 25 19:58:51 -0600 2011
+  [1m[35mSQL (1.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.1ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>:en}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/admin/_error_messages.html.erb (0.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/admin/_form_actions.html.erb (2.7ms)
+Rendered admin/_head.html.erb (5.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/authentication/app/views/sessions/new.html.erb within layouts/login (217.3ms)
+Completed 200 OK in 338ms (Views: 275.2ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/session" for 127.0.0.1 at Tue Jan 25 19:58:55 -0600 2011
+  [1m[36mSQL (1.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.1ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"Sign in", "continue_editing"=>"false", "session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"admin"}, "modal"=>"false", "authenticity_token"=>"aYlSIf1/5W+/+l1XreOvb1R6yfmRG+7HzMuRcIy90og=", "utf8"=>"✓", "locale"=>:en, "dialog"=>"false"}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."login" = 'admin') LIMIT 1
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from service at /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104)
+  [1m[36mSlug Load (0.3ms)[0m  [1mSELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'User') ORDER BY id DESC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "users" SET "perishable_token" = 'K12GohTFgKjIGEQ80WVW', "updated_at" = '2011-01-26 01:58:55.546437' WHERE ("users"."id" = 1)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."login" = 'admin') LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+Redirected to http://localhost:3000/refinery
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 302 Found in 98ms
+
+
+Started GET "/refinery" for 127.0.0.1 at Tue Jan 25 19:58:55 -0600 2011
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.1ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by Admin::DashboardController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.6ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mPage Load (0.9ms)[0m  [1mSELECT "pages".* FROM "pages" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mForBrewer Load (0.5ms)[0m  SELECT "for_brewers".* FROM "for_brewers" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mForRetailer Load (0.5ms)[0m  [1mSELECT "for_retailers".* FROM "for_retailers" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mWhatsNewStory Load (0.5ms)[0m  SELECT "whats_new_stories".* FROM "whats_new_stories" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mInquirySetting Load (0.3ms)[0m  SELECT "inquiry_settings".* FROM "inquiry_settings" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mDonationRequest Load (0.6ms)[0m  [1mSELECT "donation_requests".* FROM "donation_requests" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mLogo Load (0.3ms)[0m  SELECT "logos".* FROM "logos" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mRegion Load (0.2ms)[0m  [1mSELECT "regions".* FROM "regions" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mBrewer Load (0.4ms)[0m  SELECT "brewers".* FROM "brewers" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mBeerBrand Load (0.5ms)[0m  [1mSELECT "beer_brands".* FROM "beer_brands" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mHomepageImage Load (0.2ms)[0m  SELECT "homepage_images".* FROM "homepage_images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mManagement Load (0.5ms)[0m  [1mSELECT "managements".* FROM "managements" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mPortfolioImage Load (0.2ms)[0m  SELECT "portfolio_images".* FROM "portfolio_images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mResource Load (0.4ms)[0m  [1mSELECT "resources".* FROM "resources" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mImage Load (1.1ms)[0m  SELECT "images".* FROM "images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mSlug Load (0.3ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'User') ORDER BY id DESC LIMIT 1
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/dashboard/app/views/admin/dashboard/_recent_activity.html.erb (145.4ms)
+Rendered admin/_head.html.erb (5.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/admin/_menu.html.erb (10.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/dashboard/app/views/admin/dashboard/index.html.erb within layouts/admin (311.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 553ms (Views: 421.1ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/refinery" for 127.0.0.1 at Tue Jan 25 19:59:45 -0600 2011
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.3ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by Admin::DashboardController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.7ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mPage Load (0.9ms)[0m  [1mSELECT "pages".* FROM "pages" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mForBrewer Load (0.4ms)[0m  SELECT "for_brewers".* FROM "for_brewers" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mForRetailer Load (0.5ms)[0m  [1mSELECT "for_retailers".* FROM "for_retailers" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mWhatsNewStory Load (0.4ms)[0m  SELECT "whats_new_stories".* FROM "whats_new_stories" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mInquirySetting Load (0.2ms)[0m  SELECT "inquiry_settings".* FROM "inquiry_settings" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mDonationRequest Load (0.6ms)[0m  [1mSELECT "donation_requests".* FROM "donation_requests" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mLogo Load (0.2ms)[0m  SELECT "logos".* FROM "logos" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mRegion Load (0.2ms)[0m  [1mSELECT "regions".* FROM "regions" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mBrewer Load (0.4ms)[0m  SELECT "brewers".* FROM "brewers" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mBeerBrand Load (0.7ms)[0m  [1mSELECT "beer_brands".* FROM "beer_brands" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mHomepageImage Load (0.3ms)[0m  SELECT "homepage_images".* FROM "homepage_images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mManagement Load (0.6ms)[0m  [1mSELECT "managements".* FROM "managements" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mPortfolioImage Load (0.2ms)[0m  SELECT "portfolio_images".* FROM "portfolio_images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mResource Load (0.5ms)[0m  [1mSELECT "resources".* FROM "resources" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mImage Load (1.2ms)[0m  SELECT "images".* FROM "images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mSlug Load (0.3ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'User') ORDER BY id DESC LIMIT 1
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/dashboard/app/views/admin/dashboard/_recent_activity.html.erb (11.8ms)
+Rendered admin/_head.html.erb (5.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/admin/_menu.html.erb (10.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/dashboard/app/views/admin/dashboard/index.html.erb within layouts/admin (315.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 695ms (Views: 421.2ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/refinery" for 127.0.0.1 at Tue Jan 25 19:59:51 -0600 2011
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.3ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by Admin::DashboardController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.7ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mPage Load (1.0ms)[0m  [1mSELECT "pages".* FROM "pages" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mForBrewer Load (0.5ms)[0m  SELECT "for_brewers".* FROM "for_brewers" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mForRetailer Load (0.5ms)[0m  [1mSELECT "for_retailers".* FROM "for_retailers" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mWhatsNewStory Load (0.5ms)[0m  SELECT "whats_new_stories".* FROM "whats_new_stories" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mInquirySetting Load (0.2ms)[0m  SELECT "inquiry_settings".* FROM "inquiry_settings" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mDonationRequest Load (0.6ms)[0m  [1mSELECT "donation_requests".* FROM "donation_requests" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mLogo Load (0.3ms)[0m  SELECT "logos".* FROM "logos" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mRegion Load (0.2ms)[0m  [1mSELECT "regions".* FROM "regions" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mBrewer Load (0.4ms)[0m  SELECT "brewers".* FROM "brewers" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mBeerBrand Load (0.5ms)[0m  [1mSELECT "beer_brands".* FROM "beer_brands" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mHomepageImage Load (0.3ms)[0m  SELECT "homepage_images".* FROM "homepage_images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mManagement Load (0.5ms)[0m  [1mSELECT "managements".* FROM "managements" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mPortfolioImage Load (0.2ms)[0m  SELECT "portfolio_images".* FROM "portfolio_images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mResource Load (0.4ms)[0m  [1mSELECT "resources".* FROM "resources" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mImage Load (1.1ms)[0m  SELECT "images".* FROM "images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mSlug Load (0.3ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'User') ORDER BY id DESC LIMIT 1
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/dashboard/app/views/admin/dashboard/_recent_activity.html.erb (11.1ms)
+Rendered admin/_head.html.erb (6.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (4.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/admin/_menu.html.erb (11.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_message.html.erb (0.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/dashboard/app/views/admin/dashboard/index.html.erb within layouts/admin (298.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 663ms (Views: 402.9ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/refinery" for 127.0.0.1 at Tue Jan 25 20:02:22 -0600 2011
+  [1m[36mSQL (1.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.1ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by Admin::DashboardController#index as HTML
+  Parameters: {"locale"=>:en}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.7ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mPage Load (0.9ms)[0m  [1mSELECT "pages".* FROM "pages" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mForBrewer Load (0.4ms)[0m  SELECT "for_brewers".* FROM "for_brewers" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mForRetailer Load (0.4ms)[0m  [1mSELECT "for_retailers".* FROM "for_retailers" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mWhatsNewStory Load (0.4ms)[0m  SELECT "whats_new_stories".* FROM "whats_new_stories" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mInquirySetting Load (0.3ms)[0m  SELECT "inquiry_settings".* FROM "inquiry_settings" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mDonationRequest Load (0.7ms)[0m  [1mSELECT "donation_requests".* FROM "donation_requests" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mLogo Load (0.2ms)[0m  SELECT "logos".* FROM "logos" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mRegion Load (0.2ms)[0m  [1mSELECT "regions".* FROM "regions" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mBrewer Load (0.4ms)[0m  SELECT "brewers".* FROM "brewers" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mBeerBrand Load (0.6ms)[0m  [1mSELECT "beer_brands".* FROM "beer_brands" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mHomepageImage Load (0.3ms)[0m  SELECT "homepage_images".* FROM "homepage_images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mManagement Load (0.5ms)[0m  [1mSELECT "managements".* FROM "managements" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mPortfolioImage Load (0.2ms)[0m  SELECT "portfolio_images".* FROM "portfolio_images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mResource Load (0.4ms)[0m  [1mSELECT "resources".* FROM "resources" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mImage Load (1.1ms)[0m  SELECT "images".* FROM "images" ORDER BY updated_at DESC LIMIT 7
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY updated_at DESC LIMIT 7[0m
+  [1m[35mSlug Load (0.3ms)[0m  SELECT "slugs".* FROM "slugs" WHERE ("slugs".sluggable_id = 1 AND "slugs".sluggable_type = 'User') ORDER BY id DESC LIMIT 1
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/dashboard/app/views/admin/dashboard/_recent_activity.html.erb (13.7ms)
+Rendered admin/_head.html.erb (6.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_site_bar.html.erb (3.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/admin/_menu.html.erb (10.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_no_script.html.erb (0.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/core/app/views/shared/_message.html.erb (1.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/refinerycms-0.9.8.9/vendor/refinerycms/dashboard/app/views/admin/dashboard/index.html.erb within layouts/admin (195.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 849ms (Views: 304.0ms | ActiveRecord: 12.7ms)
+
+
+Started POST "/refinery/update_menu_positions" for 127.0.0.1 at Tue Jan 25 20:03:29 -0600 2011
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.3ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by Admin::RefineryCoreController#update_plugin_positions as */*
+  Parameters: {"locale"=>:en, "menu"=>["refinery_dashboard", "refinery_pages", "for_brewers", "for_retailers", "whats_new_stories", "events", "refinery_inquiries", "donation_requests", "managements", "logos", "regions", "brewers", "beer_brands", "homepage_images", "portfolio_images", "refinery_files", "refinery_images", "refinery_users", "refinery_settings"]}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.7ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_dashboard') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_pages') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_brewers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_retailers') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'whats_new_stories') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'events') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_inquiries') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'donation_requests') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'managements') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 8 WHERE ("user_plugins"."id" = 8)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'logos') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 9 WHERE ("user_plugins"."id" = 13)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'regions') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 10 WHERE ("user_plugins"."id" = 15)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'brewers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 11 WHERE ("user_plugins"."id" = 9)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'beer_brands') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 12 WHERE ("user_plugins"."id" = 10)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'homepage_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 13 WHERE ("user_plugins"."id" = 16)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'portfolio_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_files') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_users') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_settings') ORDER BY position ASC LIMIT 1[0m
+Rendered text template (0.0ms)
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 569ms (Views: 34.2ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/refinery/update_menu_positions" for 127.0.0.1 at Tue Jan 25 20:03:38 -0600 2011
+  [1m[36mSQL (1.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.1ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by Admin::RefineryCoreController#update_plugin_positions as */*
+  Parameters: {"locale"=>:en, "menu"=>["refinery_dashboard", "refinery_pages", "for_brewers", "managements", "for_retailers", "whats_new_stories", "events", "refinery_inquiries", "donation_requests", "logos", "regions", "brewers", "beer_brands", "homepage_images", "portfolio_images", "refinery_files", "refinery_images", "refinery_users", "refinery_settings"]}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.7ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_dashboard') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_pages') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_brewers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'managements') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "user_plugins" SET "position" = 3 WHERE ("user_plugins"."id" = 8)[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_retailers') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "user_plugins" SET "position" = 4 WHERE ("user_plugins"."id" = 18)[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'whats_new_stories') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "user_plugins" SET "position" = 5 WHERE ("user_plugins"."id" = 20)[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'events') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE "user_plugins" SET "position" = 6 WHERE ("user_plugins"."id" = 11)[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_inquiries') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "user_plugins" SET "position" = 7 WHERE ("user_plugins"."id" = 4)[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'donation_requests') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "user_plugins" SET "position" = 8 WHERE ("user_plugins"."id" = 14)[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'logos') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'regions') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'brewers') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'beer_brands') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'homepage_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'portfolio_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_files') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_users') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_settings') ORDER BY position ASC LIMIT 1[0m
+Rendered text template (0.0ms)
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 275ms (Views: 1.5ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/refinery/update_menu_positions" for 127.0.0.1 at Tue Jan 25 20:03:43 -0600 2011
+  [1m[36mSQL (1.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.1ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by Admin::RefineryCoreController#update_plugin_positions as */*
+  Parameters: {"locale"=>:en, "menu"=>["refinery_dashboard", "refinery_pages", "managements", "for_brewers", "for_retailers", "whats_new_stories", "events", "refinery_inquiries", "donation_requests", "logos", "regions", "brewers", "beer_brands", "homepage_images", "portfolio_images", "refinery_files", "refinery_images", "refinery_users", "refinery_settings"]}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.7ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_dashboard') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_pages') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'managements') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 2 WHERE ("user_plugins"."id" = 8)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_brewers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 3 WHERE ("user_plugins"."id" = 17)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_retailers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'whats_new_stories') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'events') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_inquiries') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'donation_requests') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'logos') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'regions') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'brewers') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'beer_brands') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'homepage_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'portfolio_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_files') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_users') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_settings') ORDER BY position ASC LIMIT 1[0m
+Rendered text template (0.0ms)
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 263ms (Views: 1.1ms | ActiveRecord: 9.2ms)
+
+
+Started POST "/refinery/update_menu_positions" for 127.0.0.1 at Tue Jan 25 20:07:14 -0600 2011
+  [1m[36mSQL (1.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mRefinerySetting Load (1.1ms)[0m  SELECT "refinery_settings".* FROM "refinery_settings"
+  Processing by Admin::RefineryCoreController#update_plugin_positions as */*
+  Parameters: {"locale"=>:en, "menu"=>["refinery_dashboard", "refinery_pages", "managements", "for_brewers", "for_retailers", "whats_new_stories", "portfolio_images", "events", "refinery_inquiries", "donation_requests", "logos", "regions", "brewers", "beer_brands", "homepage_images", "refinery_files", "refinery_images", "refinery_users", "refinery_settings"]}
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )[0m
+  [1m[35mUserPlugin Load (0.7ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_dashboard') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_pages') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'managements') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_brewers') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_retailers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'whats_new_stories') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'portfolio_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 6 WHERE ("user_plugins"."id" = 12)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'events') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 7 WHERE ("user_plugins"."id" = 11)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_inquiries') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 8 WHERE ("user_plugins"."id" = 4)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'donation_requests') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 9 WHERE ("user_plugins"."id" = 14)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'logos') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (1.1ms)[0m  UPDATE "user_plugins" SET "position" = 10 WHERE ("user_plugins"."id" = 13)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'regions') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 11 WHERE ("user_plugins"."id" = 15)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'brewers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  UPDATE "user_plugins" SET "position" = 12 WHERE ("user_plugins"."id" = 9)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'beer_brands') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 13 WHERE ("user_plugins"."id" = 10)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'homepage_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 14 WHERE ("user_plugins"."id" = 16)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_files') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_users') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_settings') ORDER BY position ASC LIMIT 1
+Rendered text template (0.0ms)
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 290ms (Views: 1.5ms | ActiveRecord: 12.7ms)
+
+
+Started POST "/refinery/update_menu_positions" for 127.0.0.1 at Tue Jan 25 20:07:19 -0600 2011
+  [1m[35mSQL (142.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.4ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by Admin::RefineryCoreController#update_plugin_positions as */*
+  Parameters: {"locale"=>:en, "menu"=>["refinery_dashboard", "refinery_pages", "managements", "portfolio_images", "for_brewers", "for_retailers", "whats_new_stories", "events", "refinery_inquiries", "donation_requests", "logos", "regions", "brewers", "beer_brands", "homepage_images", "refinery_files", "refinery_images", "refinery_users", "refinery_settings"]}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.7ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_dashboard') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_pages') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'managements') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'portfolio_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 3 WHERE ("user_plugins"."id" = 12)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_brewers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 4 WHERE ("user_plugins"."id" = 17)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_retailers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 5 WHERE ("user_plugins"."id" = 18)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'whats_new_stories') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 6 WHERE ("user_plugins"."id" = 20)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'events') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_inquiries') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'donation_requests') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'logos') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'regions') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'brewers') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'beer_brands') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'homepage_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_files') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_users') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_settings') ORDER BY position ASC LIMIT 1
+Rendered text template (0.0ms)
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 263ms (Views: 1.2ms | ActiveRecord: 151.0ms)
+
+
+Started POST "/refinery/update_menu_positions" for 127.0.0.1 at Tue Jan 25 20:07:28 -0600 2011
+  [1m[35mSQL (1.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.1ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by Admin::RefineryCoreController#update_plugin_positions as */*
+  Parameters: {"locale"=>:en, "menu"=>["refinery_dashboard", "refinery_pages", "managements", "portfolio_images", "for_brewers", "brewers", "for_retailers", "whats_new_stories", "events", "refinery_inquiries", "donation_requests", "logos", "regions", "beer_brands", "homepage_images", "refinery_files", "refinery_images", "refinery_users", "refinery_settings"]}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.7ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_dashboard') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_pages') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'managements') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'portfolio_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_brewers') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'brewers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 5 WHERE ("user_plugins"."id" = 9)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_retailers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 6 WHERE ("user_plugins"."id" = 18)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'whats_new_stories') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 7 WHERE ("user_plugins"."id" = 20)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'events') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 8 WHERE ("user_plugins"."id" = 11)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_inquiries') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 9 WHERE ("user_plugins"."id" = 4)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'donation_requests') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "user_plugins" SET "position" = 10 WHERE ("user_plugins"."id" = 14)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'logos') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 11 WHERE ("user_plugins"."id" = 13)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'regions') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "user_plugins" SET "position" = 12 WHERE ("user_plugins"."id" = 15)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'beer_brands') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'homepage_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_files') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_users') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_settings') ORDER BY position ASC LIMIT 1
+Rendered text template (0.0ms)
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 267ms (Views: 1.1ms | ActiveRecord: 11.0ms)
+
+
+Started POST "/refinery/update_menu_positions" for 127.0.0.1 at Tue Jan 25 20:07:31 -0600 2011
+  [1m[35mSQL (1.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.1ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by Admin::RefineryCoreController#update_plugin_positions as */*
+  Parameters: {"locale"=>:en, "menu"=>["refinery_dashboard", "refinery_pages", "managements", "portfolio_images", "for_brewers", "brewers", "beer_brands", "for_retailers", "whats_new_stories", "events", "refinery_inquiries", "donation_requests", "logos", "regions", "homepage_images", "refinery_files", "refinery_images", "refinery_users", "refinery_settings"]}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.4ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (1.0ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_dashboard') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_pages') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'managements') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.7ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'portfolio_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_brewers') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'brewers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'beer_brands') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (1.5ms)[0m  [1mUPDATE "user_plugins" SET "position" = 6 WHERE ("user_plugins"."id" = 10)[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_retailers') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "user_plugins" SET "position" = 7 WHERE ("user_plugins"."id" = 18)[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'whats_new_stories') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "user_plugins" SET "position" = 8 WHERE ("user_plugins"."id" = 20)[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'events') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "user_plugins" SET "position" = 9 WHERE ("user_plugins"."id" = 11)[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_inquiries') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "user_plugins" SET "position" = 10 WHERE ("user_plugins"."id" = 4)[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'donation_requests') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "user_plugins" SET "position" = 11 WHERE ("user_plugins"."id" = 14)[0m
+  [1m[35mUserPlugin Load (1.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'logos') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "user_plugins" SET "position" = 12 WHERE ("user_plugins"."id" = 13)[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'regions') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mUPDATE "user_plugins" SET "position" = 13 WHERE ("user_plugins"."id" = 15)[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'homepage_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_files') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_users') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_settings') ORDER BY position ASC LIMIT 1
+Rendered text template (0.0ms)
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 334ms (Views: 1.3ms | ActiveRecord: 16.0ms)
+
+
+Started POST "/refinery/update_menu_positions" for 127.0.0.1 at Tue Jan 25 20:07:35 -0600 2011
+  [1m[35mSQL (1.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.1ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by Admin::RefineryCoreController#update_plugin_positions as */*
+  Parameters: {"locale"=>:en, "menu"=>["refinery_dashboard", "refinery_pages", "managements", "portfolio_images", "brewers", "for_brewers", "beer_brands", "for_retailers", "whats_new_stories", "events", "refinery_inquiries", "donation_requests", "logos", "regions", "homepage_images", "refinery_files", "refinery_images", "refinery_users", "refinery_settings"]}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.8ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_dashboard') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_pages') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'managements') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'portfolio_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'brewers') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "user_plugins" SET "position" = 4 WHERE ("user_plugins"."id" = 9)[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_brewers') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "user_plugins" SET "position" = 5 WHERE ("user_plugins"."id" = 17)[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'beer_brands') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_retailers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'whats_new_stories') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'events') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_inquiries') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'donation_requests') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'logos') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'regions') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'homepage_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_files') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_users') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_settings') ORDER BY position ASC LIMIT 1
+Rendered text template (0.0ms)
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 265ms (Views: 1.2ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/refinery/update_menu_positions" for 127.0.0.1 at Tue Jan 25 20:07:37 -0600 2011
+  [1m[35mSQL (1.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.3ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by Admin::RefineryCoreController#update_plugin_positions as */*
+  Parameters: {"locale"=>:en, "menu"=>["refinery_dashboard", "refinery_pages", "managements", "portfolio_images", "brewers", "for_brewers", "for_retailers", "beer_brands", "whats_new_stories", "events", "refinery_inquiries", "donation_requests", "logos", "regions", "homepage_images", "refinery_files", "refinery_images", "refinery_users", "refinery_settings"]}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.7ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_dashboard') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_pages') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'managements') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'portfolio_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'brewers') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_brewers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_retailers') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "user_plugins" SET "position" = 6 WHERE ("user_plugins"."id" = 18)[0m
+  [1m[35mUserPlugin Load (0.3ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'beer_brands') ORDER BY position ASC LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "user_plugins" SET "position" = 7 WHERE ("user_plugins"."id" = 10)[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'whats_new_stories') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'events') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_inquiries') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'donation_requests') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'logos') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'regions') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'homepage_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_files') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_images') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_users') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_settings') ORDER BY position ASC LIMIT 1
+Rendered text template (0.0ms)
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+Completed 200 OK in 255ms (Views: 1.2ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/refinery/update_menu_positions" for 127.0.0.1 at Tue Jan 25 20:07:38 -0600 2011
+  [1m[35mSQL (1.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mRefinerySetting Load (1.1ms)[0m  [1mSELECT "refinery_settings".* FROM "refinery_settings"[0m
+  Processing by Admin::RefineryCoreController#update_plugin_positions as */*
+  Parameters: {"locale"=>:en, "menu"=>["refinery_dashboard", "refinery_pages", "managements", "portfolio_images", "brewers", "beer_brands", "for_brewers", "for_retailers", "whats_new_stories", "events", "refinery_inquiries", "donation_requests", "logos", "regions", "homepage_images", "refinery_files", "refinery_images", "refinery_users", "refinery_settings"]}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT * FROM "users" INNER JOIN "roles_users" ON "users".id = "roles_users".user_id WHERE ("roles_users".role_id = 1 )
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT * FROM "roles" INNER JOIN "roles_users" ON "roles".id = "roles_users".role_id WHERE ("roles_users".user_id = 1 )
+  [1m[36mUserPlugin Load (0.8ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) ORDER BY position ASC[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_dashboard') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_pages') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.5ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'managements') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'portfolio_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'brewers') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'beer_brands') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 5 WHERE ("user_plugins"."id" = 10)
+  [1m[36mUserPlugin Load (0.5ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_brewers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "user_plugins" SET "position" = 6 WHERE ("user_plugins"."id" = 17)
+  [1m[36mUserPlugin Load (0.3ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'for_retailers') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mAREL (0.7ms)[0m  UPDATE "user_plugins" SET "position" = 7 WHERE ("user_plugins"."id" = 18)
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'whats_new_stories') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'events') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_inquiries') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'donation_requests') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'logos') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'regions') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'homepage_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.2ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_files') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_images') ORDER BY position ASC LIMIT 1[0m
+  [1m[35mUserPlugin Load (0.1ms)[0m  SELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_users') ORDER BY position ASC LIMIT 1
+  [1m[36mUserPlugin Load (0.2ms)[0m  [1mSELECT "user_plugins".* FROM "user_plugins" WHERE ("user_plugins".user_id = 1) AND ("user_plugins"."name" = 'refinery_settings') ORDER BY position ASC LIMIT 1[0m
+Rendered text template (0.0ms)
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE ("roles"."title" = 'Refinery') LIMIT 1
+Completed 200 OK in 271ms (Views: 1.1ms | ActiveRecord: 11.0ms)

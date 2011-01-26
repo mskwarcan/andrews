@@ -5,7 +5,7 @@ en:
         image: image
   plugins:
     whats_new_stories:
-      title: Whats New Stories
+      title: Whats New
   admin:
     whats_new_stories:
       index:
