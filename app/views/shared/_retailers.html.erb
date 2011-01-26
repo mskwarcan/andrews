@@ -16,19 +16,11 @@
 		<% retailers.each_with_index do |retailer, i|%>
 		<% position = 550*i %>
 		<script type="text/javascript">
-		function playPause() {
-
-   		var myVideo = document.getElementsByTagName('video')[0];
-
-       myVideo.pause();
-   }
-		
 		$(document).ready(function(){
 			$('div.modal_titles a.<%= retailer.position %>').click(function() {
 			if (!$('.image_slider.retailer.<%= retailer.id %>').hasClass('active'))
 			{
 				$('.image_slider.retailer .video_slide.active .text').fadeOut();
-				playPause();
 				$('.image_slider.retailer div.video_slide').removeClass('active');
 				$('div.modal_titles a').removeClass('active');
 				$('div.modal_titles a.<%= retailer.position %>').addClass('active');

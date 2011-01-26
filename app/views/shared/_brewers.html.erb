@@ -17,19 +17,11 @@
 		<% brewers.each_with_index do |brewer, i|%>
 		<% position = 550*i %>
 		<script type="text/javascript">
-		function playPause() {
-
-   		var myVideo = document.getElementsByTagName('video')[0];
-
-       myVideo.pause();
-   }
-		
 		$(document).ready(function(){
 			$('div.brewer_titles a.<%= brewer.position %>').click(function() {
 			if (!$('.image_slider.brewer .<%= brewer.position %>').hasClass('active'))
 			{
 				$('.image_slider.brewer .video_slide.active .text').fadeOut();
-				playPause();
 				$('.image_slider.brewer div.video_slide').removeClass('active');
 				$('div.brewer_titles a').removeClass('active');
 				$('div.brewer_titles a.<%= brewer.position %>').addClass('active');
