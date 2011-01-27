@@ -1,7 +1,7 @@
 <% content_for :body_content_left do %>
 <%= javascript_include_tag "print" %>
   <ul id="whats_new_stories">
-	<% @whats_new_stories = WhatsNewStory.order("position DESC")%>
+	<% @whats_new_stories = WhatsNewStory.all(:conditions => {:active => true}, :order => "position DESC")%>
     <% @whats_new_stories.each do |whats_new_story| %>
       <li>
 				<div class="thumb"><%= image_fu whats_new_story.thumbnail, '108x100' %></div>
