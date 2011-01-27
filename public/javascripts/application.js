@@ -26,6 +26,7 @@ $(document).ready(function(){
 	  return false;
 	});
 	
+
 	$('body.whats_new_stories a#fancybox-close').append("BACK TO WHATS NEW");
 	$('body.management--2 a#fancybox-close').append("BACK TO MANAGEMENT");
 	

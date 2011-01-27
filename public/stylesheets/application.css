@@ -1290,6 +1290,17 @@ ul#whats_new_stories li
 	margin:0 16px 16px 0;
 }
 
+.print
+{
+  color:#142E5E;
+  text-transform:uppercase;
+  position:absolute;
+  top:20px;
+  right:205px;
+  font-size:11px;
+  display:block !important;
+}
+
 /* Privacy and Terms */
 
 .privacy-policy h1, .privacy-policy h2, .privacy-policy h3, .terms h1, .terms h2, .terms h3
