@@ -1,0 +1,61 @@
+.home #body_content
+{
+  position:relative;
+  top:160px;
+}
+
+.banner
+{
+  left:0;
+}
+
+#header_content
+{
+  position:relative;
+  z-index:1;
+}
+
+.core-values ul.subnav, .distribution-area ul.subnav
+{
+  width:20px !important;
+  z-index:30;
+  height:45px;
+}
+
+.core-values ul.subnav li, .distribution-area ul.subnav li
+{
+  width:100px;
+  padding:2px 0;
+  display:list-item;
+}
+
+img.core
+{
+  z-index:1000;
+}
+
+map#core
+{
+  z-index:25;
+}
+
+ul#events li
+{
+  list-style-type:none;
+  list-style-image:none;
+}
+
+table#donation
+{
+  width:564px;
+}
+
+table#donation td.right
+{
+  width:150px;
+}
+
+table#donation td.input
+{
+  width:300px;
+}

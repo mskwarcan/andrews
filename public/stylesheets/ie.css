@@ -1,0 +1,15 @@
+#modalBoxFaderLayer
+{
+  filter:aplha(opacity=90) !important;
+}
+
+table#donation
+{
+  padding-bottom:100px;
+}
+
+.the-andrews-story ul.subnav, .our-portfolio ul.subnav
+{
+  width:364px;
+  padding-right:236px;
+}
