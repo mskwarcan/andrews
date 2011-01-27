@@ -1,14 +1,12 @@
 <% brewers = ForBrewer.order("position ASC")%>
 <script src="http://github.com/vimeo/froogaloop/raw/master/froogaloop.min.js"></script> 
 <script type="text/javascript">
-$(document).ready(function(){
+
 	$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/images/close.png' />");
 	$('.image_slider.brewer .video_slide .text').hide();
 	$('.image_slider.brewer .video_slide.active .text').fadeIn();
 	
-	var VimeoEmbed = {};
-	VimeoEmbed.init();
-	
+	var VimeoEmbed = {};	
 	 //Called on document ready
     VimeoEmbed.init = function(e)
     {
@@ -69,7 +67,8 @@ $(document).ready(function(){
     VimeoEmbed.vimeo_on_pause = function(player_id) {
         $('#'+player_id).prev('.api_output').html('Paused<br/>');
     };
-});
+
+$(document).ready(VimeoEmbed.init);
 </script>
 	<div class="brewer_titles">
 		<ul>
