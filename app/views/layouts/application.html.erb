@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}) -%>
+  <% site_bar = render(:partial => "/shared/site_bar", :locals => {:head => true}, :locals => {:exclude_jquery => true}) -%> 
   <%= render :partial => "/shared/head" %>
   <body class="<%= request.path.split('/').join(" ") %>">
     <%= site_bar -%>
