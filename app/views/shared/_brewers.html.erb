@@ -24,6 +24,7 @@
      */
     VimeoEmbed.vimeo_player_loaded = function(player_id)
     {
+				alert(played_id);
         $('#'+player_id).prev('.api_output').append('VimeoEmbed.vimeo_player_loaded ' + player_id+'<br/>');
 
         var loop = 0;
@@ -61,6 +62,7 @@
 
     //API EVENTS
     VimeoEmbed.vimeo_on_play = function(player_id) {
+				alert('playing');
         $('#'+player_id).prev('.api_output').html('Playing<br/>');
     };
 
