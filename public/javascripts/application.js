@@ -296,5 +296,4 @@ $(document).ready(function(){
 	  //IE FIX
 	  $(".core-values #body").css({'background':'url("/images/body_bg.png")'});
 	});
-	
 });
