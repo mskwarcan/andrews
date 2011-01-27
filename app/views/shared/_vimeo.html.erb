@@ -6,7 +6,7 @@
     VimeoEmbed.init = function(e)
     {
         //Listen to the load event for all the iframes on the page
-        $('iframe').each(function(index, iframe){
+        $('iframe.brewer').each(function(index, iframe){
             iframe.addEvent('onLoad', VimeoEmbed.vimeo_player_loaded);
         });
     };
