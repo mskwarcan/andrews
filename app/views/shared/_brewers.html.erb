@@ -4,7 +4,6 @@
 	$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/images/close.png' />");
 	$('.image_slider.brewer .video_slide .text').hide();
 	$('.image_slider.brewer .video_slide.active .text').fadeIn();
-	VimeoEmbed.init();
 </script>
 	<div class="brewer_titles">
 		<ul>
@@ -19,6 +18,16 @@
 		<% position = 550*i %>
 		<script type="text/javascript">
 		$(document).ready(function(){
+			VimeoEmbed.init();
+			
+			 //Called on document ready
+		    VimeoEmbed.init = function(e)
+		    {
+		        //Listen to the load event for all the iframes on the page
+		        $('iframe.brewer').each(function(index, iframe){
+		            iframe.addEvent('onLoad', VimeoEmbed.vimeo_player_loaded);
+		        });
+		    };
 			$('div.brewer_titles a.<%= brewer.position %>').click(function() {
 			if (!$('.image_slider.brewer .<%= brewer.position %>').hasClass('active'))
 			{
