@@ -1271,6 +1271,11 @@ a.portal
 	max-width:700px;
 }
 
+.whats_new_stories .fancy_box h2, .whats_new_stories .fancy_box p
+{
+  display:inline-block;
+}
+
 .whats_new_stories .thumb
 {
 	width:112px;
@@ -1304,6 +1309,11 @@ ul#whats_new_stories li
   right:205px;
   font-size:10px;
   display:block !important;
+}
+
+.print:hover
+{
+    color:#142E5E;
 }
 
 /* Privacy and Terms */
