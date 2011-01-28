@@ -1,10 +1,4 @@
 <% brewers = ForBrewer.order("position ASC")%>
-
-<script type="text/javascript">
-	$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/images/close.png' />");
-	$('.image_slider.brewer .video_slide .text').hide();
-	$('.image_slider.brewer .video_slide.active .text').fadeIn();
-</script>
 	<div class="brewer_titles">
 		<ul>
 			<% brewers.each_with_index do |brewer, i|%>
@@ -13,6 +7,7 @@
 		</ul>
 	</div>
 		<img src="/images/forBrewers.png" class="modal_image"  />
+		<a href="#" class="close">BACK TO Main site <img src='/images/close.png' /></a>
 		<div class="image_slider brewer">
 		<% brewers.each_with_index do |brewer, i|%>
 		<% position = 550*i %>

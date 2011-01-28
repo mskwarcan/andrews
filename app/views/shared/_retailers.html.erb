@@ -1,9 +1,4 @@
 <% retailers = ForRetailer.order("position ASC")%>
-<script type="text/javascript">
-	$('#modalBox #modalBoxCloseButton a.closeModalBox').html("BACK TO Main site <img src='/images/close.png' />");
-	$('.image_slider.retailer .video_slide .text').hide();
-	$('.image_slider.retailer .video_slide.active .text').fadeIn();
-</script>
 	<div class="modal_titles">
 		<ul>
 			<% retailers.each_with_index do |retailer, i|%>
@@ -12,7 +7,9 @@
 		</ul>
 	</div>
 		<img src="/images/forRetailers.png" class="modal_image"  />
+		<a href="#" class="close">BACK TO Main site <img src='/images/close.png' /></a>
 		<div class="image_slider retailer">
+			
 		<% retailers.each_with_index do |retailer, i|%>
 		<% position = 550*i %>
 		<script type="text/javascript">
