@@ -69,26 +69,14 @@
     {
         target.addEvent( 'onPlay', VimeoEmbed.vimeo_on_play);
         target.addEvent( 'onPause', VimeoEmbed.vimeo_on_pause);
-        target.addEvent( 'onSeek', VimeoEmbed.vimeo_on_seek);
-        target.addEvent( 'onProgress', VimeoEmbed.vimeo_on_progress);
     };
 
 
     //API EVENTS
     VimeoEmbed.vimeo_on_play = function(player_id) {
-        $('#'+player_id).prev('.api_output').html('Playing<br/>');
     };
 
     VimeoEmbed.vimeo_on_pause = function(player_id) {
-        $('#'+player_id).prev('.api_output').html('Paused<br/>');
-    };
-
-    VimeoEmbed.vimeo_on_seek = function(time, player_id) {
-        $('#'+player_id).prev('.api_output').html('Seeking to ' + time+'<br/>');
-    };
-
-    VimeoEmbed.vimeo_on_progress = function(time, player_id) {
-        $('#'+player_id).prev('.api_output').html(time + 's<br/>');
     };
 
     //On document ready
