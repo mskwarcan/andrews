@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110127005559) do
+ActiveRecord::Schema.define(:version => 20110128193111) do
 
   create_table "beer_brands", :force => true do |t|
     t.integer   "image_id"
@@ -305,6 +305,7 @@ ActiveRecord::Schema.define(:version => 20110127005559) do
     t.timestamp "created_at"
     t.timestamp "updated_at"
     t.boolean   "active"
+    t.boolean   "float",        :default => true
   end
 
   add_index "whats_new_stories", ["id"], :name => "index_whats_new_stories_on_id"

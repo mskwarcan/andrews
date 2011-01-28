@@ -11,7 +11,7 @@
 				<div class="hide">
 					<div class="fancy_box" id="<%= whats_new_story.position %>">
 						<a href="#" class="print">PRINT</a>
-						<%= image_fu whats_new_story.image %>
+						<div <% if whats_new_story.float == true %>class="left" <% end %>><%= image_fu whats_new_story.image %></div>
 						<h2><%= whats_new_story.title %></h2>
 						<%=raw whats_new_story.text %>
 					</div>
