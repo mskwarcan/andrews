@@ -7,6 +7,8 @@ Refinery::Application.routes.draw do
   root :to => 'pages#home'
 
   scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
+    match 'donation/toggle' => 'donation_requests#toggle'
+    match 'donation/toggle/create' => 'donation_requests#toggle_create', :as => :form_field
     root :to => 'dashboard#index'
   end
 

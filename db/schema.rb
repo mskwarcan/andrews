@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110128193111) do
+ActiveRecord::Schema.define(:version => 20110128193920) do
 
   create_table "beer_brands", :force => true do |t|
     t.integer   "image_id"
@@ -94,6 +94,20 @@ ActiveRecord::Schema.define(:version => 20110128193111) do
   end
 
   add_index "for_retailers", ["id"], :name => "index_for_retailers_on_id"
+
+  create_table "form_fields", :force => true do |t|
+    t.boolean "event_name"
+    t.boolean "event_location"
+    t.boolean "event_address"
+    t.boolean "expected_attendence"
+    t.boolean "event_contact_name"
+    t.boolean "event_contact_number"
+    t.boolean "event_concessionaire"
+    t.boolean "event_concessionaire_phone"
+    t.boolean "charity_501c3"
+    t.boolean "event_contact_email"
+    t.boolean "additional_comments"
+  end
 
   create_table "homepage_images", :force => true do |t|
     t.string    "title"

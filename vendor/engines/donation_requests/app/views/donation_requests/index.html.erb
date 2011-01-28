@@ -8,6 +8,8 @@
     :include_object_name => true
   } %>
 
+<% @required = FormField.last() %>
+
 <p>Please fill out the form below and an Andrews representative will contact you concerning your request as soon as possible.</p>
 <table id="donation">
   <tr>
@@ -27,52 +29,52 @@
   
   <tr>
     <td  class="right"><%= f.label :event_name -%></td>
-    <td class="input"><%= f.text_field :event_name, :class => "required" -%></td>
+    <td class="input"><input type="text" size="30" name="donation_request[event_name]" id="donation_request_event_name" <% if @required.event_name ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
     <td  class="right"><%= f.label :event_location -%></td>
-    <td class="input"><%= f.text_field :event_location, :class => "required" -%></td>
+    <td class="input"><input type="text" size="30" name="donation_request[event_location]" id="donation_request_event_location" <% if @required.event_location ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
     <td  class="right"><%= f.label :event_address -%></td>
-    <td class="input"><%= f.text_area :event_address, :rows => 3, :class => 'wymeditor widest', :class => "required" -%></td>
+    <td class="input"><textarea rows="3" name="donation_request[event_address]" id="donation_request_event_address" cols="40" <% if @required.event_address ==true %> class="required" <% end %>></textarea></td>
   </div>
   
   <tr>
     <td  class="right"><%= f.label :expected_attendence, "Event Attendance" -%></td>
-    <td class="input"><%= f.text_field :expected_attendence, :class => "required" -%></td>
+    <td class="input"><input type="text" size="30" name="donation_request[expected_attendence]" id="donation_request_expected_attendence" <% if @required.expected_attendence ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
     <td  class="right"><%= f.label :event_contact_name -%></td>
-    <td class="input"><%= f.text_field :event_contact_name, :class => "required" -%></td>
+    <td class="input"><input type="text" size="30" name="donation_request[event_contact_name]" id="donation_request_event_contact_name" <% if @required.event_contact_name ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
     <td  class="right"><%= f.label :event_contact_number -%></td>
-    <td class="input"><%= f.text_field :event_contact_number, :class => "required phoneUS" -%></td>
+    <td class="input"><input type="text" size="30" name="donation_request[event_contact_number]" id="donation_request_event_contact_number" <% if @required.event_contact_number ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
     <td  class="right"><%= f.label :event_contact_email -%></td>
-    <td class="input"><%= f.text_field :event_contact_email, :class => "email" -%></td>
+    <td class="input"><input type="text" size="30" name="donation_request[event_contact_email]" id="donation_request_event_contact_email" <% if @required.event_contact_email ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
     <td class="right"><%= f.label :event_concessionaire -%></td>
-    <td class="input"><%= f.text_field :event_concessionaire, :class => "required" -%></td>
+    <td class="input"><input type="text" size="30" name="donation_request[event_concessionaire]" id="donation_request_event_concessionaire" <% if @required.event_concessionaire ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
     <td class="right"><%= f.label :event_concessionaire_phone -%></td>
-    <td class="input"><%= f.text_field :event_concessionaire_phone, :class => "phoneUS required" -%></td>
+    <td class="input"><input type="text" size="30" name="donation_request[event_concessionaire_phone]" id="donation_request_event_concessionaire_phone" <% if @required.event_concessionaire_phone ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
     <td class="right"><%= f.label :charity_501c3, "Charity/501C3" -%></td>
-    <td class="input"><%= f.text_field :charity_501c3, :class => "required" -%></td>
+    <td class="input"><input type="text" size="30" name="donation_request[charity_501c3]" id="donation_request_charity_501c3" <% if @required.charity_501c3 ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
@@ -85,7 +87,7 @@
   
   <tr>
     <td class="right"><%= f.label :additional_comments -%></td>
-    <td><%= f.text_area :additional_comments, :rows => 5, :class => 'wymeditor widest' -%></td>
+    <td><textarea rows="3" name="donation_request[additional_comments]" id="donation_request_additional_comments" cols="40" <% if @required.additional_comments ==true %> class="required" <% end %>></textarea></td>
   </div>
   
   <tr>
