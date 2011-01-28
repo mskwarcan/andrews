@@ -16,7 +16,7 @@
           <%= render :partial => "/shared/header" %>
         </div>
 		<div class="left_nav">
-		<a href="javascript:void(0);" class="for_brewers"></a>
+		<a href="javascript:void(0);" class="for_brewers vimeo"></a>
 		<a href="javascript:void(0);" class="for_retailers"></a>
 		<a href="/our-portfolio/destination-beer" class="about_beers"></a>
 		<a href="/whats_new_stories" class="whats_new">
@@ -40,14 +40,14 @@
   </div>
 </div>
 		<div id="for_brewers" style="display:none">
-			<%= render :partial => "/shared/vimeo" %>
 			<%= render :partial => "/shared/brewers" %>
 		</div>
 		
 		<div id="for_retailers" style="display:none">
 				<%= render :partial => "/shared/retailers" %>
 		</div>
-
+		
+		<%= render :partial => "/shared/vimeo" %>
 
   </body>
 </html>

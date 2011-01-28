@@ -30,6 +30,9 @@ $(document).ready(function(){
 	  return false;
 	});
 	
+	$(".vimeo").click(function () {
+	  VimeoEmbed.init
+  });
 
 	$('body.whats_new_stories a#fancybox-close').append("BACK TO WHATS NEW");
 	$('body.management--2 a#fancybox-close').append("BACK TO MANAGEMENT");
