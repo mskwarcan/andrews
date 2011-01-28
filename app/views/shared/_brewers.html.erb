@@ -35,7 +35,7 @@
 		});
 		</script>
 		<div class="video_slide <%= brewer.position %> <% if i==0%> active<% end %>" style="left:<%= position %>px;">
-			<iframe id="brewer<%= brewer.position %>" class="brewer" src="http://player.vimeo.com/video/19230946?js_api=1&amp;js_swf_id=brewer<%= brewer.position %>&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=ffc20e" width="525" height="294" frameborder="0"></iframe>
+			<iframe id="brewer<%= brewer.position %>" class="brewer" src="<%= retailer.vimeo_url%>?js_api=1&amp;js_swf_id=brewer<%= brewer.position %>&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=ffc20e" width="525" height="294" frameborder="0"></iframe>
 			<div class="text">
 			<%=raw brewer.text %>
 			</div>
