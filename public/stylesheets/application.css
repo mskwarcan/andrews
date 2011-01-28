@@ -180,12 +180,13 @@ p
 	position:relative;
 	left:25px;
 	padding:0;
+	letter-spacing:.5px;
 	list-style:none;
 }
 
 #menu li
 {
-	margin:0 3px;
+	margin:0 2px;
 	float:left;
 	text-transform:uppercase;
 	position:relative;
@@ -200,8 +201,8 @@ p
 
 #menu li#item_2
 {
-	width:120px;
-	margin-left:120px;
+	width:110px;
+	margin-left:125px;
 }
 
 #menu li#item_1 li.first
@@ -428,6 +429,7 @@ ul.subnav
 	width:564px;
 	position:relative;
 	left:-36px;
+	letter-spacing:.5px;
 	height:26px;
 	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
 }
@@ -1293,11 +1295,6 @@ ul#whats_new_stories li
 	margin:0 16px 16px 0;
 }
 
-.whats_new_stories #fancybox-content p, .whats_new_stories #fancybox-content h2
-{
-  min-width:250px;
-}
-
 .print
 {
   color:#142E5E;
@@ -1321,6 +1318,7 @@ ul#whats_new_stories li
 #footer_content
 {
   font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
+  letter-spacing:.5px;
 	color:#fff;
 	width:940px;
 	margin:0 auto;
