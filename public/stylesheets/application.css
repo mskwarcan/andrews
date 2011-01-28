@@ -18,9 +18,9 @@ body
 	height:100%;
 }
 
-h2
+h1, h2, h3
 {
-	font-family:serif;
+	font-family: "superclarendon-1","superclarendon-2",serif;
 	margin-bottom:7px;
 }
 
@@ -175,6 +175,7 @@ p
 /* nav */
 #menu ul
 {
+  font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
 	margin:0;
 	position:relative;
 	left:25px;
@@ -428,6 +429,7 @@ ul.subnav
 	position:relative;
 	left:-36px;
 	height:26px;
+	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
 }
 
 .our-community ul.subnav, .events ul.subnav, .donation_requests ul.subnav
@@ -1240,6 +1242,7 @@ a.portal
 	padding:3px 0;
 	font-size:11px;
 	top:306px;
+	display:none;
 }
 
 /* Whats New */
@@ -1290,6 +1293,11 @@ ul#whats_new_stories li
 	margin:0 16px 16px 0;
 }
 
+.whats_new_stories #fancybox-content p, .whats_new_stories #fancybox-content h2
+{
+  min-width:250px;
+}
+
 .print
 {
   color:#142E5E;
@@ -1312,6 +1320,7 @@ ul#whats_new_stories li
 /* footer */
 #footer_content
 {
+  font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
 	color:#fff;
 	width:940px;
 	margin:0 auto;

@@ -22,7 +22,11 @@ $(document).ready(function(){
 	});
 	
 	$(".print").click(function () {
+	  $('#fancybox-close').hide();
+	  $(".print").hide();
 	  $('#fancybox-outer').print();
+	  $('#fancybox-close').show();
+	  $(".print").show();
 	  return false;
 	});
 	

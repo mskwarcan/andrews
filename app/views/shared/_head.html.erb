@@ -1,7 +1,8 @@
 <% theme ||= false -%>
 <head>
   <title><%= browser_title(yield(:title)) %></title>
-  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/andrews-appleTouch_115x115.png" />
   <meta charset='<%= Refinery::Application.config.encoding %>' />
   <%= csrf_meta_tag %>
   <%= render(:partial => '/shared/html5_for_ie.js').html_safe if request.env['HTTP_USER_AGENT'] =~ /MSIE/ %>
@@ -21,4 +22,6 @@
   <%= "<meta name=\"description\" content=\"#{@meta.meta_description}\" />".html_safe if @meta.meta_description.present? -%>
   <%= yield :head_libraries %>
   <%= yield :head %>
+	<script type="text/javascript" src="http://use.typekit.com/pwf4moo.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
