@@ -2,7 +2,7 @@
 	<div class="brewer_titles">
 		<ul>
 			<% brewers.each_with_index do |brewer, i|%>
-						<li><a href="#" class="<%= brewer.position %> brewer <% if i==0%> active<% end %>"><%= brewer.title %></a></li>
+						<li><a href="#" id="api_pause" class="<%= brewer.position %> simple brewer <% if i==0%> active<% end %>"><%= brewer.title %></a></li>
 			<% end %>
 		</ul>
 	</div>

@@ -27,35 +27,9 @@
         var volume = 100;
 
         //Simple Buttons
-        $('#'+player_id).nextAll('button.simple').bind('click', {'player_id': player_id}, function(e){
+        $('#'+player_id).nextAll('.simple').bind('click', {'player_id': player_id}, function(e){
             var iframe = $('#'+e.data.player_id).get(0);
             iframe.api( $(e.target).attr('id'), null );
-        });
-
-        //Seek
-        $('#'+player_id).nextAll('button.seek').bind('click', {player_id: player_id}, function(e){
-            var iframe = $('#'+e.data.player_id).get(0);
-            iframe.api('api_seekTo', 30);
-        });
-
-        //Loop
-        $('#'+player_id).nextAll('button.loop').bind('click', {player_id: player_id}, function(e){
-            loop = loop == 0 ? 1 : 0;
-            var iframe = $('#'+e.data.player_id).get(0);
-            iframe.api('api_setLoop', loop);
-        });
-
-        //Volume
-        $('#'+player_id).nextAll('button.volume').bind('click', {player_id: player_id}, function(e){
-            volume = volume == 100 ? 50 : 100;
-            var iframe = $('#'+e.data.player_id).get(0);
-            iframe.api('api_setVolume', volume);
-        });
-
-        //Color
-        $('#'+player_id).nextAll('button.color').bind('click', {player_id: player_id}, function(e){
-            var iframe = $('#'+e.data.player_id).get(0);
-            iframe.api('api_changeColor', Math.floor(Math.random()*16777215).toString(16));
         });
 
         //API EVENT LISTENERS
@@ -67,13 +41,7 @@
      */
     VimeoEmbed.setupAPIEventListeners = function(target)
     {
-        target.addEvent( 'onPlay', VimeoEmbed.vimeo_on_play);
         target.addEvent( 'onPause', VimeoEmbed.vimeo_on_pause);
-    };
-
-
-    //API EVENTS
-    VimeoEmbed.vimeo_on_play = function(player_id) {
     };
 
     VimeoEmbed.vimeo_on_pause = function(player_id) {

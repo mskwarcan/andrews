@@ -2,7 +2,7 @@
 	<div class="modal_titles">
 		<ul>
 			<% retailers.each_with_index do |retailer, i|%>
-						<li><a href="#" class="<%= retailer.position %> <% if i==0%> active<% end %>"><%= retailer.title %></a></li>
+						<li><a href="#" id="api_pause" class="<%= retailer.position %> simple <% if i==0%> active<% end %>"><%= retailer.title %></a></li>
 			<% end %>
 		</ul>
 	</div>
@@ -15,6 +15,7 @@
 		<script type="text/javascript">
 		$(document).ready(function(){
 			$('div.modal_titles a.<%= retailer.position %>').click(function() {
+			
 			if (!$('.image_slider.retailer.<%= retailer.id %>').hasClass('active'))
 			{
 				$('.image_slider.retailer .video_slide.active .text').fadeOut();
