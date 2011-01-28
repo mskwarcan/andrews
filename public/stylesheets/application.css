@@ -186,7 +186,6 @@ p
 
 #menu li
 {
-	margin:0 2px;
 	float:left;
 	text-transform:uppercase;
 	position:relative;
@@ -201,7 +200,7 @@ p
 
 #menu li#item_2
 {
-	width:110px;
+	width:125px;
 	margin-left:125px;
 }
 
