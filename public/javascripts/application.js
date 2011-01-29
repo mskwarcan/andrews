@@ -35,8 +35,7 @@ $(document).ready(function(){
 	
 	///////////// AJAX FORM SUBMITS //////////////////////
 	
-	$('.submit').click(function () {
-  	$("#body").css({'position':'relative'});
+	$('.donation_requests .submit').click(function () {
 	});
 	
 	$("#new_donation_request").validate();
