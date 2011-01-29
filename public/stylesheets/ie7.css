@@ -9,6 +9,11 @@
   padding:0;
 }
 
+#header
+{
+  height:60px;
+}
+
 .left_nav
 {
   padding:0;
