@@ -4,9 +4,25 @@
   top:160px;
 }
 
+#page
+{
+  padding:0;
+}
+
+.left_nav
+{
+  padding:0;
+  left:0;
+}
+
 .banner
 {
   left:0;
+}
+
+ul#management li a
+{
+  padding-bottom:12px;
 }
 
 #header_content
