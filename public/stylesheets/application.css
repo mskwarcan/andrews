@@ -1239,15 +1239,13 @@ a.portal
 	padding:3px 0;
 	font-size:11px;
 	top:306px;
-	display:none;
 }
 
 /* Fake Modal Box */
 .overlay
 {
 	display:block;
-	opacity:.92;
-	background:#0F2348;
+	background:url("/images/overlay.png");
 	height:100%;
 	width:100%;
 	position:fixed;
