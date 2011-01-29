@@ -12,7 +12,7 @@ class Vimeo < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :for_brewers, :vimeo, :text
-    remove_column :for_retailers, :vimeo, :text
+    remove_column :for_brewers, :vimeo
+    remove_column :for_retailers, :vimeo
   end
 end

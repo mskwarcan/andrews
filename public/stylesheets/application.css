@@ -410,7 +410,7 @@ p
 .homeImage
 {
 	float:right;
-	margin:-50px -60px -321px;
+	margin:-50px -55px -321px;
 	position:relative;
 }
 
@@ -1171,22 +1171,18 @@ div#modalBox
 	position:relative;
 }
 
-#modalBoxCloseButton
+a.close
 {
-	float:right;
 	position:relative;
-	right:190px;
-	top:-50px;
-}
-
-#modalBoxCloseButton a
-{
+	right:195px;
+	float:right;
+	top:75px;
 	color:#fff;
 	font-size:11px;
 	text-transform:uppercase;
 }
 
-#modalBoxCloseButton a img
+a.close img
 {
 	position:relative;
 	top:3px;
@@ -1244,6 +1240,38 @@ a.portal
 	font-size:11px;
 	top:306px;
 	display:none;
+}
+
+/* Fake Modal Box */
+.overlay
+{
+	display:block;
+	opacity:.92;
+	background:#0F2348;
+	height:100%;
+	width:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:1000;
+	display:none;
+}
+
+.for_videos
+{
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:1001;
+	display:none;
+}
+
+.container
+{
+	margin:0 auto;
+	position:relative;
+	width:720px;
+	height:100%;
 }
 
 /* Whats New */

@@ -1,12 +1,12 @@
-<script src="http://github.com/vimeo/froogaloop/raw/master/froogaloop.min.js"></script> 
-<script type="text/javascript"> 
+<script type="text/javascript">
     var VimeoEmbed = {};
+		Froogaloop.init();
 
     //Called on document ready
     VimeoEmbed.init = function(e)
     {
         //Listen to the load event for all the iframes on the page
-        $('iframe.brewer').each(function(index, iframe){
+        $('iframe').each(function(index, iframe){
             iframe.addEvent('onLoad', VimeoEmbed.vimeo_player_loaded);
         });
     };
@@ -27,19 +27,9 @@
         var volume = 100;
 
         //Simple Buttons
-        $('#'+player_id).nextAll('button.simple').bind('click', {'player_id': player_id}, function(e){
+        $('.simple').bind('click', {'player_id': player_id}, function(e){
             var iframe = $('#'+e.data.player_id).get(0);
             iframe.api( $(e.target).attr('id'), null );
-        });
-        
-        //Getter buttons
-        $('#'+player_id).nextAll('button.get').bind('click', {player_id: player_id}, function(e) {
-            var iframe = $('#'+e.data.player_id).get(0),
-                getMethod = $(e.target).attr('id');
-            
-            iframe.get(getMethod, function(val, player_id) {
-                $('#'+player_id).prev('.api_output').html(getMethod+' '+val+'<br/>');
-            });
         });
 
         //API EVENT LISTENERS
@@ -51,18 +41,12 @@
      */
     VimeoEmbed.setupAPIEventListeners = function(target)
     {
-        target.addEvent( 'onPlay', VimeoEmbed.vimeo_on_play);
         target.addEvent( 'onPause', VimeoEmbed.vimeo_on_pause);
     };
 
-
-    //API EVENTS
-    VimeoEmbed.vimeo_on_play = function(player_id) {
-        $('#'+player_id).prev('.api_output').html('Playing<br/>');
-    };
-
     VimeoEmbed.vimeo_on_pause = function(player_id) {
-        $('#'+player_id).prev('.api_output').html('Paused<br/>');
     };
 
+    //On document ready
+    $(document).ready(VimeoEmbed.init);
 </script>

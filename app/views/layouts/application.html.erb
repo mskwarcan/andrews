@@ -39,15 +39,19 @@
         	<%= render :partial => "/shared/footer" %>
   </div>
 </div>
-		<div id="for_brewers" style="display:none">
-			<%= render :partial => "/shared/brewers" %>
+		<div id="for_brewers" class="for_videos">
+			<div class="container">
+				<%= render :partial => "/shared/brewers" %>
+			</div>
 		</div>
 		
-		<div id="for_retailers" style="display:none">
+		<div id="for_retailers" class="for_videos" style="display:none">
+			<div class="container">
 				<%= render :partial => "/shared/retailers" %>
+			</div>
 		</div>
 		
 		<%= render :partial => "/shared/vimeo" %>
-
+	<div class="overlay">
   </body>
 </html>

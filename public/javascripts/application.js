@@ -29,10 +29,6 @@ $(document).ready(function(){
 	  $(".print").show();
 	  return false;
 	});
-	
-	$(".vimeo").click(function () {
-	  VimeoEmbed.init
-  });
 
 	$('body.whats_new_stories a#fancybox-close').append("BACK TO WHATS NEW");
 	$('body.management--2 a#fancybox-close').append("BACK TO MANAGEMENT");
@@ -90,17 +86,36 @@ $(document).ready(function(){
 	$('#new_inquiry').ajaxForm(myFormOptions);
 	
 	////////////////For Brewers/Retailers//////////////
+	var position = ($(window).width() - 720)/2;
 	
-	jQuery("a.for_retailers").modalBox({
-		getStaticContentFrom : "#for_retailers"
+	$('.for_videos').css({'left':position});
+	
+	$(window).resize(function() {
+	  position = ($(window).width() - 720)/2;
+	  $('.for_videos').css({'left':position});
 	});
 	
-	$('.ajax-load-retailer').click(function (){
-		$('.retailers').load('/for-retailers-videos #videos');
+	$('.for_brewers').click(function () {
+		$('#for_brewers').fadeIn('fast');
+		$('.overlay').fadeIn('fast', function() {
+		        // Animation complete
+				$('.image_slider.brewer .video_slide .text').hide();
+				$('.image_slider.brewer .video_slide.active .text').fadeIn();
+		      });
 	});
 	
-	jQuery("a.for_brewers").modalBox({
-		getStaticContentFrom : "#for_brewers"
+	$('.for_retailers').click(function () {
+		$('#for_retailers').fadeIn('fast');
+		$('.overlay').fadeIn('fast', function() {
+		        // Animation complete
+				$('.image_slider.retailer .video_slide .text').hide();
+				$('.image_slider.retailer .video_slide.active .text').fadeIn();
+		      });
+	});
+	
+	$('a.close').click(function() {
+		$('.for_videos').fadeOut('fast');
+		$('.overlay').fadeOut('fast');
 	});
 	
 	
