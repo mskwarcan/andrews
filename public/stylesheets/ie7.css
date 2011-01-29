@@ -36,19 +36,28 @@ ul#management li a
   z-index:1;
 }
 
-.core-values ul.subnav, .distribution-area ul.subnav
+.portfolio_image
 {
-  width:20px !important;
-  z-index:30;
-  height:45px;
+  margin:0;
 }
 
-.core-values ul.subnav li, .distribution-area ul.subnav li
+ul.subnav
 {
-  width:100px;
-  padding:2px 0;
-  display:list-item;
+  margin-bottom:10px;
 }
+
+ul.subnav li.last
+{
+  width:150px;
+}
+
+.core-values #optional_area
+{
+  position:relative;
+  top:55px;
+  left:-170px;
+}
+
 
 img.core
 {
