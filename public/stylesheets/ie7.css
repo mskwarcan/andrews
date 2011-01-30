@@ -36,9 +36,20 @@ ul#management li a
   z-index:1;
 }
 
+.at-a-glance #body_content p,.destination-beer #body_content p
+{
+  width:250px;
+}
+
+.beer-brands--2 .top_right_image
+{
+  background:url('/images/bottle_cap_IE.png') no-repeat;
+}
+
 .portfolio_image
 {
-  margin:0;
+  width:289px;
+  height:503px;
 }
 
 ul.subnav
@@ -75,17 +86,49 @@ ul#events li
   list-style-image:none;
 }
 
-table#donation
+a.close
 {
-  width:564px;
+  top:-20px;
 }
 
-table#donation td.right
+table#donation
+{
+  width:500px;
+}
+
+table#inquiries label.error
+{
+  white-space:nowrap;
+  position:absolute;
+  left:0;
+  top:28px;
+}
+
+table#donation label.error
+{
+  white-space:nowrap;
+  position:absolute;
+  left:5px;
+  top:25px;
+}
+
+table#donation td
+{
+  position:relative;
+}
+
+table#inquiries td
+{
+  position:relative;
+}
+
+table#donation td.right label
 {
   width:150px;
+  white-space:nowrap;
 }
 
 table#donation td.input
 {
-  width:300px;
+  width:350px;
 }
