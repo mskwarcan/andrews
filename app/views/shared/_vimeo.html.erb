@@ -42,9 +42,14 @@
     VimeoEmbed.setupAPIEventListeners = function(target)
     {
         target.addEvent( 'onPause', VimeoEmbed.vimeo_on_pause);
+				target.addEvent( 'onPlay', VimeoEmbed.vimeo_on_pause);
     };
 
     VimeoEmbed.vimeo_on_pause = function(player_id) {
+    };
+
+    VimeoEmbed.vimeo_on_play = function(player_id) {
+			alert("playing");
     };
 
     //On document ready
