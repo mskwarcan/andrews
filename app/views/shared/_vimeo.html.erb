@@ -49,7 +49,8 @@
     };
 
     VimeoEmbed.vimeo_on_play = function(player_id) {
-			alert("playing");
+			var iframe = $('#'+e.data.player_id).get(0);
+      iframe.api( $(e.target).attr('id'), null );
     };
 
     //On document ready
