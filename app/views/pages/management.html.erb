@@ -9,7 +9,7 @@
 		<%= image_fu management.thumb_image, "112x112" %>
       <span class="title"><%= management.title %></span><br />
 		<h2><%= management.name %></h2> <a href="#<%= management.position %>" class="fancy">Read More >></a><br />
-		<%=raw management.bio[0, 250] %>...
+				<% if management.teaser %> <%=raw management.teaser %><% end %>
 		<div class="hide">
 			<div class="fancy_box" id="<%= management.position %>">
 				<%= image_fu management.main_image %>
