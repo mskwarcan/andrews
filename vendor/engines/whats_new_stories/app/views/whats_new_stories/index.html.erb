@@ -6,7 +6,7 @@
       <li>
 				<div class="thumb"><%= image_fu whats_new_story.thumbnail, '108x100' %></div>
 				<h2><%= whats_new_story.title %></h2> <a href="#<%= whats_new_story.position %>" class="whats-new-link">Read More >></a>
-				<p><%= strip_tags(whats_new_story.text[0, 200]) %>...</p>
+				<% if whats_new_story.teaser %><%=raw whats_new_story.teaser %><% end %>
 				
 				<div class="hide">
 					<div class="fancy_box" id="<%= whats_new_story.position %>">

@@ -28,57 +28,57 @@
   </div>
   
   <tr>
-    <td  class="right"><%= f.label :event_name -%></td>
+    <td  class="right"><%= f.label :event_name -%><% if @required.event_name ==true %><span class="yellow">*</span><% end %></td>
     <td class="input"><input type="text" size="30" name="donation_request[event_name]" id="donation_request_event_name" <% if @required.event_name ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
-    <td  class="right"><%= f.label :event_location -%></td>
+    <td  class="right"><%= f.label :event_location -%><% if @required.event_name ==true %><span class="yellow">*</span><% end %></td>
     <td class="input"><input type="text" size="30" name="donation_request[event_location]" id="donation_request_event_location" <% if @required.event_location ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
-    <td  class="right"><%= f.label :event_address -%></td>
+    <td  class="right"><%= f.label :event_address -%><% if @required.event_name ==true %><span class="yellow">*</span><% end %></td>
     <td class="input"><textarea rows="3" name="donation_request[event_address]" id="donation_request_event_address" cols="40" <% if @required.event_address ==true %> class="required" <% end %>></textarea></td>
   </div>
   
   <tr>
-    <td  class="right"><%= f.label :expected_attendence, "Event Attendance" -%></td>
+    <td  class="right"><%= f.label :expected_attendence, "Event Attendance" -%><% if @required.event_name ==true %><span class="yellow">*</span><% end %></td>
     <td class="input"><input type="text" size="30" name="donation_request[expected_attendence]" id="donation_request_expected_attendence" <% if @required.expected_attendence ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
-    <td  class="right"><%= f.label :event_contact_name -%></td>
+    <td  class="right"><%= f.label :event_contact_name -%><% if @required.event_name ==true %><span class="yellow">*</span><% end %></td>
     <td class="input"><input type="text" size="30" name="donation_request[event_contact_name]" id="donation_request_event_contact_name" <% if @required.event_contact_name ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
-    <td  class="right"><%= f.label :event_contact_number -%></td>
+    <td  class="right"><%= f.label :event_contact_number -%><% if @required.event_name ==true %><span class="yellow">*</span><% end %></td>
     <td class="input"><input type="text" size="30" name="donation_request[event_contact_number]" id="donation_request_event_contact_number" <% if @required.event_contact_number ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
-    <td  class="right"><%= f.label :event_contact_email -%></td>
+    <td  class="right"><%= f.label :event_contact_email -%><% if @required.event_name ==true %><span class="yellow">*</span><% end %></td>
     <td class="input"><input type="text" size="30" name="donation_request[event_contact_email]" id="donation_request_event_contact_email" <% if @required.event_contact_email ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
-    <td class="right"><%= f.label :event_concessionaire -%></td>
+    <td class="right"><%= f.label :event_concessionaire -%><% if @required.event_name ==true %><span class="yellow">*</span><% end %></td>
     <td class="input"><input type="text" size="30" name="donation_request[event_concessionaire]" id="donation_request_event_concessionaire" <% if @required.event_concessionaire ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
-    <td class="right"><%= f.label :event_concessionaire_phone -%></td>
+    <td class="right"><%= f.label :event_concessionaire_phone -%><% if @required.event_name ==true %><span class="yellow">*</span><% end %></td>
     <td class="input"><input type="text" size="30" name="donation_request[event_concessionaire_phone]" id="donation_request_event_concessionaire_phone" <% if @required.event_concessionaire_phone ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
-    <td class="right"><%= f.label :charity_501c3, "Charity/501C3" -%></td>
+    <td class="right"><%= f.label :charity_501c3, "Charity/501C3" -%><% if @required.event_name ==true %><span class="yellow">*</span><% end %></td>
     <td class="input"><input type="text" size="30" name="donation_request[charity_501c3]" id="donation_request_charity_501c3" <% if @required.charity_501c3 ==true %> class="required" <% end %>></td>
   </div>
   
   <tr>
-    <td class="right"><%= f.label :wine_spirits_served -%></td>
+    <td class="right"><%= f.label :wine_spirits_served -%><% if @required.event_name ==true %><span class="yellow">*</span><% end %></td>
     <td class="input"><select name="donation_request[wine_spirits_served]">
 					<option value="Yes">Yes</option>
 					<option value="No">No</option>
@@ -86,7 +86,7 @@
   </div>
   
   <tr>
-    <td class="right"><%= f.label :additional_comments -%></td>
+    <td class="right"><%= f.label :additional_comments -%><% if @required.event_name ==true %><span class="yellow">*</span><% end %></td>
     <td><textarea rows="3" name="donation_request[additional_comments]" id="donation_request_additional_comments" cols="40" <% if @required.additional_comments ==true %> class="required" <% end %>></textarea></td>
   </div>
   

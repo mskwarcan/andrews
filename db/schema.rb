@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110128193920) do
+ActiveRecord::Schema.define(:version => 20110201210700) do
 
   create_table "beer_brands", :force => true do |t|
     t.integer   "image_id"
@@ -67,6 +67,13 @@ ActiveRecord::Schema.define(:version => 20110128193920) do
 
   add_index "events", ["id"], :name => "index_events_on_id"
 
+  create_table "fields", :force => true do |t|
+    t.string  "field"
+    t.boolean "required"
+  end
+
+  add_index "fields", ["id"], :name => "index_fields_on_id"
+
   create_table "for_brewers", :force => true do |t|
     t.string    "title"
     t.integer   "ogg_file_id"
@@ -76,7 +83,7 @@ ActiveRecord::Schema.define(:version => 20110128193920) do
     t.integer   "position"
     t.timestamp "created_at"
     t.timestamp "updated_at"
-    t.text      "vimeo"
+    t.string    "vimeo_url"
   end
 
   add_index "for_brewers", ["id"], :name => "index_for_brewers_on_id"
@@ -90,7 +97,7 @@ ActiveRecord::Schema.define(:version => 20110128193920) do
     t.integer   "position"
     t.timestamp "created_at"
     t.timestamp "updated_at"
-    t.text      "vimeo"
+    t.string    "vimeo_url"
   end
 
   add_index "for_retailers", ["id"], :name => "index_for_retailers_on_id"
@@ -174,6 +181,7 @@ ActiveRecord::Schema.define(:version => 20110128193920) do
     t.integer   "position"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.text      "teaser"
   end
 
   add_index "managements", ["id"], :name => "index_managements_on_id"
@@ -318,8 +326,9 @@ ActiveRecord::Schema.define(:version => 20110128193920) do
     t.integer   "position"
     t.timestamp "created_at"
     t.timestamp "updated_at"
-    t.boolean   "active"
+    t.boolean   "active",       :default => true
     t.boolean   "float",        :default => true
+    t.text      "teaser"
   end
 
   add_index "whats_new_stories", ["id"], :name => "index_whats_new_stories_on_id"

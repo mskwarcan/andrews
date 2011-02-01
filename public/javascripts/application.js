@@ -11,6 +11,7 @@ $(document).ready(function(){
 	$("a.fancy").fancybox({
 		'transitionIn'	: 'fade',
 		'transitionOut'	: 'fade',
+		'hideOnOverlayClick':false,
 		'overlayColor':'#0F2348'
 	});
 	
@@ -18,6 +19,7 @@ $(document).ready(function(){
 		'transitionIn'	: 'fade',
 		'transitionOut'	: 'fade',
 		'width': 590,
+		'hideOnOverlayClick':false,
 		'overlayColor':'#0F2348'
 	});
 	
