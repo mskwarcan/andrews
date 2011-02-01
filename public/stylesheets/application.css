@@ -507,7 +507,7 @@ ul.subnav li:first-child
 
 .left_nav a.for_brewers:hover
 {
-	background-position:0 142px;
+	background-position:0 -142px;
 }
 
 .left_nav a.for_retailers
@@ -518,7 +518,7 @@ ul.subnav li:first-child
 
 .left_nav a.for_retailers:hover
 {
-	background-position:0 121px;
+	background-position:0 -121px;
 }
 
 .left_nav a.about_beers
@@ -530,7 +530,7 @@ ul.subnav li:first-child
 
 .left_nav a.about_beers:hover
 {
-	background-position:0 121px;
+	background-position:0 -121px;
 }
 
 .left_nav a.whats_new
@@ -542,7 +542,7 @@ ul.subnav li:first-child
 
 .left_nav a.whats_new:hover
 {
-	background-position:0 113px;
+	background-position:0 -113px;
 }
 
 /* core values */
