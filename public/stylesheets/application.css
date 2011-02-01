@@ -1166,6 +1166,8 @@ div#modalBox
 	padding:104px 0 2250px;
 	margin:0;
 	list-style:none;
+	position:fixed;
+	background:#000;
 }
 
 .modal_titles ul li a, .brewer_titles ul li a
@@ -1280,13 +1282,13 @@ a.portal
 	background:url("/images/none.png");
 	height:296px;
 	width:10000px;
-	position:absolute;
+	position:fixed;
 	z-index:1;
 }
 
 .for_videos
 {
-	position:fixed;
+	position:absolute;
 	top:0;
 	left:0;
 	z-index:1001;
