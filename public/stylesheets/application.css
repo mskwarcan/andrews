@@ -1224,6 +1224,11 @@ a.close img
 	min-height:296px;
 }
 
+.video_slide.active
+{
+	z-index:2;
+}
+
 .video_slide .text
 {
 	padding-top:30px;
@@ -1267,6 +1272,16 @@ a.portal
 	top:0;
 	z-index:1000;
 	display:none;
+}
+
+.invisible
+{
+	display:block;
+	background:url("/images/none.png");
+	height:296px;
+	width:10000px;
+	position:absolute;
+	z-index:1;
 }
 
 .for_videos
