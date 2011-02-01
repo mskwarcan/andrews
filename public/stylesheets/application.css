@@ -707,6 +707,7 @@ ul#management li .title, ul#whats_new_stories li .title
 .management--2 .fancy_box
 {
 	max-width:580px;
+	border-bottom:1px solid #142E5E;
 }
 
 #fancybox-content div
@@ -729,8 +730,7 @@ ul#management li .title, ul#whats_new_stories li .title
 {
 	margin:0 30px;
 	clear:left;
-	border-bottom:1px solid #142E5E;
-	padding-bottom:15px;
+	padding-bottom:7px;
 }
 
 ul#management li h2, ul#whats_new_stories li h2
@@ -750,7 +750,7 @@ ul#management li a, ul#whats_new_stories li a.whats-new-link
 	display:inline-block;
 	position:relative;
 	top:6px;
-	padding-bottom:5px;
+	padding-bottom:8px;
 }
 
 ul#management li img, ul#whats_new_stories li img
