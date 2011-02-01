@@ -225,6 +225,7 @@ p
 	padding:5px 15px;
 	position:relative;
 	z-index:3;
+	font-weight:600;
 }
 
 #menu li ul
@@ -436,6 +437,7 @@ ul.subnav
 	letter-spacing:.5px;
 	height:26px;
 	font-family: "proxima-nova-1","proxima-nova-2",sans-serif;
+	font-weight:600;
 }
 
 .our-community ul.subnav, .events ul.subnav, .donation_requests ul.subnav
