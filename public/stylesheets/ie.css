@@ -21,6 +21,11 @@ ul.subnav li.last
   padding-right:236px;
 }
 
+#menu ul
+{
+  letter-spacing:0;
+}
+
 ul#management li a
 {
   padding-bottom:9px;
