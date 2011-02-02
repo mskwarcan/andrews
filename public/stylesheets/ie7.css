@@ -30,6 +30,11 @@ ul#management
   list-style-image:none;
 }
 
+ul#management li
+{
+  display:inline-block;
+}
+
 ul#management li a
 {
   padding-bottom:12px;
