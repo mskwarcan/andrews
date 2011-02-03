@@ -25,6 +25,16 @@
   left:0;
 }
 
+ul#management
+{
+  list-style-image:none;
+}
+
+ul#management li
+{
+  display:inline-block;
+}
+
 ul#management li a
 {
   padding-bottom:12px;
@@ -69,6 +79,11 @@ ul.subnav li.last
   left:-170px;
 }
 
+
+.core-values #body
+{
+  margin-bottom:150px;
+}
 
 img.core
 {

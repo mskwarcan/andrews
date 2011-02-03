@@ -693,6 +693,7 @@ ul#management, ul#whats_new_stories
 ul#management li, ul#whats_new_stories li
 {
 	padding:9px 0;
+	clear:left;
 	border-bottom:solid #fff 1px;
 }
 
