@@ -1163,7 +1163,7 @@ div#modalBox
 
 .modal_titles ul, .brewer_titles ul
 {
-	padding:104px 0 2250px;
+	padding:104px 0 0px;
 	margin:0;
 	list-style:none;
 	position:fixed;

@@ -89,11 +89,16 @@ $(document).ready(function(){
 	////////////////For Brewers/Retailers//////////////
 	var position = ($(window).width() - 720)/2;
 	
+	$('.modal_titles ul').css({'height':$(window).height()});
+	$('.brewer_titles ul').css({'height':$(window).height()});
+	
 	$('.for_videos').css({'left':position});
 	
 	$(window).resize(function() {
 	  position = ($(window).width() - 720)/2;
 	  $('.for_videos').css({'left':position});
+		$('.modal_titles ul').css({'height':$(window).height()});
+		$('.brewer_titles ul').css({'height':$(window).height()});
 	});
 	
 	$('.for_brewers').click(function () {

@@ -17,7 +17,7 @@
 		<td><span class="yellow">*</span>Required</td>
 	</tr>
   <tr>
-    <td  class="right"><%= f.label :event_region -%></td>
+    <td  class="right"><%= f.label :event_region -%><span class="yellow">*</span></td>
     <td><select name="donation_request[event_region]">
 				<% @regions = Region.all()%>
 				<% @regions.each do |region|%>
