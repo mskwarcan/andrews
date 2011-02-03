@@ -1167,7 +1167,7 @@ div#modalBox
 	padding:104px 0 0px;
 	margin:0;
 	list-style:none;
-	position:fixed;
+	position:absolute;
 	background:#000;
 }
 
@@ -1260,6 +1260,7 @@ a.portal
 	position:relative;
 	padding:3px 0;
 	font-size:11px;
+	z-index:2;
 	top:306px;
 }
 
@@ -1283,7 +1284,7 @@ a.portal
 	background:url("/images/none.png");
 	height:296px;
 	width:10000px;
-	position:fixed;
+	position:absolute;
 	z-index:1;
 }
 
