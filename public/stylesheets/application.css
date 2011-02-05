@@ -1296,7 +1296,8 @@ a.portal
 	z-index:1001;
 	display:none;
 	overflow:hidden;
-	height:700px;
+	min-height:700px;
+	height:100%;
 }
 
 .container
