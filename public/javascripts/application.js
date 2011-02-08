@@ -87,10 +87,12 @@ $(document).ready(function(){
 	$('#new_inquiry').ajaxForm(myFormOptions);
 	
 	////////////////For Brewers/Retailers//////////////
+  
 	var position = ($(window).width() - 720)/2;
-	var height = $(window).height() - 104;
+	var height = $(document).height();
 	var width = $(window).width();
 	
+	$('.for_videos').css({'height':height});
 	$('.modal_titles ul').css({'height':height});
 	$('.brewer_titles ul').css({'height':height});
 	
@@ -100,7 +102,8 @@ $(document).ready(function(){
 	$(window).resize(function() {
 	  position = ($(window).width() - 720)/2;
 	  $('.for_videos').css({'padding-left':position});
-		height = $(window).height() - 104;
+		height = $(document).height();
+		$('.for_videos').css({'height':height});
 		$('.modal_titles ul').css({'height':height});
 		$('.brewer_titles ul').css({'height':height});
 		width = $(window).width();
