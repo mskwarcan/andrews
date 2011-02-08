@@ -117,6 +117,7 @@ $(document).ready(function(){
 				$('.image_slider.brewer .video_slide .text').hide();
 				$('.image_slider.brewer .video_slide.active .text').fadeIn();
 		      });
+		return false;
 	});
 	
 	$('.for_retailers').click(function () {
@@ -126,11 +127,13 @@ $(document).ready(function(){
 				$('.image_slider.retailer .video_slide .text').hide();
 				$('.image_slider.retailer .video_slide.active .text').fadeIn();
 		      });
+		return false;
 	});
 	
 	$('a.close').click(function() {
 		$('.for_videos').fadeOut('fast');
 		$('.overlay').fadeOut('fast');
+		return false;
 	});
 	
 	
