@@ -97,6 +97,7 @@ p
 	position:relative;
 	min-height:100%;
 	background:url('../images/logo_bg.png') no-repeat top center;
+	overflow:hidden;
 }
 
 #page
@@ -456,9 +457,10 @@ ul.subnav li
 	text-transform:uppercase;
 	font-size:10px;
 	float:left;
-	padding:0;
-	list-style-image:url("/images/bullet.png");
-	margin:0 10px;
+	padding:0 0 0 15px;
+	background:url("/images/bullet.png") no-repeat 0 7px;
+	list-style:none;
+	margin:0 5px;
 }
 
 ul.subnav li.active a
@@ -480,11 +482,13 @@ ul.subnav li a
 ul.subnav li:first-child
 {
 	list-style:none;
+	background:none;
 }
 
 .brewers ul.subnav li:last-child, .our-portfolio ul.subnav li:last-child, .managements ul.subnav li:last-child, 
 .the-andrews-story ul.subnav li:last-child, .beer-brands ul.subnav li:last-child
 {
+  background:none;
 	list-style:none;
 	clear:left;
 }
@@ -946,7 +950,7 @@ ul#brewers li img
 {
 	right:-70px;
 	float:right;
-	bottom:-20px;
+	bottom:-00px;
 	margin-bottom:-20px;
 	position:relative;
 }

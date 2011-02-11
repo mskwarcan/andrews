@@ -13,6 +13,7 @@ ul.subnav li.last
   list-style-image:none !important;
   list-style-type:none !important;
   clear:left;
+  background:none;
 }
 
 .the-andrews-story ul.subnav, .our-portfolio ul.subnav
