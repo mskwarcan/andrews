@@ -20,7 +20,7 @@
 		<a href="#" class="for_retailers simple"></a>
 		<a href="/our-portfolio/destination-beer" class="about_beers"></a>
 		<a href="/whats_new_stories" class="whats_new">
-			<% story = WhatsNewStory.first(:order =>"position DESC", :conditions => {:active => true}) %>
+			<% story = WhatsNewStory.first(:order =>"position ASC", :conditions => {:active => true}) %>
 			<%= image_fu story.thumbnail, "120x100", :class => "whats_new_thumb" %>
 			<span class="whats_new_title"><%= story.title %></span>
 		</a>
